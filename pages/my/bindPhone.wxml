@@ -1,0 +1,33 @@
+<form bindsubmit="onSubmit">
+<view class="list justify" style="margin-top: 20rpx;">
+	<view class="item start">
+		<view><text>手机号码</text></view>
+		<view>
+			<input focus="{{inputFocus}}" class="width-100" type="number" name="phoneNumber" value="{{phoneNumber}}" bindinput="onInput" ></input>
+		</view>
+	</view>
+
+	<view class="item start">
+		<view><text>验证码</text></view>
+		<view>
+			<input style="width: calc(100% - 350rpx);" type="number" name="smsCode" value="{{smsCode}}" bindinput="onSmsInput"></input>   
+            <!-- <input class="width-100" type="number" name="smsCode" value="{{smsCode}}" bindinput="onSmsInput"></input>   -->
+			<button style='margin-top:7rpx' type="primary" plain size="mini" class="code" disabled="{{smsDisabled}}" bindtap="onSmsCode">
+			发送验证码 {{time < 60 ? time : ''}}
+			</button>
+		</view>
+	</view>
+
+</view>
+<view style="padding: 20rpx 30rpx;">
+	<checkbox-group bindchange="checkboxChange">
+	  <label class="checkbox">
+	    <checkbox style="transform:scale(.7)"  value="true" checked="true"/> 
+	  </label>
+	  <text bindtap="onGo" data-url="userTermsService" style="text-decoration:underline;color: #333;">用户服务条款</text>
+	</checkbox-group>
+</view>
+<view style="width:90%;margin:60rpx auto;">
+	<button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo" disabled="{{btnDisabled}}">授权绑定</button>
+</view>
+</form>

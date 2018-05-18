@@ -1,0 +1,8 @@
+
+<view class="list justify" style="margin-top: 20rpx;">
+	<navigator wx:for="{{problemTypes}}" wx:key="{{item.id}}" url="problemDetails?problemTypeId={{item.id}}&title={{item.title}}" class="item">
+		<view>{{item.title}}</view>
+		<view><text class="navigator-arrow"></text></view>
+	</navigator>
+</view>
+

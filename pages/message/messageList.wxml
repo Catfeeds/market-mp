@@ -1,0 +1,15 @@
+<view wx:for="{{msgListData}}" wx:key="{{item.id}}" class="msg-list">
+    <view wx:if="{{item.imgUrl != '非图文模式'}}">
+        <view class="haveImg" data-mid="{{item.id}}" data-url="{{item.moveUrl}}" bindtap="onGoto">
+            <image class="haveImage" src="{{item.listImgUrl}}" data-mid="{{item.id}}" mode="scaleToFill" lazy-load="true" binderror="setDefaultImg"></image>
+            <!-- <view class="haveDesc">{{item.content}}</view>
+            <view class="havePublishedAt">{{item.createTime}}</view>    -->
+        </view> 
+    </view>
+    <view wx:else>
+        <view class="msg-html" data-mid="{{item.id}}" data-url="{{item.moveUrl}}" bindtap="onGoto">
+            <view class="haveDesc">{{item.content}}</view>
+            <view class="havePublishedAt">{{item.createTime}}</view>   
+        </view> 
+    </view>      
+</view>

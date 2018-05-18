@@ -1,0 +1,97 @@
+/** orderInfo.wxss **/
+page{
+  background: #fff;
+}
+
+.list.justify, .list .item{
+	background: #efeff4;	
+}
+
+
+
+.content .scan-success{
+	margin: auto calc((100% - 186rpx)/2);
+}
+
+.content .title{
+	font-size: 40rpx;
+	color: #000000;
+	text-align: center;
+}
+ 
+
+.content .divider{
+	display: block;
+	text-align: center;
+	position: relative;
+}
+
+
+.content .divider_{
+    content: '';                 /*CSS伪类用法*/
+    position: absolute;         /*定位背景横线的位置*/
+    top: 52%;
+    background: #cacaca;       /*宽和高做出来的背景横线*/
+    width: 30%;
+    height: 1px;
+    /*left: 0;*/
+}
+
+.mouths{
+	/*display:-webkit-box;*/
+	-webkit-box-pack:center;
+	text-align: center;
+}
+.mouths .mouth{
+	background: #F6ECEE;
+	border-radius: 12rpx;
+	color: #8F1A30;
+	font-size: 40rpx;
+	padding: 14rpx 26rpx;
+	line-height: 100rpx;
+	margin: 10rpx;
+}
+
+.msg{
+	text-align: center;
+	color: #8F1A30;
+}
+.containerMsg{
+	text-align: center;
+	color: #8F1A30;
+}
+
+.itemGoods{
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	border-top:1px solid #f5f5f5;
+	box-shadow:0px -2rpx 20rpx #d8d8d8;
+
+	/*border-bottom:1px solid #f5f5f5;*/
+	/*padding-bottom:10px;*/
+}
+.itemGoods .item{
+	/*color: #888888;*/
+	/*padding: 5px 10px;*/
+}
+
+.itemGoods .bar{
+	color: #434343;
+	/*color: #fff;*/
+	width: 100%;
+	border-top:1px solid #f5f5f5;
+	padding: 10rpx 20rpx;
+	/*background-color: #890E25;*/
+}
+.itemGoods .right{
+	position: absolute;
+	right: 40rpx;
+}
+
+.list.justify, .list .item{
+	background-color: #fff;
+}
+
+
+

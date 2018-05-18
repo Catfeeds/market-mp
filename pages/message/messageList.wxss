@@ -1,0 +1,53 @@
+/* pages/message/messageList.wxss */
+/*有图片的样式*/
+page{
+    background: #f8f8f8;
+}
+.msg-list{
+    margin: 1rem;
+    background: #fff;
+}
+.haveImg{
+    height: 9rem;
+    width: 100%;
+    margin: 1rem auto;
+    background-color: #fff;
+    border-radius:7px;
+    /* box-shadow: 1px 1px 1px 1px #890E25; */
+     filter: drop-shadow(2px 2px 5px #666); 
+    position: relative;
+    z-index: auto;
+}
+.haveImage {
+    /* width: 96%;
+    height: 90%;
+    padding: 2%; */
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    padding: 10px;
+}
+.haveDesc {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    color: #666;
+}
+.havePublishedAt {
+    position: absolute;
+    right: 1rem;
+    bottom: 0rem;
+    color: #666;
+}
+/*其他样式*/
+.msg-html{
+    height: 5rem;
+    width: 95%;
+    margin: 0.45rem auto;
+    background-color: #ccc;
+    border-radius: 4px;
+    border: 1px solid #e9faff;
+    box-shadow: 2px 3px 3px 3px #F8F8F8;
+    position: relative;
+    z-index: auto;
+    color: aqua;
+}

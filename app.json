@@ -1,0 +1,73 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/index/_index",
+        "pages/index/search",
+        "pages/index/authorization",
+        "pages/cart/cart",
+        "pages/pay/pay",
+        "pages/pay/chooseCoupons",
+        "pages/my/my",
+        "pages/my/edit",
+        "pages/my/bindPhone",
+        "pages/my/userTermsService",
+        "pages/problem/problem",
+        "pages/problem/problemDetails",
+        "pages/address/address",
+        "pages/address/addressEdit",
+        "pages/address/addressBaiduMap",
+        "pages/coupons/coupons",
+        "pages/coupons/canReceive",
+        "pages/order/order",
+        "pages/order/orderInfo",
+        "pages/order/scan",
+        "pages/order/scanSuccess",
+        "pages/order/scanDetails",
+        "pages/order/refund/refundApply",
+        "pages/order/refund/refundWhy",
+        "pages/message/message",
+        "pages/message/messageList",
+        "pages/message/messageDetail",
+        "pages/xiaopi/xiaopi"
+    ],
+    "tabBar": {
+        "color": "#888",
+        "selectedColor": "#890E25",
+        "borderStyle": "#890E25",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "image/bar/home-pre.png",
+                "selectedIconPath": "image/bar/home.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/xiaopi/xiaopi",
+                "iconPath": "image/bar/cart-pre.png",
+                "selectedIconPath": "image/bar/cart.png",
+                "text": "小批"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "iconPath": "image/bar/mine-pre.png",
+                "selectedIconPath": "image/bar/mine.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#890E25",
+        "navigationBarTitleText": "小惠便利仓",
+        "navigationBarTextStyle": "#fff",
+        "enablePullDownRefresh": false
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": false
+}

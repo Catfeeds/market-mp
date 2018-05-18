@@ -1,0 +1,16 @@
+/**my.wxss**/
+page{
+  background: #efeff4;
+}
+
+.list.justify .item {
+  margin-left: 0px;
+
+}
+.list .item{
+  padding:32rpx 0 22rpx 32rpx;
+  /* border-bottom:20rpx solid #efeff4; */
+}
+.navigator-arrow::after{
+  top: 40%;
+}

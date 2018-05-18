@@ -1,0 +1,65 @@
+page{
+  background: #efeff4;
+}
+.scrollx-tab {
+  height: 90rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.scrollx-tab__bd {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #e5e5e5;
+  background: #fff;
+}
+.scrollx-tab__bd--fixed {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.scrollx-tab__item {
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.scrollx-tab__title {
+  font-size: 28rpx;
+  display: inline-block;
+  color: #666;
+  height: 88rpx;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  margin: 0 20rpx;
+  word-break: keep-all;
+}
+
+.scrollx-tab__item--selected .scrollx-tab__title {
+  color: #890E25;
+  border-bottom: 3px solid #890E25;
+}
+
+.scrollx-tab__bd--scroll {
+  display: block;
+  white-space: nowrap;
+}
+.scrollx-tab__bd--scroll .scrollx-tab__item {
+  min-width: 90rpx;
+}
+.scrollx-tab__bd--scroll .scrollx-tab__text {
+  margin: 0 40rpx;
+}
+.classify-area {
+    padding: 10rpx 30rpx;
+    background-color: #fff;
+}
+.classify-area-name{
+    padding:10rpx;
+    background:#EAEEF2;
+    border-radius:30rpx;
+    margin:10rpx;
+    display:inline-flex;
+    font-size:24rpx;
+    color:#888888;
+}

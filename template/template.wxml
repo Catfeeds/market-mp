@@ -1,0 +1,76 @@
+<template name="icon">
+	<image class="icon" src="{{url}}" style="width: {{w}};height:{{h}};"></image>
+</template>
+
+
+<!-- 模板 导航栏 -->
+<template name="temp_offcanvas_navbar">
+	<navigator redirect hover-class="other-navigator-hover" url="../index/index">
+		<view class="item"><icon class="iconfont icon-shouye-xianxing cus-fs-18" ></icon>首页</view>
+	</navigator>
+	<navigator url="../cart/cart">
+		<view class="item" bindtap="onStatus" data-status-key="canvasShow">
+		<icon class="iconfont icon-caigou-xianxing cus-fs-18" ></icon>购物车
+		</view>
+	</navigator>
+	<navigator url="../order/order">
+		<view class="item" bindtap="onStatus" data-status-key="canvasShow">
+		<icon class="iconfont icon-danju-xianxing cus-fs-18" ></icon>我的订单
+		</view>
+	</navigator>
+	<view class="subItem">
+		<navigator url="../order/order?tabActive=11"><view class="bbs">全部订单</view></navigator>
+		<navigator url="../order/order?tabActive=12"><view class="bbs">待付款</view></navigator>
+		<navigator url="../order/order?tabActive=13"><view>待收货</view></navigator>
+		<navigator url="../order/order?tabActive=14"><view>退款</view></navigator>
+	</view>
+	<navigator url="../my/my">
+		<view class="item" bindtap="onStatus" data-status-key="canvasShow">
+		<icon class="iconfont icon-yonghu-xianxing cus-fs-18" ></icon>个人信息
+		</view>
+	</navigator>
+	<!-- <view class="subItem">
+		<view class="bbs">设置头像</view>
+		<view class="bbs">设置昵称</view>
+		<view>修改密码</view>
+	</view> -->
+	<navigator url="../address/address">
+		<view class="item" bindtap="onStatus" data-status-key="canvasShow">
+		<icon class="iconfont icon-weizhi-xianxing cus-fs-18" ></icon>收货地址
+		</view>
+	</navigator>
+
+    <!-- <view class="subItem">
+        <navigator url="../address/addressEdit"><view>添加地址</view></navigator> 
+    </view>    -->
+    <view class="subItem" bindtap="onGo" data-url="../address/addressEdit">
+        <view data-url="../address/addressEdit">添加地址</view>
+    </view> 
+	<navigator url="../coupons/coupons">
+		<view class="item" bindtap="onStatus" data-status-key="canvasShow">
+		<icon class="iconfont icon-wenti-xianxing cus-fs-18" ></icon>优惠券
+		</view>
+	</navigator> 
+	<navigator url="../problem/problem">
+		<view class="item" bindtap="onStatus" data-status-key="canvasShow">
+		<icon class="iconfont icon-wenti-xianxing cus-fs-18" ></icon>常见问题
+		</view>
+	</navigator> 
+    <navigator>
+        <view class="item" bindtap="onCall" data-status-key="">
+        <icon class="iconfont icon-kefu-dianhua cus-fs-18" ></icon>客服电话
+        </view>
+	</navigator>
+</template>
+ 
+ <!-- 模板 选择店铺 -->
+<template name="temp_offcanvas_market">
+	<view class="item" bindtap="onMarket" data-id="{{id}}" style="position: relative;">
+			<text class="title" data-id="{{id}}">{{marketData[id].name}}</text>
+			<text wx:if="{{marketData[id].show}}" class="tags yellow">距离最近</text>
+			 <text class="tags blue" data-id="{{id}}">{{marketData[id].formatDistance}}</text> 
+			<view style="font-size: 26rpx;color:#717171;" data-id="{{id}}">
+				地址：{{marketData[id].formatAddress}}
+			</view>
+	</view>
+</template>

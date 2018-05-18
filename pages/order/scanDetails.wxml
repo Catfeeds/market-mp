@@ -1,0 +1,37 @@
+
+<view class="text-content">
+	<view class="item">
+		<view class="hd">
+			<text>文字列表</text>
+		</view>
+		<view class="bd">
+			<text class="title">标题</text>
+			<text class="info">
+				由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+			</text>
+		</view>
+	</view>
+	<view class="item">
+		<view class="hd">
+			<text>文字列表</text>
+		</view>
+		<view class="bd">
+			<text class="title">标题</text>
+			<text class="info">
+				由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+			</text>
+		</view>
+	</view>
+	<view class="item">
+		<view class="hd">
+			<text>文字列表</text>
+		</view>
+		<view class="bd">
+			<text class="title">标题</text>
+			<text class="info">
+				由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+			</text>
+		</view>
+	</view>
+
+</view>

@@ -1,0 +1,54 @@
+<form bindsubmit="onSubmit">
+<view class="list justify" style="margin-top: 20rpx;">
+	<view class="item start">
+		<view><text>收货人</text></view>
+		<view>
+			<input name="name" placeholder="请填写收货人姓名" value="{{address.name}}"></input>
+		</view>
+	</view>
+	<view class="item start">
+		<view><text>联系电话</text></view>
+		<view>
+			<input type="number" name="phoneNumber" placeholder="请填写联系人手机号" value="{{address.phoneNumber}}"></input>
+		</view>
+	</view>
+	<view class="item" bindtap="onChooseLocation">
+		<view><text>所在区域</text></view>
+		<view>
+			<input style="width:calc(100% - 160rpx);" name="alias" disabled value="{{address.alias || address.addressAlias || location.name}}"></input>
+			<text class="text-B2 navigator-arrow" style="background-color: #fff;z-index: 100;">请选择</text>
+		</view>
+	</view>
+	<!--
+	<view class="item">
+		<view><text>街道</text></view>
+		<view bindtap="onGo" data-url="addressArea?showName=street">
+			<text class="text-B2" data-url="addressArea?showName=street">请选择</text>
+			<text class="navigator-arrow text-B2" data-url="addressArea?showName=street"></text>
+		</view>
+	</view>
+	-->
+	<view class="item start">
+		<view><text>详细地址</text></view>
+		<view>
+			<input name="detailAddress" placeholder="街道门牌信息" value="{{address.detailAddress}}"></input>
+		</view>
+	</view>
+</view>
+
+<view class="list justify" style="margin-top: 20rpx;">
+	<view class="item">
+		<view><text>设为默认</text></view>
+		<view>
+			<view class="body-view">
+			    <switch checked="{{address.status == 2 ? 'true' : ''}}" color="#8F1A30" bindchange="onSwitchChange"/>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+<view style="width:90%;margin:60rpx auto;">
+	<button formType="submit" type="primary" hover-class="none">确认</button>
+</view>
+</form>

@@ -1,0 +1,11 @@
+<import src="../../template/temp-order.wxml"/>
+
+
+<scroll-view scroll-y="true" style="height:100%;" bindscrolltoupper="onScrollTop" bindscrolltolower="onScrollBottom" enable-back-to-top="true">
+		<view class="text-null" wx:if="{{!couponsData}}">
+   		<block>没有可领取的优惠券哦~</block>
+		</view>
+
+       
+      <template is="temp_coupons_receive" data="{{...item}}" wx:for="{{couponsData}}" wx:key="{{id}}"></template>
+</scroll-view>

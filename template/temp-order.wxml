@@ -1,0 +1,97 @@
+<!-- 模板 订单信息_状态 -->
+<template name="temp_orders">
+   <view class="order">
+		<view class="hd">
+			<view class="left" style="line-height:28rpx;">{{marketName}}
+				<text class="tags {{ deliverType == 1 ? 'green':'yellow'}}">{{deliverTitle}}</text>
+			</view>
+			<view class="right text-main">{{orderStatusTitle}}</view>
+		</view>
+   		<scroll-view scroll-x="true" style="height: 85;" class="bd {{itemsSize == 1 ? 'space':''}}" bindtap="onGo" data-url="orderInfo?orderId={{orderId}}">
+			<block wx:for="{{items}}" wx:for-item="item" wx:key="item.itemId">
+   			<view class="item {{itemsSize > 1 ? 'multiple':''}}" data-url="orderInfo?orderId={{orderId}}">
+   				<image class="item-img" style="position:absolute;" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/defaultImg.png" data-url="orderInfo?orderId={{orderId}}"></image>
+   				<image class="item-img" src="{{item.image}}" data-url="orderInfo?orderId={{orderId}}"></image>
+   				<text  class="item-title" data-url="orderInfo?orderId={{orderId}}">{{item.name}}</text>
+   			</view>
+   			</block>
+   		</scroll-view>
+		<view class="ft">
+			<view class="left text-small">共{{totalItemQuantity}}件商品，实付款：<text class="text-large-15" style="margin-top:-4rpx;">￥{{actualPrice / 100}}</text></view>
+			<view class="right">
+				<!-- 
+				自提 在取货前 都可以 退款。  
+				配送 在接单前  可以退款
+
+
+				问题3.0.5 中  出货中 可以申请退款
+				-->
+				<button wx:if="{{orderStatus == 1}}" 
+				type="primary" size="mini" bindtap="onGo" data-url="orderInfo?orderId={{orderId}}" 
+				hover-class="none">去支付</button>
+        
+				<button wx:if="{{orderStatus == 256}}"
+				type="primary" size="mini" hover-class="none" bindtap="onAgainBuy" data-id="{{orderId}}">再次购买</button>
+
+				<button wx:if="{{deliverType == 1 && (orderStatus == 32 || orderStatus == 64)}}" 
+				type="default" size="mini" bindtap="onGo" data-url="refund/refundApply?actualPrice={{showActualPrice}}&sequence={{orderSequenceNumber}}" 
+				hover-class="none">申请退款</button>
+
+				<button wx:if="{{deliverType == 2 && orderStatus == 8}}" 
+				type="default" size="mini" bindtap="onGo" data-url="refund/refundApply?actualPrice={{showActualPrice}}&sequence={{orderSequenceNumber}}" 
+				hover-class="none">申请退款</button>
+
+				<button wx:if="{{deliverType == 1 && (orderStatus == 32 || orderStatus == 64)}}" 
+				type="primary" size="mini" bindtap="onGo" 
+				data-url="scan?url={{orderSequenceNumber}}&orderId={{orderId}}&marketName={{marketName}}&marketFormatAddress={{marketFormatAddress}}" 
+				hover-class="none">扫码取货</button>
+
+				<button wx:if="{{orderStatus > 512}}" 
+				type="default" size="mini" bindtap="onGo" data-url="orderInfo?orderId={{orderId}}" 
+				hover-class="none">查看详情</button>
+			</view>
+		</view>
+   </view>
+</template>
+
+
+<!-- 优惠券模板 -->
+<template name="temp_coupons">
+     <view class="coupons" bindtap="onChooseCoupon" data-id="{{id}}">
+        <view data-id="{{id}}"><text class="text-large" data-id="{{id}}">{{name}}</text></view>
+        <view data-id="{{id}}"><text class="text-small text-muted" data-id="{{id}}">{{useMarket}}</text></view>
+        <view data-id="{{id}}"><text class="text-small text-muted" data-id="{{id}}">{{timeExplain}}</text></view>
+        <view class="text-center" style="position: absolute;right: 10px;top: 10px" data-id="{{id}}">
+           <view class="text-large-red" data-id="{{id}}"><text data-id="{{id}}">{{showDiscountAmount}}</text></view>
+           <view class="text-small text-muted" data-id="{{id}}"><text data-id="{{id}}">{{showTriggerAmount}}</text></view>
+        </view>
+     </view>
+     <view class="coupons_Rule" bindtap="onChoose" data-id="{{id}}">
+        <text class="text-small"  data-id="{{id}}">更多使用规则</text>
+        <text class="{{show ? 'icon-up' : 'icon-dw'}}"  data-id="{{id}}"></text>
+        <view wx:if="{{show}}"><text class="text-small text-muted2">{{desc}}</text></view>
+     </view>
+</template>
+
+<!-- 首页弹窗优惠券领取模板 -->
+<template name="temp_coupons_receive">
+     <view class="coupons" data-id="{{couponTemplateId}}">
+        <view data-id="{{couponTemplateId}}"><text class="text-large" data-id="{{couponTemplateId}}">{{name}}</text></view>
+        <view data-id="{{couponTemplateId}}"><text class="text-small text-muted" data-id="{{couponTemplateId}}">{{useMarket}}</text></view>
+        <view data-id="{{couponTemplateId}}"><text class="text-small text-muted" data-id="{{couponTemplateId}}">{{useTip}}</text></view>
+        <view class="text-center" style="position: absolute;right: 10px;top: 10px" data-id="{{couponTemplateId}}">
+           <view class="text-large-red" data-id="{{couponTemplateId}}"><text data-id="{{couponTemplateId}}">{{showDiscountAmount}}</text></view>
+           <view class="text-small text-muted" data-id="{{couponTemplateId}}"><text data-id="{{couponTemplateId}}">{{showTriggerAmount}}</text></view>
+        </view>
+        <view class="text-red" bindtap="onChoose" data-id="{{couponTemplateId}}">点击立即领取</view>
+     </view>
+     <view class="coupons_Rule" bindtap="onLookRule" data-id="{{couponTemplateId}}">
+        <text class="text-small"  data-id="{{couponTemplateId}}">更多使用规则</text>
+        <text class="{{show ? 'icon-up' : 'icon-dw'}}"  data-id="{{couponTemplateId}}"></text>
+        <view wx:if="{{show}}"><text class="text-small text-muted2">{{desc}}</text></view>
+     </view>
+</template>
+
+
+
+

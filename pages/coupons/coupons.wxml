@@ -1,0 +1,25 @@
+<import src="../../template/temp-order.wxml" />
+
+<view class="tab">
+    <view class="item {{status.tabActive == 1 ? 'active':''}}" style="width: 33.33%" bindtap="onStatus" data-status-key="tabActive" data-status-val="1">未使用</view>
+    <view class="item {{status.tabActive == 2 ? 'active':''}}" style="width: 33.33%" bindtap="onStatus" data-status-key="tabActive" data-status-val="2">使用记录</view>
+    <view class="item {{status.tabActive == 3 ? 'active':''}}" style="width: 33.33%" bindtap="onStatus" data-status-key="tabActive" data-status-val="3">已过期</view>
+    <view class="liner" style="left: {{(status.tabActive - 1) * 33.33 +'%'}}"></view>
+</view>
+
+<scroll-view scroll-y="true" style="height: calc(100% - 90rpx - 94rpx);" bindscrolltoupper="onScrollTop" bindscrolltolower="onScrollBottom" enable-back-to-top="true">
+    <!-- <block wx:if="{{!couponsData}}">
+            <view class="text-null">没有更多数据</view>
+        </block>
+        <block>
+            <template is="temp_coupons" data="{{...item}}" wx:for="{{couponsData}}" wx:key="{{id}}"></template>
+        </block> -->
+    <view class="text-null" wx:if="{{couponsData == ''}}">
+        <block wx:if="{{status.tabActive == 1}}">没有未使用的优惠券哦~</block>
+        <block wx:if="{{status.tabActive == 2}}">没有优惠券使用记录哦~</block>
+        <block wx:if="{{status.tabActive == 3}}">没有已过期的优惠券哦~</block>
+    </view>
+    <template is="temp_coupons" data="{{...item}}" wx:for="{{couponsData}}" wx:key="{{id}}"></template>
+</scroll-view>
+
+<view class="butAdd" bindtap="onGo" data-url="canReceive">领取优惠券</view>

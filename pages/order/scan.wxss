@@ -1,0 +1,54 @@
+/** orderInfo.wxss **/
+page{
+  background: #efeff4;
+}
+
+.list.justify, .list .item{
+	background: #efeff4;	
+}
+
+.content{
+	border: 1px solid #cacaca;
+	border-radius: 20rpx;
+	background: #fff;
+	width: 90%;
+	margin: 60rpx 5%; 
+	padding:0;
+}
+
+.content .scan-img{
+	margin: auto calc((100% - 87%)/2);
+	margin-top: 20rpx;
+	margin-bottom: 20rpx; 
+	border:1px solid #cacaca;
+
+}
+
+.scan-success{
+	position: absolute;
+	top: 0;
+	left:0;
+	right: 0;
+	background-color: #fff;
+	opacity: 0.9;
+	z-index: 100;
+	height: 100%;
+}
+.scan-success-image{
+	position: absolute;
+	height: 280rpx;
+	width: 280rpx;
+	z-index: 101;
+	margin: auto calc(45% - 140rpx);
+	margin-top:100rpx;
+}
+.scan-success-title{
+	position: absolute;
+	z-index: 101;
+	text-align: center;
+	margin-top: 460rpx;
+	display: block;
+	width: 80%;
+	color: #8F1A30;
+	margin-left:5%;
+}

@@ -1,0 +1,99 @@
+<import src="../../template/template.wxml"/>
+<import src="../../template/temp-goods.wxml"/>
+
+	<view class="navbar search">
+		<image class="icon-search" src="{{icons.search.url}}?v=1" style="width: {{icons.search.w}};height:{{icons.search.h}};"></image>
+		<input style="padding-right:62rpx;" placeholder="{{placeholder}}" focus="{{status.fuzzyFocus}}" value="{{fuzzyMatchItemName}}" bindinput="onSearch" bindblur=""></input>
+		<image wx:if="{{status.searchClose}}" class="" src="{{icons.close.url}}" bindtap="onSearchClose"
+		style="width: {{icons.close.w}};height:{{icons.close.h}};position: absolute;right: 140rpx;top:30rpx;z-index: 100"></image>
+		<viem class="but" bindtap="onCancel">取消</viem>
+	</view>
+
+	<view class="search-panel" wx:if="{{status.showSearch == 0 || status.showSearch == 1}}">
+		<view style="height: 88rpx;"></view>
+		<block wx:if="{{status.showSearch == 0}}">
+			<block wx:if="{{searchHistoryData.length > 0}}">
+			<view class="title">
+				<text>历史搜索</text>
+				<image class="" src="{{icons.close.url}}" bindtap="onSearchRemoveAll"
+				style="width: {{icons.close.w}};height:{{icons.close.h}};position: absolute;right: 32rpx;top:48rpx"></image>
+			</view>
+			<view style="padding: 8rpx 30rpx 8rpx 30rpx;">
+				<view class="tag" wx:for="{{searchHistoryData}}" wx:key="{{item}}" bindtap="onSearchGood" data-value="{{item}}">{{item}}</view>
+			</view>
+			</block>
+
+			<view class="title">
+				<text>热门搜索</text>
+			</view>
+			<view style="padding: 8rpx 30rpx 8rpx 30rpx;">
+			   <view class="tag" wx:for="{{searchHotData}}" wx:key="{{item}}" bindtap="onSearchGood" data-value="{{item}}">{{item}}</view> 
+			</view>
+		</block>
+
+		<block wx:if="{{status.showSearch == 1}}">
+		<view class="list justify">
+			<block wx:if="{{fuzzyData.length > 0}}">
+				<view wx:for="{{fuzzyData}}" wx:key="{{item}}" class="item" bindtap="onSearchGood" data-value="{{item}}" >
+					<text data-value="{{item}}" >{{item}}</text>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="item">
+					<text>未搜到记录..</text>
+				</view>
+			</block>
+		</view>
+		</block>
+	</view>
+
+	<block wx:if="{{status.showSearch == 2}}">
+		<!-- 商品显示区域 -->
+		<scroll-view class="list" scroll-y="true" style="width: 100%;height:100%;" bindscrolltolower="onScrollBottom" scroll-top="{{scrollTop}}">
+			<view style="height: 88rpx;"></view>
+			<template is="temp_goods_sort"  data="{{id,goodData}}" wx:for="{{goodSort}}" wx:for-item="id"  wx:key="id"/>
+			<text wx:if="{{noData}}" class="noData">未搜索到 ‘{{searchKeyValue}}‘ 数据</text>
+			<view wx:if="{{isGoodData}}" style="height: 60rpx;line-height: 60rpx;color: #b8b8b8;width: 100%;text-align: center;">没有更多数据...</view>
+			<view style="height: 100rpx;"></view>
+		</scroll-view>
+
+
+		<!-- 购物车 -->
+		<view class="cartnav">
+			<view class="item left {{status.cartShow ? 'hide':'show'}}">
+				<view class="iconCart">
+					<image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png" data-status-key="cartShow" bindtap="onStatus"></image>
+					<view class="tagNnm">{{checkTotal.totalNum}}</view>
+				</view>
+			</view>
+			<view class="item center">
+				<view class="text-small-1x">合计：￥<text class="text-large-2x">{{checkTotal.totalMoney}}</text></view>
+				<view class="text-small-1x">节省：￥{{checkTotal.thriftMoney}}</view>
+			</view>
+			<view class="item right" style="font-size: 34rpx;opacity:{{checkTotal.totalNum > 0 ? '1' : '0.2'}}" bindtap="onPay">去结算</view>
+		</view>
+
+		<!-- 二级购物车 -->
+		<view class="cart-subnav-scenes {{status.cartShow ? 'show':'hide'}}" data-status-key="cartShow" catchtap="onStatus"></view>
+		<view class="cart-subnav {{status.cartShow ? 'show':'hide'}}">
+			<view class="iconCart">
+				<image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png" data-status-key="cartShow" catchtap="onStatus"></image>
+				<view class="tagNnm">{{checkTotal.totalNum}}</view>
+			</view>
+			<text class="iconCart-up"></text>
+			<view class="hd">
+				<image class="checkAll-img" 
+				data-check="{{status.checkAll}}" 
+				bindtap="onCartCheckAll"
+				src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}" 
+				></image>
+				全选（已选 {{checkTotal.speciesNum || 0}} 件）
+				<view style="width:160rpx;" data-type="REMOVER" catchtap="onCart">
+					清空购物车
+				</view>
+			</view>
+			<scroll-view class="bd list" scroll-y="true">
+				<template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{item.id}}"/>
+			</scroll-view>
+		</view>
+	</block>

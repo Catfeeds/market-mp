@@ -1,0 +1,8 @@
+/** orderInfo.wxss **/
+page{
+	background: #efeff4;
+}
+.index{
+  background: #efeff4;
+  padding-top: 20rpx;
+}

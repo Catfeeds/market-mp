@@ -1,0 +1,22 @@
+/** address.wxss **/
+
+page{
+  background:#efeff4;
+}
+.list.justify .item.start{
+  -webkit-box-pack:start;
+  position: relative;
+}
+.list.justify .item input{
+  position: absolute;
+  left: 180rpx;
+  top:16rpx;
+}
+
+.width-100{
+	width:calc(100% - 200rpx);
+}
+
+input[disabled]{
+	color: #888;
+}

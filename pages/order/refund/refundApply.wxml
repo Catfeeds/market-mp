@@ -1,0 +1,38 @@
+
+<form bindsubmit="onSubmit">
+<view class="list justify" style="margin: 10px auto">
+	<view class="item">
+		<view><text class="text-main">*</text><text>退款原因</text></view>
+		<view bindtap="onGo" data-url="refundWhy">
+			<text class="text-shallow" data-url="refundWhy">{{!title ? '请先选择退款原因': title}}</text>
+			<label class="navigator-arrow" data-url="refundWhy"></label>
+		</view>
+	</view>
+</view>
+
+<view class="list justify" style="margin: 20rpx auto">
+	<view class="item">
+		<view>
+			<text>退款说明</text>
+			<text class="text-small">（可不填）</text>
+		</view>
+		<view></view>
+	</view>
+	<view class="item item-before" style="padding: 30rpx 0;padding-left: 0px">
+		<view class="textarea" bindtap="onFocus">
+			<input focus="{{tareaFocus}}" name="content" class="weui-input" placeholder="请输入退款说明" value=""></input>
+		</view>
+	</view>
+
+</view>
+
+<view class="list justify" style="margin: 20rpx 0 40rpx 0;background:#efeff4">
+	<view class="item" style="background:#efeff4">
+		<view></view>
+		<view class="text-large-2x">退款金额：<text class="text-main">￥{{actualPrice}}</text></view>
+	</view>
+</view>
+
+<button  wx:if="{{isSubmit}}" formType="submit" type="primary" style="width: 90%" hover-class="none">提交申请</button>
+<button  wx:if="{{!isSubmit}}" formType="submit" type="primary" style="width: 90%" hover-class="none" disabled="true" >提交申请</button>
+</form>

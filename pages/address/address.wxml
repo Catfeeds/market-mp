@@ -1,0 +1,41 @@
+
+<scroll-view scroll-y="true" style="height: calc(100% - 114rpx);">
+	<radio-group class="radio-group" bindchange="setDefaultAddress">
+
+	<view class="text-null" wx:if="{{!addressData}}">您还没有添加收货地址哦~</view>
+
+	<view wx:for="{{addressSort}}" wx:for-item="id" wx:key="id" class="list justify">
+		<view class="item" bindtap="{{choose ? 'onChoose' : ''}}" data-id="{{id}}" data-lat="{{addressData[id].latitude}}" data-lng="{{addressData[id].longitude}}">
+			<view data-id="{{id}}">
+			<text data-id="{{id}}">{{addressData[id].addressAlias}}</text>
+			<text data-id="{{id}}" style="padding-left: 10px;">{{addressData[id].detailAddress}}</text>
+			</view>
+		</view>
+		<view class="item" bindtap="{{choose ? 'onChoose' : ''}}" data-id="{{id}}" data-lat="{{addressData[id].latitude}}" data-lng="{{addressData[id].longitude}}">
+			<view class="text-shallow" data-id="{{id}}">  
+				<text data-id="{{id}}">{{addressData[id].name}}</text>
+				<text data-id="{{id}}" style="padding-left: 100rpx;" data-id="{{id}}">{{addressData[id].phoneNumber}}</text>
+			</view>
+		</view>
+		 <view class="item" style="background: #FAFAFA;margin-left:0px">
+			<view>
+				<label class="radio" style="margin:40rpx 0 0 24rpx;">
+					<radio style="transform:scale(.85);" name="status" value="{{id}}" checked="{{addressData[id].status == 2 ? 'checked':''}}"  data-type="CHECK" color="#8F1A30"/>
+					默认地址
+				</label>
+			</view>
+            <!-- <block wx:if="{{!choose}}"> -->
+                <view class="buts">
+                    <text class="border-r" bindtap="onGo" data-url="addressEdit?type=edit&id={{id}}">编辑</text>
+                    <text class="" bindtap="removeAddress" data-id="{{id}}">删除</text>
+                </view>
+            <!-- </block> -->
+		</view> 
+	</view>
+	</radio-group>
+</scroll-view>
+
+<view class="butAdd" bindtap="onGo" data-url="addressEdit"><text>+</text>添加地址</view>	
+
+
+

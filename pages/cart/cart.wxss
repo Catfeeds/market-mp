@@ -1,0 +1,36 @@
+/**cart.wxss**/
+
+/** 导航 **/
+.navbar{
+  background: #fff;
+  color: #717171;
+  border-bottom:1px solid #d8d8d8;
+  height: 80rpx;
+  position: absolute;
+  top: 0px;
+  z-index: 1000;
+}
+.navbar .item{
+  width: 180rpx;
+
+}
+
+.navbar .left{
+  width: 50%;
+  /*margin-left: 10px;*/
+  text-align: left;
+}
+
+
+.item .checkbox{
+  margin:36rpx 0 0 20rpx;
+}
+
+.cartnav .item.center{
+  width:calc(100% - 170rpx - 280rpx);
+}
+
+.list{
+  padding-top:80rpx;
+  height:calc(100% - 184rpx)
+}

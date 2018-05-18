@@ -1,0 +1,17 @@
+
+
+
+	<view class="navbar search">
+		<image class="icon-search" src="{{icons.O_location.url}}" style="width: 26rpx;height:34rpx;top:28rpx;"></image>
+		<input style="padding-right:62rpx;" bindinput="onSearch" focus="true"></input>
+		<viem class="but" bindtap="onCancel">取消</viem>
+	</view>
+
+
+	<view class="search-panel">
+		<view class="list justify">
+			<view wx:for="{{sugData}}" wx:key="{{item}}" class="item" bindtap="onSearchResult" data-key="{{index}}">
+				<text data-key="{{index}}">{{item.name}}</text>
+			</view>
+		</view>
+	</view>

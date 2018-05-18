@@ -1,0 +1,6 @@
+
+
+<view class="content">
+	<view style="text-align: center;padding: 25%">需要您的授权才能使用</view>	
+	<button type="primary" hover-class="none" bindtap="openSetting">立即授权</button>
+</view>

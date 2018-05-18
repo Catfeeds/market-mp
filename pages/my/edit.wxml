@@ -1,0 +1,22 @@
+<import src="../../template/temp-user.wxml"/>
+
+<view class="index">
+	<view class="list justify" style="margin-top: 20rpx;">
+		<view class="item">
+			<view>
+			<input value="{{userInfo.userName}}" focus="true"></input>
+			</view>
+			<view style="line-height: 40rpx" bindtap="onIpuClose">
+				<image class="icon" src="{{icons.close.url}}" style="width: {{icons.close.w}};height:{{icons.close.h}};"></image>
+			</view>
+		</view>
+		<view class="item" style="background:#efeff4;margin-left:0;padding-left: 30rpx;color: #888;font-size: 24rpx;">
+			<view>
+				<text>4-20个字符，可由中英文及数字组成</text>
+			</view>
+		</view>
+	</view>
+	<view style="width:90%;margin:80rpx auto;">
+		<button type="primary" bindtap="onPay" data-isTap="true" hover-class="none">确认</button>
+	</view>
+</view>

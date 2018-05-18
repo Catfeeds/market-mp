@@ -1,0 +1,20 @@
+/** orderInfo.wxss **/
+.index{
+  background: #efeff4;
+  padding-top: 20rpx;
+}
+
+button[type="default"] {
+  background:#fff;
+}
+
+button{
+  margin-left: 20rpx;
+  border-radius: 50rpx;
+  border:1px solid rgba(0, 0, 0, 0.2);
+
+}
+button::after{
+  border-radius: initial;
+  border:none;
+}

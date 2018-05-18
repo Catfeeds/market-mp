@@ -1,0 +1,11 @@
+page{
+  background: #efeff4;
+}
+
+
+.content{
+  background: #efeff4;
+  width: 80%;
+
+  padding: 30% 10%;
+}

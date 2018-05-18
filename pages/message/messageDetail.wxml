@@ -1,0 +1,29 @@
+<!--pages/message/messageDetail.wxml-->
+
+<view class="container">
+    <view class="content-article-detail">
+        <view class="entry-title">{{msgContentData.name}}</view>
+        <view class="entry-date">
+            <!-- <image src="../../image/bar/mine-pre.png" style="height:24rpx;width:24rpx;"></image> -->
+            <!-- <text class="entry-date-text">{{msgContentData.createTime}}</text> -->
+            <!-- <image src="../../image/comments.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+            <text class="entry-icon-text">594</text>
+            <image src="../../image/pageviews.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+            <text class="entry-icon-text">58</text>
+            <image src="../../image/home-like.png" style="height:24rpx;width:24rpx;margin-left: 20rpx;"></image>
+            <text class="entry-icon-text">51554</text> -->
+        </view>
+    </view>
+    <view class="entry-summary">
+        <!-- <template is="wxParse" data="{{wxParseData:article.nodes}}" /> -->
+        <view class="entry-summary-p">
+            <view class="p-view p-inline">
+               {{msgContentData.content}}
+            </view>
+        </view>
+        <view class="entry-summary-p">
+            <image class="p-image" src="{{msgContentData.imgUrl}}"></image>
+        </view>
+    </view>
+</view>
+

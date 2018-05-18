@@ -1,0 +1,27 @@
+
+
+page{
+  background:#efeff4;
+}
+.list.justify .item.start{
+  -webkit-box-pack:start;
+  position: relative;
+}
+.list.justify .item input{
+  position: absolute;
+  left: 180rpx;
+  top:24rpx;
+}
+
+.width-100{
+  width:calc(100% - 200rpx);
+}
+.list .item {
+  padding:20rpx 0 20rpx 0;
+}
+.code{
+  position: absolute;
+  right: 20rpx;
+  top: 12rpx;
+  padding:0 0.5em!important;
+}

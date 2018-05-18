@@ -1,0 +1,161 @@
+<!-- 模板 热卖 -->
+<template name="temp_hot">
+    <view class="hot">
+        <block wx:if="{{itemsSize > 1}}">
+            <scroll-view scroll-x="true" style="height:128rpx;white-space:nowrap;">
+                <image wx:for="{{items}}" wx:for-item="item" wx:key="item.id" class="item-img" src="{{item.image}}"></image>
+            </scroll-view>
+            <text class="tag">待取货</text>
+        </block>
+        <block wx:else>
+            <image class="item-img" src="{{items[0].image}}"></image>
+            <view class="title">{{items[0].name}}</view>
+            <text class="tag">待取货</text>
+        </block>
+    </view>
+    <view class="hot-ft">
+        <view class="text-small">
+            {{itemsSize}}件商品,实付款:
+            <label class="text-main">￥</label>
+            <label class="text-main text-large-2x">{{showActualPrice}}</label>
+        </view>
+        <button type="primary" size="mini" bindtap="onGo" data-url="../order/scan?url={{orderSequenceNumber}}&orderId={{orderId}}&marketName={{marketName}}&marketFormatAddress={{marketFormatAddress}}" hover-class="none">{{orderStatus == 8196?'取货信息':'扫码取货'}}</button>
+    </view>
+</template>
+
+<!-- 商品模板 有排序-->
+<template name="temp_goods_sort">
+    <view class="item">
+        <view style="width: 150rpx;">
+            <image wx:if="{{goodData[id].stock == 0}}" class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
+            <image wx:if="{{goodData[id].stock <= 5}}" class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
+            <image style="position: absolute;top: calc(50% - 62rpx)" class="item-img" src="{{goodData[id].imageUrl}}" lazy-load="true" data-id="{{id}}" binderror="setDefaultImg"></image>
+        </view>
+        <view style="width:calc(100% - 126rpx);">
+            <view class="text-large">{{goodData[id].name}}</view>
+            <view>
+                <!-- <text class="text-muted text-small">库存：<block wx:if="{{goodData[id].stock > 5}}">充足</block><block wx:else>{{goodData[id].stock}}</block></text> -->
+                <text wx:if="{{goodData[id].itemLadderPrices.length > 0}}" class="text-secon text-small">{{goodData[id].itemLadderPrices[0].showMsg}}</text>
+                <text wx:else class='text-small' style='color:#fff'>暂无满减活动</text>
+            </view>
+            <view style="margin-top:8rpx;">
+                <text class="text-main text-small">￥</text>
+                <block wx:if="{{goodData[id].discountType == 0}}">
+                    <text class="text-main text-large-2x">{{goodData[id].showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{goodData[id].showMaxPrice}}</text>
+                </block>
+                <block wx:if="{{goodData[id].discountType != 0}}">
+                    <text class="text-main text-large-2x">{{goodData[id].showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{goodData[id].showMaxPrice}}</text>
+                </block>
+            </view>
+        </view>
+        <view class="cart-buts">
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/minusIcon@3x.png" data-type="MINUS" data-id="{{id}}" catchtap="onCart" class="{{goodData[id].num == 0 ?'hide':''}}"></image>
+            <view class="{{goodData[id].num == 0 ?'hide':''}}" style="display: inline-block;width:60rpx;text-align: center;position: relative;top: 4rpx;">{{goodData[id].num}}</view>
+            <block wx:if="{{goodData[id].num >= goodData[id].stock}}">
+                <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon_dis.png"></image>
+            </block>
+            <block wx:else>
+                <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon@3x.png" data-type="ADD" data-id="{{id}}" catchtap="onCart"></image>
+            </block>
+        </view>
+    </view>
+</template>
+
+<!-- 商品购物车模板 -->
+<template name="temp_goods_cart">
+    <view class="item">
+        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        <image class="item-img" src="{{imageUrl}}"></image>
+        <view>
+            <view class="" style="color: #3F3F3F;font-size: 28rpx;">{{name}}</view>
+            <view>
+                <text class="text-muted text-small">库存：<block wx:if="{{stock > 5}}">充足</block><block wx:else>{{stock}}</block></text>
+                <text wx:if="{{itemLadderPrices.length > 0}}" class="text-secon text-small text-indent">{{itemLadderPrices[0].showMsg}}</text>
+            </view>
+            <view>
+                <text class="text-main text-small">￥</text>
+                <block wx:if="{{discountType == 0}}">
+                    <text class="text-main text-large-2x">{{showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{showMaxPrice}}</text>
+                </block>
+                <block wx:if="{{discountType != 0}}">
+                    <text class="text-main text-large-2x">{{showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{showMaxPrice}}</text>
+                </block>
+            </view>
+        </view>
+        <view class="cart-buts">
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/minusIcon@3x.png" data-type="MINUS" data-id="{{itemId}}" catchtap="onCart" class="{{num == 0 ?'hide':''}}"></image>
+            <view class="{{num == 0 ?'hide':''}}" style="display: inline-block;width:60rpx;text-align: center;position: relative;top: 4rpx;">{{num}}</view>
+            <block wx:if="{{num >= stock}}">
+                <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon_dis.png"></image>
+            </block>
+            <block wx:else>
+                <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon@3x.png" data-type="ADD" data-id="{{itemId}}" catchtap="onCart"></image>
+            </block>
+        </view>
+    </view>
+</template>
+
+
+<template name="temp_goods_pay">
+    <view class="item">
+        <!-- <label wx:if="{{!isHide}}" class="checkbox" style="margin: 20px 0 0 10px">
+		<checkbox data-id="{{itemId}}" checked="{{check ? 'checked':''}}" data-type="CHECK" catchtap="onCart"></checkbox>
+	</label> -->
+        <view style="width:20rpx"></view>
+        <image class="item-img" src="{{imageUrl}}"></image>
+        <view>
+            <view class="text-large">{{name}}</view>
+            <view>
+                <text class="text-muted text-small">库存：<block wx:if="{{stock > 5}}">充足</block><block wx:else>{{stock}}</block></text>
+                <text wx:if="{{itemLadderPrices.length > 0}}" class="text-secon text-small text-indent">{{itemLadderPrices[0].showMsg}}</text>
+            </view>
+            <view>
+                <text class="text-main text-small">￥</text>
+                <block wx:if="{{discountType == 0}}">
+                    <text class="text-main text-large-2x">{{showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{showMaxPrice}}</text>
+                </block>
+                <block wx:if="{{discountType != 0}}">
+                    <text class="text-main text-large-2x">{{showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{showMaxPrice}}</text>
+                </block>
+            </view>
+        </view>
+        <view class="cart-buts">
+            <text class="" style="font-size: 24rpx;padding: 0px">x</text>
+            <text class="text-large-2x">{{num}}</text>
+        </view>
+    </view>
+</template>
+
+<wxs module="util">
+    var sub = function(val) {
+        var len = val.lenght
+        if (len > 18) {
+            return val.substring(0, 16) + '...'
+        } else {
+            return val
+        }
+    }
+    module.exports.sub = sub;
+</wxs>
+
+<template name="temp_goods_info">
+    <view class="item">
+        <view style="width:20rpx"></view>
+        <image class="item-img" src="{{imageUrl || image}}"></image>
+        <view>
+            <view class="text-large">{{util.sub(name || itemName)}}</view>
+            <view style="margin-top:38rpx;">
+                <text class="text-main text-small">单价：</text>
+                <text class="text-main">￥{{showPrice}}</text>
+            </view>
+        </view>
+        <view class="cart-buts" style="top: 20rpx">x {{num || quantity}}</view>
+        <view class="cart-buts text-main">总价：{{showTotalPrice}}</view>
+    </view>
+</template>

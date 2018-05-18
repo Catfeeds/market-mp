@@ -1,0 +1,55 @@
+<import src="../../template/temp-order.wxml" />
+
+<view class='scrollx-tab'>
+    <scroll-view class="scrollx-tab__bd scrollx-tab__bd--scroll" scroll-x="true" style="height: 90rpx">
+        <view class="scrollx-tab__item scrollx-tab__item--selected">
+            <view class="scrollx-tab__title">针线布料</view>
+        </view>
+        <view class="scrollx-tab__item">
+            <view class="scrollx-tab__title">酒水饮料</view>
+        </view>
+        <view class="scrollx-tab__item">
+            <view class="scrollx-tab__title">零食口粮</view>
+        </view>
+        <view class="scrollx-tab__item">
+            <view class="scrollx-tab__title">纸巾/清洁</view>
+        </view>
+        <view class="scrollx-tab__item">
+            <view class="scrollx-tab__title">菜米油盐</view>
+        </view>
+        <view class="scrollx-tab__item">
+            <view class="scrollx-tab__title">母婴用品</view>
+        </view>
+        <view class="scrollx-tab__item">
+            <view class="scrollx-tab__title">纸巾/清洁</view>
+        </view>
+        <view class="scrollx-tab__item">
+            <view class="scrollx-tab__title">菜米油盐</view>
+        </view>
+        <view class="scrollx-tab__item">
+            <view class="scrollx-tab__title">母婴用品</view>
+        </view>
+    </scroll-view>
+</view>
+<view class="classify-area">
+	<view class="classify-area-name">巧克力</view>
+    <view class="classify-area-name">辣条</view>
+    <view class="classify-area-name">巧克力</view>
+    <view class="classify-area-name">辣条</view>
+    <view class="classify-area-name">巧克力</view>
+    <view class="classify-area-name">辣条</view>
+    <view class="classify-area-name">巧克力</view>
+    <view class="classify-area-name">辣条</view>
+    <view class="classify-area-name">巧克力</view>
+    <view class="classify-area-name">辣条</view>
+</view>
+<scroll-view scroll-y="true" style="height: calc(100% - 45px);padding-top:8px;" bindscrolltolower="onScrollBottom" bindscrolltoupper="onScrollTop" enable-back-to-top="true" scroll-top="scrollTop">
+    <view class="text-null" wx:if="{{ordersData == ''}}">
+        <block wx:if="{{status.tabActive == 11}}">没有任何订单哦~</block>
+        <block wx:if="{{status.tabActive == 12}}">没有待付款的订单哦~</block>
+        <block wx:if="{{status.tabActive == 13}}">没有待取货的订单哦~</block>
+        <block wx:if="{{status.tabActive == 14}}">没有退款的订单哦~</block>
+        <block wx:if="{{status.tabActive == 15}}">没有待扫码的订单哦~</block>
+    </view>
+    <template is="temp_orders" data="{{...item}}" wx:for="{{ordersData}}" wx:key="{{id}}"></template>
+</scroll-view>

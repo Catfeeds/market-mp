@@ -1,0 +1,40 @@
+
+<view class="index">
+
+	<!-- <view class="list justify" >
+		<view class="item">
+			<view></view>
+			<navigator url="scanDetails"><text class="text-red">使用说明</text></navigator>
+		</view>
+	</view> -->
+	<view class="content">
+		<block wx:if="{{scanShow}}">
+			<view class="scan-success"></view>
+			<image class="scan-success-image" src="{{icons.success.url}}"></image>
+			<view  class="scan-success-title">{{scanMsg}}</view>
+			<view class="scan-img" style="width: {{size.w}}px;height: {{size.h}}px;background:#f1f1f1;display: block;"></view>
+		</block>
+		 
+		<block wx:if="{{!scanShow}}">
+		<canvas class="scan-img" style="width: {{size.w}}px;height: {{size.h}}px;background:#f1f1f1;" canvas-id="mycanvas"/>
+		<!-- <image class="scan-img" src="/image/scan.png"></image> -->
+		</block>
+
+		
+		<view style="text-align: center;margin:20rpx 0 40rpx 0;">
+			<view><text class="text-large-17">{{option.marketName}}</text></view>
+			<view><text class="text-muted">{{option.marketFormatAddress}}</text></view>
+		</view>
+	</view>
+
+	<view class="text-red" style="margin: auto 10%">
+		<view>使用说明：</view>
+		<view>1.该取货码仅能在对应的门店扫码取货</view>
+		<view>2.取货码仅能使用一次</view>
+		<view>3.扫码成功后，会打开对应的取货仓口</view>
+		<view>4.如有疑问，请及时联系客服 400-809-0696</view>
+	</view>
+</view>
+
+
+

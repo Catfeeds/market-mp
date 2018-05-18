@@ -1,0 +1,41 @@
+/** address.wxss **/
+
+page{
+  background:#efeff4;
+}
+.list{
+  border:1px solid #E5E5E5;
+  margin-top: 30rpx;
+}
+
+.buts{
+  position: absolute;
+  right: 0px;
+  color:#888;
+}
+.buts .border-r{
+  border-right:1px solid #D8D8D8;
+}
+.buts text{
+  padding: 0 30rpx;
+}
+
+
+.butAdd{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height:94rpx;
+  line-height: 94rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background-color:#890E25;
+  text-align: center;
+  border-top:1px solid #D8D8D8;
+}
+
+.butAdd text{
+  font-size:36rpx;
+  position:relative;
+  left:-14rpx;
+}

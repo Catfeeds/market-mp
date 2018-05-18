@@ -1,0 +1,99 @@
+/** 导航 **/
+
+.navbar {
+    background: #f4f4f4;
+    color: #333;
+    border-bottom: 1rpx solid #d8d8d8;
+    height: 80rpx;
+    font-size: 30rpx;
+    /* position: absolute; *//* top: 0px; */
+    z-index: 1000;
+}
+
+.navbar .item {
+    text-align: right;
+}
+
+.navbar .left {
+    width: 65%;
+    text-align: left;
+    text-decoration:underline;
+}
+.location-icon{
+     width:9px;
+     height:13px;
+     padding-left:10rpx;
+     margin-right:20rpx;
+}
+.posBar {
+    background: #f4f4f4;
+    color: #666;
+    border-bottom: 1rpx solid #d8d8d8;
+    height: 70rpx;
+}
+
+.posBar .item {
+    line-height: 70rpx;
+}
+
+.listView {
+    padding-top: 5rpx;
+    height: calc(100% - 184rpx);
+}
+
+.market-box {
+    padding: 10rpx 20rpx;
+    /* display: flex; */
+    align-items: center;
+    border-bottom: 1rpx solid #d8d8d8;
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+     height: 100rpx; 
+}
+
+.market-box-img {
+    margin-right: 46rpx;
+    /* display: none; */
+}
+
+.market-box-ctn {
+    flex-shrink: 100;
+    position: absolute;
+    left: 85rpx;
+}
+
+.market-box-title {
+    font-size: 34rpx;
+}
+.market-box-title-label{
+    margin-left: 5px;
+    padding: 1px;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #890E25;
+}
+.market-box-desc {
+    margin-top: 12rpx;
+    font-size: 26rpx;
+    color: #888;
+}
+
+.market-box-far {
+    font-size: 26rpx;
+    color: #888;
+    /* height: 100rpx;
+  line-height: 100rpx; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.market-small-wrp {
+    width: 93rpx;
+    height: 93rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

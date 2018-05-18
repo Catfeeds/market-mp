@@ -1,0 +1,92 @@
+<import src="../../template/temp-goods.wxml"/>
+
+<view class="index cus-height-100">
+	<view class="tab">
+		<view wx:if="{{isHide}}" class="item {{status.tabActive == 1 ? 'active':''}}" style="width:50%"
+			bindtap="onStatus"
+			data-status-key="tabActive" 
+			data-status-val="1">我要自提</view>
+        <view wx:if="{{!isHide}}" class="abled" style="width:50%"
+			bindtap="onAlert"
+			data-status-key="tabActive" 
+			data-status-val="1">我要自提</view>
+		<view class="item {{status.tabActive == 2 ? 'active':''}}" style="width:50%"
+			bindtap="onStatus" 
+			data-status-key="tabActive" 
+			data-status-val="2">我要配送</view>
+		<view class="liner" style="left: {{status.tabActive == 1 ? '0':'50%'}}"></view>
+	</view>
+	<view wx:if="{{status.tabActive == 1}}" class="content">
+		<view class="text-large-15">取货点：{{market.name}}</view>
+		<view class="text-large-15">取货地址：{{market.formatAddress}}</view>
+	</view>
+
+	<navigator wx:if="{{status.tabActive == 2}}" class="content" hover-class="navigator-hover" url="../address/address?type=choose" > 
+		<block wx:if="{{address.name}}">
+		    <view class="text-large-15">{{address.name}}    {{address.phoneNumber}}</view> 
+		    <view class="navigator-arrow"></view>
+		    <view class="text-large-15"><text class="text-main" style="margin-left:-16rpx;">【默认】</text>{{address.addressAlias}}  {{address.detailAddress}}</view>
+		</block>
+		<block wx:else>
+		    <view class="text-main navigator-arrow">请设置默认地址</view> 
+		</block>
+	</navigator>
+	<!-- <view class="navbar">
+		<view class="item">
+			{{market.name}}
+		</view>
+	</view> -->
+	<view class="list" style='margin-top:8px'>
+		<template is="temp_goods_pay" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{id}}"/>
+	</view>
+
+
+
+	<view class="list justify" style="margin-top: 20rpx;">
+		<view class="item" bindtap="onGo" data-url="chooseCoupons?id={{coupon.id}}">
+			<view data-url="chooseCoupons"><text>优惠券</text></view>
+			<view data-url="chooseCoupons">
+				<text class="text-shallow" data-url="chooseCoupons?id={{coupon.id}}">{{coupon.discountAmount ? coupon.showDiscountAmount : '选择优惠券'}}</text>
+				<text class="navigator-arrow"></text>
+			</view>
+		</view>
+		<view class="item">
+			<view><text>市场价</text></view>
+			<view><text class="text-shallow">¥ {{checkTotal.marketMoney}}</text></view>
+		</view>
+		<view class="item">
+			<view><text>节     省</text></view>
+			<view><text class="text-shallow">¥ {{checkTotal.thriftMoney}}</text></view>
+		</view>
+		<view wx:if="{{status.tabActive == 2}}" class="item text-shallow">
+			<view><text>运     费（满 {{market.freeDeliveryFee/100}} 免运费）</text></view>
+			<view><text>¥ {{checkTotal.totalMoney >= (market.freeDeliveryFee / 100) ? '免运费' : market.deliveryCost / 100 }}</text></view>
+		</view>
+		<view class="item item-before">
+			<view><text>实付金额</text></view>
+			<view class="text-main" style="font-size: 40rpx;"><text class="text-small">¥</text>
+				<block wx:if="{{status.tabActive == 1}}"> 
+                    <wxs module="round">
+                        var round = {
+                            toFix: function (value) {
+                                return value.toFixed(2)//取小数点后两位，第三位四舍五入
+                            }
+                        }
+                        module.exports = {toFix: round.toFix}
+                    </wxs> 
+                     {{coupon.discountAmount ? round.toFix(checkTotal.totalMoney - coupon.discountAmount/100) : checkTotal.totalMoney}}  
+				</block>
+				<block wx:if="{{status.tabActive == 2}}" >
+					 {{coupon.discountAmount ? round.toFix(checkTotal.totalMoneyAndCost - coupon.discountAmount/100) : checkTotal.totalMoneyAndCost}} 
+				</block>
+			</view>
+		</view>
+
+	</view>
+
+	<view style="width:90%;margin:80rpx auto;">
+		<button wx:if="{{status.isPay}}"  type="primary" style="background:#1AAD19;font-size: 36rpx;" bindtap="onPay" data-isPay="true" hover-class="none">微信支付</button>
+		<button wx:if="{{!status.isPay}}" type="primary" style="background:#1AAD19;font-size: 36rpx;" disabled="true" hover-class="none">微信支付</button>
+	</view>
+
+</view>	

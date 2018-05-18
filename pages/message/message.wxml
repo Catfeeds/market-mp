@@ -1,0 +1,44 @@
+<view class="common-list">
+    <navigator class="list-item has-img" url="messageList?typeId=1&passportId={{passportId}}">
+        <view class="content-title">
+            <text>精选活动</text>
+        </view>
+        <view class="content-text">
+            <text>活动多多，惊喜享不停……</text>
+        </view>
+        <view class="content-img">
+            <image src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/act.png" mode="aspectFill" class="cover"></image>
+            <block wx:if="{{msgCount.activityCount > 0}}">
+                <view class="tagNum">{{msgCount.activityCount}}</view>
+            </block>
+        </view>
+    </navigator>
+    <navigator class="list-item has-img" url="../coupons/canReceive">
+        <view class="content-title">
+            <text>优惠券</text>
+        </view>
+        <view class="content-text">
+            <text>更有优惠，常来这里看看。</text>
+        </view>
+        <view class="content-img">
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png" mode="aspectFill" class="cover"></image>
+            <block wx:if="{{msgCount.couponCount > 0}}">
+                <view class="tagNum">{{msgCount.couponCount}}</view>
+            </block>
+        </view>
+    </navigator>
+    <navigator class="list-item has-img" url="messageList?typeId=2&passportId={{passportId}}">
+        <view class="content-title">
+            <text>小惠贴士</text>
+        </view>
+        <view class="content-text">
+            <text>小惠和你说句悄悄话。</text>
+        </view>
+        <view class="content-img">
+            <image src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/tips.png" mode="aspectFill" class="cover"></image>
+            <block wx:if="{{msgCount.tipsCount > 0}}">
+                <view class="tagNum">{{msgCount.tipsCount}}</view>
+            </block>
+        </view>
+    </navigator>
+</view>

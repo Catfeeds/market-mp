@@ -1,0 +1,16 @@
+<import src="../../template/temp-order.wxml"/>
+
+<view class="noBut" bindtap="onBack">
+	<text>不使用优惠券</text>
+	<image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEVklEQVR4Xu1bi3ETMRBdVQBUQKiApIJkrwGcCggVECog6SBUAKmAVHDrVICpgFABoQIxLyMz51g6re4kRZ54ZzLjie+z7+1XK9nQMxfzzPHTnoC9B1RgoO/7Y2PMCREdEtFLIsJnnyyJ6J6IVtbaZdd1t6XVKxICIgKQ74ho4f7m4Lghohtmvp7zkNC9WQkQkQMi+uxAg4ScAs+4IqIvzIzPWSQLAc7iAH6eRav4Q0DEZQ4iZhMgIu+dZXJbPEbDHRF9YmaEyGSZTICz+tcMMT5ZeXfjN0fEpLCYRICIIJt/JyLEfAuyIiKeEhLJBDjw4spZC+DXOiAkTpkZZKgliYCGwa8BIwzgCWoS1ATsAPihJxxpw0FFgEt4PxqK+ZiLr5j5KHYRvtcSgISHrm6XBA1TtC+JEiAiZ0SEcreLgnyA9UVQRglwrv+rwYyvNQYqw2g+iBGAlvOj9m2NXoeW+SKkW5AAt7CB9ZsTa+2tMeZYqRhK45tQVRgjAC0m+vyWBEvic4Bx4QkP1egY9AIvAY3G/jUzIyFvSN/3S4U33DPzK58lQwS0lvm94AFIRBDfWIrHBG3y1soxRAAuxESnBQmCTyTA+5wQAbYF5EQ0Ct4RgA4Vq9OYeMNgiwARwcASq72nFg14NGhbeWFEcfQEGwslHwHamCpJUAnw0BcTJFSO/+Ij4KnjvxR4gN5aH2wRoCwrpaxfEjyhgeq6bmNPwucBSQnQWvvTGIOwQWwdWmsvjDFvJzBUFDz0yU6AtfavMeZg2GaiicKuTiIJxcE7g2xVgrke4G0xE0moBf6BA2bewFyEAFefNZ5QFXwJArBndxqK94gnVAePkO26bmMDZ64HAPsHZsbK0SsBEqqDVyfBiWUwhYQnAa8mQESmNkJREtxaPjidcbkjtb1NqbhbSTt3KzxKQkxTESkJXt0Kz10MTSKhAngQEF8MOTdM6gY9lk0ioQZ4XwWA3iUHIioSaoB3BkoaiOQaicUSY+mYHzqnfiSGu/q+vzfGvIglLsX3XhIqWh6LoN9d13nPMoyNxXMORi6Y+XLdIruttpp7jWlj8YGifxQWTrkEmxRVzxL5VqxDhfdbY2Pmc338yhjzOsXMrVw7FvtrHTXb44hVnA/YRZm3Pb5GLCIt7hPGDDK6K6z2gHVCnDDmiilY7Hvf7C/0smgIDLwAE567TL1BSfAY0p5kPSQ1IAFTXww8czRI2UmIlTzfC9Ue8IiEm9YqgxvPqy2flAMeM5c49c1u6ccPdCdGFlq3VzdCMc1FpIUzRKpsPzsJhh4gIgtr7VXtkECTY4w5ix2DixkxOQf4HuiO1Jxba89LJ0iX6K7GTn7FQGcLAV9uwOCzBBHO4mjIAH7SbwOyVAEtuwgNHK+11i6meoWz9vpHU7N+GVIsB2gIcSfNMWw9sNY+HGcZnuwCULe7jP9jlxknPJcpx941elT1gKkK1b4vSxKsrXTO9+0JyMnmLj7rH8TSUF+IpzTrAAAAAElFTkSuQmCC" style="height:40rpx;width:40rpx;vertical-align:middle;margin-left: 20rpx;"></image>
+</view>
+
+<scroll-view scroll-y="true" style="height: calc(100% - 90rpx);" bindscrolltoupper="onScrollTop" bindscrolltolower="onScrollBottom" enable-back-to-top="true">
+		<view class="text-null" wx:if="{{!couponsData}}">
+   		<block wx:if="{{status.tabActive == 1}}">没有未使用优惠券哦~</block>
+   		<block wx:if="{{status.tabActive == 2}}">没有优惠券使用记录哦~</block>
+   		<block wx:if="{{status.tabActive == 3}}">没有过期的优惠券哦~</block>
+		</view>
+      <template is="temp_coupons" data="{{...item}}" wx:for="{{couponsData}}" wx:key="{{id}}"></template>
+</scroll-view>
+

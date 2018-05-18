@@ -1,0 +1,118 @@
+/**my.wxss**/
+
+
+page{
+  /*background: #efeff4;*/
+}
+
+
+.tab {
+  background:#fafafa;
+  border-bottom: 1px solid #E5E5E5;
+}
+.tab .liner {
+  width: 33.33%;
+}
+
+
+
+
+.tags{
+  font-size: 18rpx;
+  letter-spacing: 0;
+  color: #890E2D;
+  margin-left: 20rpx;
+  padding: 0rpx 8rpx;
+  line-height:28rpx;
+  height:28rpx;
+  /*margin-top:2px;*/
+  border: 1px solid #890E2D;
+}
+.tags.blue{
+  border: 1px solid #00BFFF;
+  color: #00BFFF;
+  position:absolute;
+  right:22rpx;
+  top:22rpx;
+  line-height: normal;
+}
+.tags.yellow{
+  border: 1px solid #FFBF00;
+  color :#FFBF00;
+}
+.tags.green{
+  border: 1px solid #1AAD19;
+  color :#1AAD19;
+}
+
+
+
+.coupons{
+  margin: 20rpx 20rpx 0 20rpx;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  border: 1px solid #E5E5E5;
+  position: relative;
+  min-height: 126rpx;
+}
+
+.coupons_Rule{
+  margin: 0 20rpx;
+  border-radius: 12rpx;
+  padding: 4rpx 20rpx;
+  border: 1px solid #E5E5E5;
+
+  border-top: 0px;
+}
+
+.text-large-red {
+    font-size: 72rpx;
+    line-height: 72rpx;
+    font-weight: 300;
+    color: red;
+}
+
+.icon-up {
+    width: 0;
+    height: 0;
+    border-left: 8rpx solid transparent;
+    border-right: 8rpx solid transparent;
+    border-bottom: 8rpx solid #000;
+    position:relative;
+    left:10rpx;
+    top:-26rpx;
+}
+
+.icon-dw {
+    width: 0;
+    height: 0;
+    border-left: 8rpx solid transparent;
+    border-right: 8rpx solid transparent;
+    border-top: 8rpx solid #000;
+    position:relative;
+    left:10rpx;
+    top:26rpx;
+}
+
+
+
+
+.butAdd{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 94rpx;
+  line-height: 94rpx;
+  font-size: 36rpx;
+  color: #fff;
+  background-color:#890E25;
+  text-align: center;
+  border-top:1px solid #D8D8D8;
+}
+
+.butAdd text{
+  font-size: 36rpx;
+  position: relative;
+  left: -14rpx;
+}
+

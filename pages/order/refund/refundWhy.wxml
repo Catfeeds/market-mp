@@ -1,0 +1,19 @@
+
+<view class="index">
+
+	<view class="list justify" style="margin: 20rpx 0 60rpx 0">
+
+		<block wx:for="{{refundData}}" wx:for-item="item" wx:key="unique">
+		<view class="item" bindtap="onStatus" 
+				data-status-key="check" 
+				data-status-val="{{item.id}}">
+			<view><text>{{item.title}}</text></view>
+			<view>
+				<image wx:if="{{status.check == item.id}}" class="icon" src="{{icons.check.url}}" style="width: {{icons.check.w}};height:{{icons.check.h}};"></image>
+			</view>
+		</view>
+		</block>
+	</view>
+
+	<button type="primary" style="width: 90%;" bindtap="onSubmit" hover-class="none">确定</button>
+</view>

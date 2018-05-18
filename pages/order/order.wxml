@@ -1,0 +1,23 @@
+<import src="../../template/temp-order.wxml" />
+
+
+<view class="tab">
+    <view class="item {{status.tabActive == 11 ? 'active':''}}" style="width: 20%" bindtap="onStatus" data-status-key="tabActive" data-status-val="11">全部</view>
+    <view class="item {{status.tabActive == 12 ? 'active':''}}" style="width: 20%" bindtap="onStatus" data-status-key="tabActive" data-status-val="12">待付款</view>
+    <view class="item {{status.tabActive == 13 ? 'active':''}}" style="width: 20%" bindtap="onStatus" data-status-key="tabActive" data-status-val="13">待取货</view>
+    <view class="item {{status.tabActive == 14 ? 'active':''}}" style="width: 20%" bindtap="onStatus" data-status-key="tabActive" data-status-val="14">退款</view>
+    <view class="item {{status.tabActive == 15 ? 'active':''}}" style="width: 20%" bindtap="onStatus" data-status-key="tabActive" data-status-val="15">待扫码</view>
+    <view class="liner" style="left: {{(status.tabActive - 11) * 20 +'%'}}"></view>
+</view>
+
+<scroll-view scroll-y="true" style="height: calc(100% - 45px);" bindscrolltolower="onScrollBottom" bindscrolltoupper="onScrollTop" enable-back-to-top="true" scroll-top="scrollTop">
+    <view class="text-null" wx:if="{{ordersData == ''}}">
+        <block wx:if="{{status.tabActive == 11}}">没有任何订单哦~</block>
+        <block wx:if="{{status.tabActive == 12}}">没有待付款的订单哦~</block>
+        <block wx:if="{{status.tabActive == 13}}">没有待取货的订单哦~</block>
+        <block wx:if="{{status.tabActive == 14}}">没有退款的订单哦~</block>
+        <block wx:if="{{status.tabActive == 15}}">没有待扫码的订单哦~</block>
+    </view>
+    <template is="temp_orders" data="{{...item}}" wx:for="{{ordersData}}" wx:key="{{id}}"></template>
+    <!-- <view wx:if="{{status.scrollUpStop && ordersData}}" style="height: 60rpx;line-height: 60rpx;color: #b8b8b8;width: 100%;text-align: center;">没有更多数据...</view> -->
+</scroll-view>
