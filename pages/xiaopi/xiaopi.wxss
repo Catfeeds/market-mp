@@ -3,13 +3,13 @@ page{
 }
 .scrollx-tab {
   height: 90rpx;
-  border-bottom: 1rpx solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 .scrollx-tab__bd {
   width: 750rpx;
   display: flex;
   flex-direction: row;
-  border-bottom: 1rpx solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
   background: #fff;
 }
 .scrollx-tab__bd--fixed {
@@ -63,3 +63,5 @@ page{
     font-size:24rpx;
     color:#888888;
 }
+
+

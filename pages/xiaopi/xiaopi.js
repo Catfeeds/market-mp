@@ -1,4 +1,5 @@
-
+var app = getApp();
+var _this = null
 
 Page({
     data: {

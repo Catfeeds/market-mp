@@ -43,7 +43,7 @@
     <view class="classify-area-name">巧克力</view>
     <view class="classify-area-name">辣条</view>
 </view>
-<scroll-view scroll-y="true" style="height: calc(100% - 45px);padding-top:8px;" bindscrolltolower="onScrollBottom" bindscrolltoupper="onScrollTop" enable-back-to-top="true" scroll-top="scrollTop">
+<scroll-view class="list" scroll-y="true" style="height: calc(100% - 45px);padding-top:5px;" bindscrolltolower="onScrollBottom" bindscrolltoupper="onScrollTop" enable-back-to-top="true" scroll-top="scrollTop">
     <view class="text-null" wx:if="{{ordersData == ''}}">
         <block wx:if="{{status.tabActive == 11}}">没有任何订单哦~</block>
         <block wx:if="{{status.tabActive == 12}}">没有待付款的订单哦~</block>
@@ -60,6 +60,7 @@
         <view style="width:calc(100% - 126rpx);">
             <view class="text-large">百威啤酒330ml</view>
             <view>
+                <text class="text-B2 text-small">配送到家当日达，</text>
                 <text class="text-secon text-small">满6瓶，￥5.00/瓶</text>
             </view>
             <view style="margin-top:8rpx;">
@@ -74,4 +75,77 @@
             <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon_dis.png"></image>
         </view>
     </view>
+    <view class="item">
+        <view style="width: 150rpx;">
+            <image class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
+            <image style="position: absolute;top: calc(50% - 62rpx)" class="item-img" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/item/6948960100108.jpg" lazy-load="true" binderror="setDefaultImg"></image>
+        </view>
+        <view style="width:calc(100% - 126rpx);">
+            <view class="text-large">百威啤酒330ml</view>
+            <view>
+                <text class="text-B2 text-small">配送到家当日达，</text>
+                <text class="text-secon text-small">均价1.30/瓶</text>
+            </view>
+            <view style="margin-top:8rpx;">
+                <text class="text-main text-small">￥</text>
+                <text class="text-main text-large-2x">1.00</text>
+                <text class="text-delete text-small text-indent-small">￥0.50</text>
+            </view>
+        </view>
+        <view class="cart-buts">
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/minusIcon@3x.png" data-type="MINUS" catchtap="onCart" class=""></image>
+            <view class="" style="display: inline-block;width:60rpx;text-align: center;position: relative;top: 4rpx;">5</view>
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon_dis.png"></image>
+        </view>
+    </view>
+    <view class="item">
+        <view style="width: 150rpx;">
+            <image class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
+            <image style="position: absolute;top: calc(50% - 62rpx)" class="item-img" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/item/6948960100108.jpg" lazy-load="true" binderror="setDefaultImg"></image>
+        </view>
+        <view style="width:calc(100% - 126rpx);">
+            <view class="text-large">百威啤酒330ml</view>
+            <view>
+                <text class="text-B2 text-small">配送到家当日达，</text>
+                <text class="text-secon text-small">满6瓶，￥5.00/瓶</text>
+            </view>
+            <view style="margin-top:8rpx;">
+                <text class="text-main text-small">￥</text>
+                <text class="text-main text-large-2x">1.00</text>
+                <text class="text-delete text-small text-indent-small">￥0.50</text>
+            </view>
+        </view>
+        <view class="cart-buts">
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/minusIcon@3x.png" data-type="MINUS" catchtap="onCart" class=""></image>
+            <view class="" style="display: inline-block;width:60rpx;text-align: center;position: relative;top: 4rpx;">5</view>
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon_dis.png"></image>
+        </view>
+    </view>
+    <view class="item">
+        <view style="width: 150rpx;">
+            <image class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
+            <image style="position: absolute;top: calc(50% - 62rpx)" class="item-img" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/item/6948960100108.jpg" lazy-load="true" binderror="setDefaultImg"></image>
+        </view>
+        <view style="width:calc(100% - 126rpx);">
+            <view class="text-large">百威啤酒330ml</view>
+            <view>
+                <text class="text-B2 text-small">配送到家当日达，</text>
+                <text class="text-secon text-small">均价1.30/瓶</text>
+            </view>
+            <view style="margin-top:8rpx;">
+                <text class="text-main text-small">￥</text>
+                <text class="text-main text-large-2x">1.00</text>
+                <text class="text-delete text-small text-indent-small">￥0.50</text>
+            </view>
+        </view>
+        <view class="cart-buts">
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/minusIcon@3x.png" data-type="MINUS" catchtap="onCart" class=""></image>
+            <view class="" style="display: inline-block;width:60rpx;text-align: center;position: relative;top: 4rpx;">5</view>
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon_dis.png"></image>
+        </view>
+    </view>
 </scroll-view>
+<view class="floatCart">
+    <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png"></image>
+    <view class="tagNnm" style="{{checkTotal.totalNum > 99 ? 'width: 28px;right: -9px;':''}}">2</view>
+</view>
