@@ -1,41 +1,37 @@
-<import src="../../template/temp-goods.wxml"/>
+<import src="../../template/temp-goods.wxml" />
 
 
-	<view class="navbar" style="background:#f4f4f4">
-		<view class="item left">
-			<image class="checkAll-img" 
-			data-check="{{status.checkAll}}" 
-			bindtap="onCartCheckAll"
-			src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}" 
-			></image>
-			全选 <text class="text-muted text-small">（共选 {{checkTotal.speciesNum || 0}} 件）</text>
-		</view>
-		<view class="item" data-type="REMOVER" bindtap="onCart" style="width:240rpx;"> 
-			<image class="icon" src="{{icons.trash.url}}" style="width: {{icons.trash.w}};height:{{icons.trash.h}}; position: relative;top:-2rpx;right:8rpx;" data-type="REMOVER" ></image>
-			<text data-type="REMOVER" >清空购物车</text>
-		</view>
-	</view>
+<view class="navbar" style="background:#f4f4f4">
+    <view class="item left">
+        <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        全选
+        <text class="text-muted text-small">（共选 {{checkTotal.speciesNum || 0}} 件）</text>
+    </view>
+    <view class="item" data-type="REMOVER" bindtap="onCart" style="width:240rpx;">
+        <image class="icon" src="{{icons.trash.url}}" style="width: {{icons.trash.w}};height:{{icons.trash.h}}; position: relative;top:-2rpx;right:8rpx;" data-type="REMOVER"></image>
+        <text data-type="REMOVER">清空购物车</text>
+    </view>
+</view>
 
-	<scroll-view class="list" scroll-y="true" style="">
-		<template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{id}}"/>
-	</scroll-view>
+<scroll-view class="list" scroll-y="true" style="">
+    <template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{id}}" />
+    <view style="height:120rpx"></view>
+</scroll-view>
 
 
-	<view class="cartnav">
-		<view class="item">
-			<image class="checkAll-img" 
-			data-check="{{status.checkAll}}" 
-			bindtap="onCartCheckAll"
-			src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}" 
-			></image>
-			全选
-		</view>
-		<view class="item center">
-			<view class="text-small-1x">合计：￥<text class="text-large-2x" style="font-weight: 600;">{{checkTotal.totalMoney}}</text></view>
-			<view class="text-B2 text-small-1x" style="font-weight: 600;">节省：￥0.00</view>
-		</view>
-		<view class="item right" style="font-size: 32rpx;opacity:{{checkTotal.totalNum > 0 ? '1' : '0.2'}}" bindtap="onPay">
-			去结算
-			<text class="text-small">({{checkTotal.totalNum}}件)</text>
-		</view>
-	</view>
+<view class="cartnav">
+    <view class="item">
+        <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        全选
+    </view>
+    <view class="item center">
+        <view class="text-small-1x">合计：￥
+            <text class="text-large-2x" style="font-weight: 600;">{{checkTotal.totalMoney}}</text>
+        </view>
+        <view class="text-B2 text-small-1x" style="font-weight: 600;">节省：￥0.00</view>
+    </view>
+    <view class="item right" style="font-size: 32rpx;opacity:{{checkTotal.totalNum > 0 ? '1' : '0.2'}}" bindtap="onPay">
+        去结算
+        <text class="text-small">({{checkTotal.totalNum}}件)</text>
+    </view>
+</view>

@@ -230,11 +230,12 @@ button[type="warn"] {
   text-align: center;
   height: 112rpx;
   line-height: 112rpx;
-  border-bottom:1px solid #fff;
+  border-bottom:1rpx solid #fff;
 }
 .subnav .item.active{
   background:#fff;
   color: #8F1A30;
+  border-left:10rpx solid #8F1A30;
   border-bottom:1px solid #E6E4E4;
 }
 .subnav .subitem{
@@ -342,8 +343,8 @@ button[type="warn"] {
 /** 浮动购物车按钮 **/
 .floatCart{
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 10px;
+  right: 10px;
   z-index: 90;
   height: 100rpx;
   width: 100rpx;
@@ -422,13 +423,13 @@ button[type="warn"] {
   position:absolute;
   top: 0px;
   right:0px;
-  height:42rpx;
-  width:42rpx;
+  height:30rpx;
+  width:30rpx; 
   color: #fff;
   background:#F12C20;
   border-radius:100rpx;
-  line-height:42rpx;
-  font-size:24rpx;
+  line-height:30rpx;
+  font-size:20rpx;
   text-align:center;
   display:inline-block;
 }
@@ -610,7 +611,7 @@ button[type="warn"] {
   transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
   position: absolute;
   top: 45%;
-  margin-top: -8rpx;
+  margin-top: -6rpx;
   /*right: 28rpx;*/
 }
 

@@ -157,6 +157,7 @@ App({
     },
     /** 全局跳转 **/
     onGo: function (url) {
+      console.log(url)
         // 网络监听错误方法
         if (_this.data.isConnected) {
             wx.navigateTo({ url: url })

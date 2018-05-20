@@ -63,7 +63,7 @@
 	</navigator>
 </template>
  
- <!-- 模板 选择店铺 -->
+ <!-- 旧模板 选择店铺 -->
 <template name="temp_offcanvas_market">
 	<view class="item" bindtap="onMarket" data-id="{{id}}" style="position: relative;">
 			<text class="title" data-id="{{id}}">{{marketData[id].name}}</text>
@@ -74,3 +74,21 @@
 			</view>
 	</view>
 </template>
+ <!-- 新模板 选择店铺 -->
+<template name="template_market">
+    <view class="market-box" data-id="{{id}}" bindtap="onMarket">
+        <view class="market-small-wrp">
+            <icon class="market-box-img" type="info_circle" size="20" color="#C9C9C9"></icon>
+        </view>
+        <view class="market-box-ctn">
+            <view class="market-box-title">{{marketData[id].name}}
+                <label class='market-box-title-label' wx:if="{{marketData[id].show}}">距离最近</label>
+            </view>
+            <view class="market-box-desc" data-id="{{id}}">{{marketData[id].formatAddress}}</view>
+        </view>
+        <view class='market-box-far'>
+            <text class='navigator-arrow' data-id="{{id}}">{{marketData[id].formatDistance}}</text>
+        </view>
+    </view>
+</template>
+

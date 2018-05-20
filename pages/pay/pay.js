@@ -23,9 +23,9 @@ var winAjax = {
                             success: function (res) {
                                 if (res.confirm) {
                                     // wx.redirectTo({ url: '../index/index' })
-                                    wx.reLaunch({ url: '../index/index' })
+                                    wx.reLaunch({ url: '../index/home' })
                                 } else if (!res.cancel) {
-                                    wx.reLaunch({ url: '../index/index' })
+                                    wx.reLaunch({ url: '../index/home' })
                                 }
                             }
                         })

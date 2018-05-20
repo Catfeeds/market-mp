@@ -121,6 +121,20 @@ var config = {
         url: "/itemTypes",
         data: { requestSourse: 3, marketId: 100000 }
     },
+    // 小批商品分类接口
+    getMarketItemClassifyVoList: {
+        host: "market",
+        islogin: true,
+        url: "/getMarketItemClassifyVoList",
+        data: { marketId: 100001, itemClassifyVisible: 3 }
+    },
+    //小批商品接口
+    getItemByClassifyId: {
+        host: "market",
+        islogin: true,
+        url: "/getItemByClassifyId",
+        data: { marketId: 100001, classifyId: 1, pageSize: 12, pageIndex: 0 }
+    },
     // 找到商店
     findMarket: {
         host: "market",

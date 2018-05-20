@@ -1,9 +1,14 @@
 page{
   background: #efeff4;
 }
+.fixed-box{
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background:#fff;
+}
 .scrollx-tab {
   height: 90rpx;
-  border-bottom: 1px solid #e5e5e5;
 }
 .scrollx-tab__bd {
   width: 750rpx;
@@ -63,5 +68,8 @@ page{
     font-size:24rpx;
     color:#888888;
 }
-
+.list{
+     height: calc(100% - 260rpx);
+     padding-top:260rpx;
+}
 

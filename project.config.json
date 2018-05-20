@@ -46,20 +46,26 @@
 				},
 				{
 					"id": 2,
-					"name": "订单",
-					"pathName": "pages/order/order",
+					"name": "主页",
+					"pathName": "pages/index/home",
 					"query": ""
 				},
 				{
 					"id": 3,
 					"name": "选择门店",
-					"pathName": "pages/index/_index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "支付",
+					"pathName": "pages/pay/pay",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "购物车",
-					"pathName": "pages/cart/cart",
+					"name": "demo",
+					"pathName": "pages/index/demo",
 					"query": ""
 				}
 			]

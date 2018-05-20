@@ -1,7 +1,7 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/index/_index",
+        "pages/index/home",
         "pages/index/search",
         "pages/index/authorization",
         "pages/cart/cart",
@@ -37,7 +37,7 @@
         "backgroundColor": "#ffffff",
         "list": [
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "pages/index/home",
                 "iconPath": "image/bar/home-pre.png",
                 "selectedIconPath": "image/bar/home.png",
                 "text": "首页"
