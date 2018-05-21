@@ -68,6 +68,10 @@ page{
     font-size:24rpx;
     color:#888888;
 }
+.classify-area .active{
+    background:#890E25;
+    color:#fff;
+}
 .list{
      height: calc(100% - 260rpx);
      padding-top:260rpx;

@@ -83,11 +83,13 @@
 .market-box-title-label{
     margin-left: 5px;
     padding: 1px;
-    font-size: 22rpx;
-    line-height: 22rpx;
+    font-size: 20rpx;
+    line-height: 20rpx;
     color: #fff;
     border-radius: 5px;
     background-color: #890E25;
+    position: absolute;
+    top: 14rpx;
 }
 .market-box-desc {
     margin-top: 16rpx;

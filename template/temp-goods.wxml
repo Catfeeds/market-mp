@@ -28,7 +28,7 @@
     <view class="item">
         <view style="width: 150rpx;">
             <image wx:if="{{goodData[id].stock == 0}}" class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
-            <image wx:if="{{goodData[id].stock <= 5}}" class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
+            <image wx:if="{{goodData[id].stock <= 5}}" class="sellout" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/lessStock.png" lazy-load="true"></image>
             <image style="position: absolute;top: calc(50% - 62rpx)" class="item-img" src="{{goodData[id].imageUrl}}" lazy-load="true" data-id="{{id}}" binderror="setDefaultImg"></image>
         </view>
         <view style="width:calc(100% - 126rpx);">
@@ -68,11 +68,11 @@
     <view class="item">
         <view style="width: 150rpx;">
             <image wx:if="{{goodData[id].stock == 0}}" class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
-            <image wx:if="{{goodData[id].stock <= 5}}" class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
-            <image style="position: absolute;top: calc(50% - 62rpx)" class="item-img" src="{{goodData[id].defineImage}}" lazy-load="true" data-id="{{id}}" binderror="setDefaultImg"></image>
+            <image wx:if="{{goodData[id].stock <= 5}}" class="sellout" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/lessStock.png" lazy-load="true"></image>
+            <image style="position: absolute;top: calc(50% - 62rpx)" class="item-img" src="{{goodData[id].imageUrl}}" lazy-load="true" data-id="{{id}}" binderror="setDefaultImg"></image>
         </view>
         <view style="width:calc(100% - 126rpx);">
-            <view class="text-large">{{goodData[id].defineName}}</view>
+            <view class="text-large">{{goodData[id].name}}</view>
             <view>
                 <text class="text-B2 text-small">配送到家当日达，</text>
                 <text wx:if="{{goodData[id].itemLadderPrices.length > 0}}" class="text-secon text-small">{{goodData[id].itemLadderPrices[0].showMsg}}</text>
@@ -80,12 +80,12 @@
             <view style="margin-top:8rpx;">
                 <text class="text-main text-small">￥</text>
                 <block wx:if="{{goodData[id].discountType == 0}}">
-                    <text class="text-main text-large-2x">{{goodData[id].sellPrice}}</text>
-                    <text class="text-delete text-small text-indent-small">￥{{goodData[id].marketPrice}}</text>
+                    <text class="text-main text-large-2x">{{goodData[id].showSellPrice}}</text>
+                     <text class="text-delete text-small text-indent-small">￥{{goodData[id].showMaxPrice}}</text> 
                 </block>
                 <block wx:if="{{goodData[id].discountType != 0}}">
-                    <text class="text-main text-large-2x">{{goodData[id].sellPrice}}</text>
-                    <text class="text-delete text-small text-indent-small">￥{{goodData[id].marketPrice}}</text>
+                    <text class="text-main text-large-2x">{{goodData[id].showSellPrice}}</text>
+                     <text class="text-delete text-small text-indent-small">￥{{goodData[id].showMaxPrice}}</text> 
                 </block>
             </view>
         </view>

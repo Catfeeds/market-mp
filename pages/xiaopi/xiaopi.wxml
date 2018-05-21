@@ -1,28 +1,25 @@
 <import src="../../template/temp-goods.wxml" />
 <view class="fixed-box">
-    <block wx:for="{{typeList}}" wx:key="{{item.id}}" wx:for-index="idx">
-        <view class="scrollx-tab">
-            <scroll-view class="scrollx-tab__bd scrollx-tab__bd--scroll" scroll-x="true">
-
-                <view class="scrollx-tab__item scrollx-tab__item--selected">
+    <view class="scrollx-tab">
+        <scroll-view class="scrollx-tab__bd scrollx-tab__bd--scroll" scroll-x="true">
+            <block wx:for="{{typeList}}" wx:key="{{item.id}}" wx:for-index="idx">
+                <view class="scrollx-tab__item {{curTab == item.id ? 'scrollx-tab__item--selected' : ''}}" data-index="{{idx}}" data-id="{{item.id}}" bindtap="onTab">
                     <view class="scrollx-tab__title">{{item.title}}</view>
                 </view>
-    </scroll-view>
+            </block>
+        </scroll-view>
     </view>
     <view class="classify-area">
-
-        <block wx:for="{{item.marketItemClassifyEntityList}}" wx:for-item="subItem" wx:key="{{subItem.id}}">
-            <view class="classify-area-name">{{subItem.title}}</view>
+        <block wx:for="{{typeList[curTabIndex].marketItemClassifyEntityList}}" wx:for-index="idx" wx:key="{{item.id}}">
+            <view class="classify-area-name" data-index="{{idx}}" data-id="{{item.id}}">{{item.title}}</view>
         </block>
-
     </view>
-    </block>
 </view>
-<scroll-view class="list" scroll-y="true" bindscrolltolower="onScrollBottom" bindscrolltoupper="onScrollTop" scroll-top="scrollTop">
+<scroll-view class="list" scroll-y="true">
     <template is="temp_xiaopi_goods_sort" data="{{id,goodData}}" wx:for="{{goodSort}}" wx:for-item="id" wx:key="id" />
     <view style="height: 150rpx;"></view>
 </scroll-view>
-<view class="floatCart">
+<view class="floatCart" bindtap="onGoCart">
     <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png"></image>
-    <view class="tagNnm" style="{{checkTotal.totalNum > 99 ? 'width: 28px;right: -9px;':''}}">2</view>
+    <view class="tagNnm" style="{{checkTotal.totalNum > 99 ? 'width: 28px;right: -5px;':''}}">{{checkTotal.totalNum}}</view>
 </view>

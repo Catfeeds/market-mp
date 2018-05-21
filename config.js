@@ -132,7 +132,7 @@ var config = {
     getItemByClassifyId: {
         host: "market",
         islogin: true,
-        url: "/getItemByClassifyId",
+        url: "/getItemByClassifyIds",
         data: { marketId: 100001, classifyId: 1, pageSize: 12, pageIndex: 0 }
     },
     // 找到商店

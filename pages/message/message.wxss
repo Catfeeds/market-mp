@@ -11,7 +11,7 @@ page{
 
 .common-list .list-item {
   position: relative;
-  border-bottom: 1px solid #efeff4;
+  border-bottom: 1rpx solid #efeff4;
   padding: 24rpx;
   min-height: 150rpx;
   overflow: hidden;
@@ -21,14 +21,14 @@ page{
   position: absolute;
   left: 24rpx;
   top: 24rpx;
-  width: 150rpx;
-  height: 150rpx;
+  width: 140rpx;
+  height: 140rpx;
   /* border-radius:50%; */
   /* background-color: #ccc; */
 }
 .common-list .list-item.has-img .content-img image.cover {
-  width: 150rpx;
-  height: 150rpx;
+  width: 140rpx;
+  height: 140rpx;
   /* border-radius:50%; */
 }
 .common-list .list-item.has-img .content-img .tagNum{

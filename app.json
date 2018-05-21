@@ -2,12 +2,13 @@
     "pages": [
         "pages/index/index",
         "pages/index/home",
+        "pages/xiaopi/xiaopi",
+        "pages/my/my",
         "pages/index/search",
         "pages/index/authorization",
         "pages/cart/cart",
         "pages/pay/pay",
         "pages/pay/chooseCoupons",
-        "pages/my/my",
         "pages/my/edit",
         "pages/my/bindPhone",
         "pages/my/userTermsService",
@@ -27,8 +28,7 @@
         "pages/order/refund/refundWhy",
         "pages/message/message",
         "pages/message/messageList",
-        "pages/message/messageDetail",
-        "pages/xiaopi/xiaopi"
+        "pages/message/messageDetail"
     ],
     "tabBar": {
         "color": "#888",
@@ -38,20 +38,20 @@
         "list": [
             {
                 "pagePath": "pages/index/home",
-                "iconPath": "image/bar/home-pre.png",
-                "selectedIconPath": "image/bar/home.png",
+                "iconPath": "image/bld.png",
+                "selectedIconPath": "image/bldAc.png",
                 "text": "首页"
             },
             {
                 "pagePath": "pages/xiaopi/xiaopi",
-                "iconPath": "image/bar/cart-pre.png",
-                "selectedIconPath": "image/bar/cart.png",
+                "iconPath": "image/xp.png",
+                "selectedIconPath": "image/xpAc.png",
                 "text": "小批"
             },
             {
                 "pagePath": "pages/my/my",
-                "iconPath": "image/bar/mine-pre.png",
-                "selectedIconPath": "image/bar/mine.png",
+                "iconPath": "image/my.png",
+                "selectedIconPath": "image/myAc.png",
                 "text": "我的"
             }
         ]

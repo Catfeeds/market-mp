@@ -1,5 +1,4 @@
 <!--pages/message/messageDetail.wxml-->
-
 <view class="container">
     <view class="content-article-detail">
         <view class="entry-title">{{msgContentData.name}}</view>

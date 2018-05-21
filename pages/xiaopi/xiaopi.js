@@ -8,11 +8,12 @@ var winAjax = {
     getMarketItemClassifyVoList: function () {
         var option = config.getMarketItemClassifyVoList;
         // option.data.marketId = app.data.currMarket.id
-        console.log("====> currMarket id: ", app.data.currMarket)
+        console.log("====> currMarket id: ", app.data)
 
         option.success = function (data) {
             console.log("====> " + option.url, data)
             _this.setData({
+                curTab: data.data.response.datas[0].id,
                 typeList: data.data.response ? data.data.response.datas : {}
             })
         };
@@ -45,7 +46,8 @@ var winAjax = {
                 return true;
             }
 
-            data = data.data.response.datas;
+            data = data.data.response.pageItemMsg;
+            console.log(data)
             for (var i in data) {
                 if (cart[data[i].itemId]) {
                     data[i].num = cart[data[i].itemId].num;
@@ -70,14 +72,52 @@ var winAjax = {
             _scrollLoad = true
         }
         app.ajax(_this, option);
+    },
+    filterValidItems: function (cb) {
+        var option = config.filterValidItems;
+        var cart = app.Cart.getCart();
+        option.data.itemSet = []
+        for (var i in cart) {
+            option.data.itemSet.push(i)
+        }
+        if (option.data.itemSet.join(',') == "") return false
+
+        option.data.itemSet = option.data.itemSet.join(',');
+        option.success = function (data) {
+            if (data.data.code == 0) {
+                data = data.data.response.datas
+                var Cart = {} //新的购物车
+                for (var i in data) {
+                    if (cart[data[i]]) {
+                        Cart[data[i]] = cart[data[i]]
+                    }
+                }
+                app.Cart.saveCart(Cart, null);
+                _this.data.checkTotal = app.Cart.getCheckTotal(); // 加载选中商品total
+                _this.setData(_this.data);
+                typeof cb == "function" && cb(_this.data.checkTotal.totalNum > 0 ? true : false)
+            }
+        }
+        app.ajax(_this, option);
     }
 }
 
 Page({
     data: {
         typeList: [],
+        cartData: [],
         goodData: {},
-        goodSort: []
+        goodSort: [],
+        checkTotal: {
+            speciesNum: 0,
+            totalNum: 0,
+            totalMoney: 0.00,
+            thriftMoney: 0.00
+        },
+        curTab: null,
+        curTabIndex: 0,
+        curNav: null,
+        curNavIndex: 0
     },
     onLoad: function () {
         _this = this
@@ -88,6 +128,42 @@ Page({
 
         // 加载商品
         _this.ajax.getItemByClassifyId();
+
+        // 检查购物车
+        _this.ajax.filterValidItems();
+    },
+    setDefaultImg: function (e) {
+        this.data.goodData[e.target.dataset.id].imageUrl = 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/defaultImg.png'
+        this.setData({
+            goodData: this.data.goodData
+        })
+    },
+    onTab: function (e) {
+        let id = e.currentTarget.dataset.id,
+            index = parseInt(e.currentTarget.dataset.index);  
+        this.setData({
+            curTab: id,
+            curTabIndex: index
+        })
+    },
+    onItemNav: function (e) {
+        curNav
+    },
+    onShow: function () {
+        // 检查购物车
+        _this.ajax.filterValidItems()
+    },
+    onCart: function (e) {
+        console.log(e)
+        var data = {};
+        // data.status = this.data.status;
+        data.goodData = this.data.goodData;
+        data.cartData = this.data.cartData;
+        data.checkTotal = this.data.checkTotal;
+        _this.setData(app.Cart[e.target.dataset.type](data, e.target.dataset.id));
+    },
+    onGoCart: function () {
+        wx.navigateTo({ url: '../cart/cart' })
     },
     ajax: winAjax
 })

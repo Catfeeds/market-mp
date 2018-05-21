@@ -17,7 +17,7 @@
     <view class="item">
         <navigator class='item_coupon' hover-class="navigator-hover" url="../coupons/canReceive">
             <view>
-                <text style='background-color:#ff6600;border-radius:2px;padding:1px'>领优惠券</text>
+                <label style='background-color:#ff6600;border-radius:2px;padding:1px'>领优惠券</label>
             </view>
         </navigator>
         <navigator class='item_nav' hover-class="navigator-hover" url="search">
@@ -35,7 +35,7 @@
     <scroll-view class="subnav" scroll-y="true" style="width: 170rpx;">
         <view style="height: 80rpx;"></view>
         <view class="item {{status.typeShow == '0' ? 'active':''}}" data-status-key="typeShow" data-status-val="0" data-temp-key="temp_main" data-temp-val="temp_hot" bindtap="onStatus">
-            <image src="../../image/06-assets/FocusIcon@3x.png"></image>热卖
+            <image src="../../image/06-assets/hot.png"></image>热卖
         </view>
         <block wx:for="{{typeList}}" wx:key="{{item.id}}" wx:for-index="idx">
             <view class="item {{status.typeShow == item.id ? (status.typeSubShow < 1 ? 'active' : 'bgF'):''}}" data-status-key="typeShow" data-status-val="{{item.id}}" data-status-act="{{status.typeShow == item.id ? true:false}}" data-temp-key="temp_main" data-temp-val="temp_goods"
@@ -70,20 +70,9 @@
 </view>
 
 <!-- 购物车 -->
-<view class="floatCart" data-url="../cart/cart" bindtap="onStatuss">
-    <!-- <view class="item left {{status.cartShow ? 'hide':'show'}}">
-        <view class="iconCart" bindtap="onStatuss"> -->
+<view class="floatCart" data-url="../cart/cart" bindtap="onGoCart">
     <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png"></image>
     <view class="tagNnm" style="{{checkTotal.totalNum > 99 ? 'width: 28px;right: -5px;':''}}">{{checkTotal.totalNum}}</view>
-    <!-- </view>  -->
-    <!-- </view> -->
-    <!-- <view class="item center {{status.cartShow ? 'text-padding-left':''}}">
-        <view class="text-small-1x">合计：￥
-            <text class="text-large-2x" style="font-weight: 600;">{{checkTotal.totalMoney}}</text>
-        </view>
-        <view class="text-B2 text-small-1x" style="font-weight: 600;">节省：￥{{checkTotal.thriftMoney}}</view>
-    </view>
-    <view class="item right" style="font-size: 32rpx;opacity:{{checkTotal.totalNum > 0 ? '1' : '0.09'}}" bindtap="onPay">去结算</view> -->
 </view>
 
 <!-- 二级购物车 -->

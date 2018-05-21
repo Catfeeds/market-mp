@@ -7,7 +7,7 @@
             <text>活动多多，惊喜享不停……</text>
         </view>
         <view class="content-img">
-            <image src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/act.png" mode="aspectFill" class="cover"></image>
+            <image src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/act.png" mode="scaleToFill" class="cover"></image>
             <block wx:if="{{msgCount.activityCount > 0}}">
                 <view class="tagNum">{{msgCount.activityCount}}</view>
             </block>

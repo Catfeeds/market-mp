@@ -378,13 +378,12 @@ Page({
         // 加载 热卖
         _this.getHot()
     },
-    onStatuss: function (e) {
-        console.log(e.currentTarget.dataset.url)
-        // wx.navigateTo({ url: e.currentTarget.dataset.url })
+    onGoCart: function () {
         wx.navigateTo({ url: '../cart/cart' })
     },
-    onHide: function () {
-
+    onShow: function () {
+        // 检查购物车
+        _this.ajax.filterValidItems()
     },
     onScrollHotTop: function (e) {
         wx.showNavigationBarLoading() //在标题栏中显示加载
@@ -535,6 +534,7 @@ Page({
         data.goodData = this.data.goodData;
         data.cartData = this.data.cartData;
         data.checkTotal = this.data.checkTotal;
+        console.log(data)
         _this.setData(app.Cart[e.target.dataset.type](data, e.target.dataset.id));
     },
     onMarket: function (e) {
