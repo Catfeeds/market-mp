@@ -26,7 +26,7 @@ var winAjax = {
     goodData: function () {
         var option = config.getItemByClassifyIds;
         console.log(_this.data)
-            // option.data.classifyId = _this.data.curTab
+        // option.data.classifyId = _this.data.curTab
         var goodData = _scrollLoad ? {} : _this.data.goodData, cart = app.Cart.getCart();
         // if (!_this.data.currMarket.id || _this.data.currMarket.id == null) {
         //     _this.data.status.canvasShow = true;
@@ -42,6 +42,7 @@ var winAjax = {
         // option.data.itemTypeId = _this.data.status.typeSubShow == 0 ? _this.data.status.typeShow : _this.data.status.typeSubShow
         option.success = function (data) {
             var goodSort = []
+            
             // 没有更多数据
             if (data.data.code == 100) {
                 if (config.getItemByClassifyId.data.pageIndex == 0) {
@@ -52,30 +53,36 @@ var winAjax = {
                 return true;
             }
 
-            data = data.data.response.pageItemMsg;
-            console.log(data)
-            for (var i in data) {
-                if (cart[data[i].itemId]) {
-                    data[i].num = cart[data[i].itemId].num;
-                    data[i].check = cart[data[i].itemId].check;
-                } else {
-                    data[i].num = 0;
-                    data[i].check = false;
+            data = data.data.response.pageItemMsg
+
+            // if (data.length == 0) {
+            //     _this.setData({
+            //         goodData: false
+            //     })
+            // } else {
+                for (var i in data) {
+                    if (cart[data[i].itemId]) {
+                        data[i].num = cart[data[i].itemId].num;
+                        data[i].check = cart[data[i].itemId].check;
+                    } else {
+                        data[i].num = 0;
+                        data[i].check = false;
+                    }
+                    goodSort.push(data[i].itemId)
+                    goodData[data[i].itemId] = data[i];
                 }
-                goodSort.push(data[i].itemId)
-                goodData[data[i].itemId] = data[i];
-            }
 
-            if (config.getItemByClassifyIds.data.pageIndex != 0 && !_scrollLoad) {
-                goodSort = _this.data.goodSort.concat(goodSort)
-            }
+                if (config.getItemByClassifyIds.data.pageIndex != 0 && !_scrollLoad) {
+                    goodSort = _this.data.goodSort.concat(goodSort)
+                }
 
-            _this.setData({
-                isGoodData: false,
-                goodData: goodData,
-                goodSort: goodSort
-            })
-            _scrollLoad = true
+                _this.setData({
+                    isGoodData: false,
+                    goodData: goodData,
+                    goodSort: goodSort
+                })
+                _scrollLoad = true
+            // }
         }
         app.ajax(_this, option);
     },
@@ -146,7 +153,7 @@ Page({
     },
     onItemTab: function (e) {
         let id = e.currentTarget.dataset.id,
-            index = parseInt(e.currentTarget.dataset.index);  
+            index = parseInt(e.currentTarget.dataset.index);
         this.setData({
             curTab: id,
             curTabIndex: index,
@@ -159,16 +166,16 @@ Page({
     onItemTag: function (e) {
         let id = e.currentTarget.dataset.id,
             index = parseInt(e.currentTarget.dataset.index);
-        if(id > 0) {
+        if (id > 0) {
             this.setData({
                 isTotal: false,
                 curTag: id
-            }) 
+            })
             config.getItemByClassifyIds.data.pageIndex = 0
             config.getItemByClassifyIds.data.classifyId = id
             _this.ajax.goodData()
         }
-        if (id == -1){
+        if (id == -1) {
             id = this.data.curTab
             this.setData({
                 isTotal: true,
