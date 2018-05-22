@@ -12,7 +12,7 @@
     <view class="classify-area">
         <view class="classify-area-name {{isTotal ? 'active':''}}" data-id="-1" bindtap="onItemTag">全部</view>
         <block wx:for="{{typeList[curTabIndex].marketItemClassifyEntityList}}" wx:for-index="idx" wx:key="{{item.id}}">
-            <view class="classify-area-name {{curTag == item.id ? 'active' : ''}}" data-index="{{idx}}" data-id="{{item.id}}"  bindtap="onItemTag">{{item.title}}</view>
+            <view class="classify-area-name {{curTag == item.id && !isTotal ? 'active' : ''}}" data-index="{{idx}}" data-id="{{item.id}}"  bindtap="onItemTag">{{item.title}}</view>
         </block>
     </view>
 </view>

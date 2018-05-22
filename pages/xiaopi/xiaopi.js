@@ -16,11 +16,17 @@ var winAjax = {
                 curTab: data.data.response.datas[0].id,
                 typeList: data.data.response ? data.data.response.datas : {}
             })
+
+            // 加载商品列表
+            config.getItemByClassifyIds.data.classifyId = data.data.response.datas[0].id
+            _this.ajax.goodData()
         };
         app.ajax(_this, option);
     },
-    getItemByClassifyIds: function () {
+    goodData: function () {
         var option = config.getItemByClassifyIds;
+        console.log(_this.data)
+            // option.data.classifyId = _this.data.curTab
         var goodData = _scrollLoad ? {} : _this.data.goodData, cart = app.Cart.getCart();
         // if (!_this.data.currMarket.id || _this.data.currMarket.id == null) {
         //     _this.data.status.canvasShow = true;
@@ -38,7 +44,7 @@ var winAjax = {
             var goodSort = []
             // 没有更多数据
             if (data.data.code == 100) {
-                if (config.getItemByClassifyId.data.pageIndex == 1) {
+                if (config.getItemByClassifyId.data.pageIndex == 0) {
                     _this.setData({ isGoodData: true, goodData: {}, goodSort: [] })
                 } else {
                     _this.setData({ isGoodData: true })
@@ -60,7 +66,7 @@ var winAjax = {
                 goodData[data[i].itemId] = data[i];
             }
 
-            if (config.getItemByClassifyIds.data.pageIndex != 1 && !_scrollLoad) {
+            if (config.getItemByClassifyIds.data.pageIndex != 0 && !_scrollLoad) {
                 goodSort = _this.data.goodSort.concat(goodSort)
             }
 
@@ -108,6 +114,7 @@ Page({
         cartData: [],
         goodData: [],
         goodSort: [],
+        currMarket: false,
         checkTotal: {
             speciesNum: 0,
             totalNum: 0,
@@ -128,9 +135,6 @@ Page({
         // 加载分类
         _this.ajax.getMarketItemClassifyVoList()
 
-        // 加载商品
-        _this.ajax.getItemByClassifyIds()
-
         // 检查购物车
         _this.ajax.filterValidItems()
     },
@@ -148,8 +152,9 @@ Page({
             curTabIndex: index,
             isTotal: true
         });
+        config.getItemByClassifyIds.data.pageIndex = 0
         config.getItemByClassifyIds.data.classifyId = id
-        _this.ajax.getItemByClassifyIds()
+        _this.ajax.goodData()
     },
     onItemTag: function (e) {
         let id = e.currentTarget.dataset.id,
@@ -159,8 +164,9 @@ Page({
                 isTotal: false,
                 curTag: id
             }) 
+            config.getItemByClassifyIds.data.pageIndex = 0
             config.getItemByClassifyIds.data.classifyId = id
-            _this.ajax.getItemByClassifyIds()
+            _this.ajax.goodData()
         }
         if (id == -1){
             id = this.data.curTab
@@ -168,8 +174,9 @@ Page({
                 isTotal: true,
                 curTag: id
             })
+            config.getItemByClassifyIds.data.pageIndex = 0
             config.getItemByClassifyIds.data.classifyId = id
-            _this.ajax.getItemByClassifyIds()
+            _this.ajax.goodData()
         }
     },
     onShow: function () {
@@ -192,8 +199,8 @@ Page({
     onScrollTop: function (e) {
         wx.showNavigationBarLoading() //在标题栏中显示加载
         wx.setNavigationBarTitle({ title: '刷新中...' })
-        config.pageItems.data.pageIndex = 1
-        _this.ajax.getItemByClassifyIds();
+        config.getItemByClassifyIds.data.pageIndex = 0
+        _this.ajax.goodData();
         setTimeout(function () {
             wx.hideNavigationBarLoading() //完成停止加载
             wx.setNavigationBarTitle({ title: '小批' })
@@ -204,7 +211,7 @@ Page({
         if (!_scrollLoad) return
         _scrollLoad = false
         config.getItemByClassifyIds.data.pageIndex += 1
-        _this.ajax.getItemByClassifyIds();
+        _this.ajax.goodData();
     },
     ajax: winAjax
 })
