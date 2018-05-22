@@ -4,8 +4,8 @@
 <view class="navbar" style="background:#f4f4f4">
     <view class="item left">
         <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
-        全选
-        <text class="text-muted text-small">（共选 {{checkTotal.speciesNum || 0}} 件）</text>
+        <text class="text-red"> 自提与配送商品合并下单，全部配送</text>
+        <!-- <text class="text-muted text-small">（共选 {{checkTotal.speciesNum || 0}} 件）</text> -->
     </view>
     <view class="item" data-type="REMOVER" bindtap="onCart" style="width:240rpx;">
         <image class="icon" src="{{icons.trash.url}}" style="width: {{icons.trash.w}};height:{{icons.trash.h}}; position: relative;top:-2rpx;right:8rpx;" data-type="REMOVER"></image>
@@ -21,7 +21,7 @@
 
 <view class="cartnav">
     <view class="item">
-        <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/radiocheck.png' : 'https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/radiobox.png'}}"></image>
         全选
     </view>
     <view class="item center">

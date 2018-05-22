@@ -1,10 +1,12 @@
 /** 导航 **/
-.fixed-box{
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-  background:#fff;
+
+.fixed-box {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: #fff;
 }
+
 .navbar {
     background: #f4f4f4;
     color: #777;
@@ -14,21 +16,27 @@
 }
 
 .navbar .item {
-    text-align: right;
+    /* text-align: right; */
     width: 240rpx;
 }
 
 .navbar .left {
     width: 65%;
     text-align: left;
-    text-decoration:underline;
+    text-decoration: underline;
 }
-.location-icon{
-     width:9px;
-     height:13px;
-     padding-left:10rpx;
-     margin-right:20rpx;
+
+.location-icon {
+    position: absolute;
+    top: 5px;
+    right: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
+    padding-left: 5rpx;
+    /* margin-right:20rpx; */
+    margin-top: 5px;
 }
+
 .posBar {
     background: #f4f4f4;
     color: #666;
@@ -43,7 +51,7 @@
 .listView {
     padding-top: 272rpx;
     height: calc(100% - 272rpx);
-     margin-bottom: 1px; 
+    margin-bottom: 1px;
 }
 
 .market-box {
@@ -53,9 +61,10 @@
     border-bottom: 1rpx solid #d8d8d8;
     display: -webkit-box;
     -webkit-box-pack: justify;
-     height: 100rpx; 
+    height: 100rpx;
 }
-.market-null-box{
+
+.market-null-box {
     padding: 10rpx 20rpx;
     border-bottom: 1rpx solid #d8d8d8;
     height: 100rpx;
@@ -66,6 +75,7 @@
     text-align: center;
     background-color: #f8f8f8;
 }
+
 .market-box-img {
     margin-right: 46rpx;
 }
@@ -80,23 +90,25 @@
 .market-box-title {
     font-size: 34rpx;
 }
-.market-box-title-label{
+
+.market-box-title-label {
     margin-left: 5px;
     padding: 1px;
     font-size: 20rpx;
     line-height: 20rpx;
     color: #fff;
     border-radius: 5px;
-    background-color: #890E25;
+    background-color: #890e25;
     position: absolute;
     top: 14rpx;
 }
+
 .market-box-desc {
     margin-top: 16rpx;
     font-size: 24rpx;
     color: #888;
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
 }
@@ -116,7 +128,8 @@
     align-items: center;
     justify-content: center;
 }
-.maket-list-null{
+
+.maket-list-null {
     text-align: center;
     font-size: 30rpx;
     color: #888;

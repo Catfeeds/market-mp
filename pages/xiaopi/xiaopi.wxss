@@ -73,7 +73,7 @@ page{
     color:#fff;
 }
 .list{
-     height: calc(100% - 260rpx);
-     padding-top:260rpx;
+     height: calc(100% - 190rpx);
+     padding-top:190rpx;
 }
 

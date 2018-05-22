@@ -11,7 +11,7 @@
         </view>
         <view class="item" bindtap="getLocation">
             <text class='text-red'>重新定位</text>
-            <image class="location-icon" src="../../image/06-assets/O-location@3x.png"></image>
+            <image class="location-icon" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/relocation.png"></image>
         </view>
     </view>
     <block wx:if="{{currMarket.id}}">

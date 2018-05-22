@@ -129,7 +129,7 @@ var config = {
         data: { marketId: 100001, itemClassifyVisible: 3 }
     },
     //小批商品接口
-    getItemByClassifyId: {
+    getItemByClassifyIds: {
         host: "market",
         islogin: true,
         url: "/getItemByClassifyIds",

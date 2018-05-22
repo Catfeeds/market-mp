@@ -3,20 +3,26 @@
     <view class="scrollx-tab">
         <scroll-view class="scrollx-tab__bd scrollx-tab__bd--scroll" scroll-x="true">
             <block wx:for="{{typeList}}" wx:key="{{item.id}}" wx:for-index="idx">
-                <view class="scrollx-tab__item {{curTab == item.id ? 'scrollx-tab__item--selected' : ''}}" data-index="{{idx}}" data-id="{{item.id}}" bindtap="onTab">
+                <view class="scrollx-tab__item {{curTab == item.id ? 'scrollx-tab__item--selected' : ''}}" data-index="{{idx}}" data-id="{{item.id}}" bindtap="onItemTab">
                     <view class="scrollx-tab__title">{{item.title}}</view>
                 </view>
             </block>
         </scroll-view>
     </view>
     <view class="classify-area">
+        <view class="classify-area-name {{isTotal ? 'active':''}}" data-id="-1" bindtap="onItemTag">全部</view>
         <block wx:for="{{typeList[curTabIndex].marketItemClassifyEntityList}}" wx:for-index="idx" wx:key="{{item.id}}">
-            <view class="classify-area-name" data-index="{{idx}}" data-id="{{item.id}}">{{item.title}}</view>
+            <view class="classify-area-name {{curTag == item.id ? 'active' : ''}}" data-index="{{idx}}" data-id="{{item.id}}"  bindtap="onItemTag">{{item.title}}</view>
         </block>
     </view>
 </view>
-<scroll-view class="list" scroll-y="true">
-    <template is="temp_xiaopi_goods_sort" data="{{id,goodData}}" wx:for="{{goodSort}}" wx:for-item="id" wx:key="id" />
+<scroll-view class="list" scroll-y="true" bindscrolltoupper="onScrollTop" bindscrolltolower="onScrollBottom" scroll-top="{{scrollTop}}">
+     <block wx:if="{{goodData == '{}'}}"> 
+        <view style="color:#999999;text-align:center;padding:50px">该分类下没有商品!</view>
+     </block>
+    <block wx:else>
+        <template is="temp_xiaopi_goods_sort" data="{{id,goodData}}" wx:for="{{goodSort}}" wx:for-item="id" wx:key="id" />
+    </block> 
     <view style="height: 150rpx;"></view>
 </scroll-view>
 <view class="floatCart" bindtap="onGoCart">

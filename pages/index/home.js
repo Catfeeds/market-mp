@@ -198,6 +198,7 @@ var winAjax = {
                         Cart[data[i]] = cart[data[i]]
                     }
                 }
+                console.log(Cart)
                 app.Cart.saveCart(Cart, null);
                 _this.data.checkTotal = app.Cart.getCheckTotal(); // 加载选中商品total
                 _this.setData(_this.data);
@@ -382,6 +383,7 @@ Page({
         wx.navigateTo({ url: '../cart/cart' })
     },
     onShow: function () {
+        console.log(this.data.checkTotal)
         // 检查购物车
         _this.ajax.filterValidItems()
     },
@@ -534,7 +536,6 @@ Page({
         data.goodData = this.data.goodData;
         data.cartData = this.data.cartData;
         data.checkTotal = this.data.checkTotal;
-        console.log(data)
         _this.setData(app.Cart[e.target.dataset.type](data, e.target.dataset.id));
     },
     onMarket: function (e) {

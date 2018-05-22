@@ -244,8 +244,8 @@ button[type="warn"] {
   color: #717171;
 }
 .subnav .item image{
-    width: 10px;
-    height: 11px;
+    width: 13px;
+    height: 15px;
     vertical-align:middle;
     padding: 0 10rpx 6rpx 0;
 }

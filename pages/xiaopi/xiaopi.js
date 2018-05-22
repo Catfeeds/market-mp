@@ -19,8 +19,8 @@ var winAjax = {
         };
         app.ajax(_this, option);
     },
-    getItemByClassifyId: function () {
-        var option = config.getItemByClassifyId;
+    getItemByClassifyIds: function () {
+        var option = config.getItemByClassifyIds;
         var goodData = _scrollLoad ? {} : _this.data.goodData, cart = app.Cart.getCart();
         // if (!_this.data.currMarket.id || _this.data.currMarket.id == null) {
         //     _this.data.status.canvasShow = true;
@@ -56,11 +56,11 @@ var winAjax = {
                     data[i].num = 0;
                     data[i].check = false;
                 }
-                goodSort.push(data[i].id)
-                goodData[data[i].id] = data[i];
+                goodSort.push(data[i].itemId)
+                goodData[data[i].itemId] = data[i];
             }
 
-            if (config.getItemByClassifyId.data.pageIndex != 1 && !_scrollLoad) {
+            if (config.getItemByClassifyIds.data.pageIndex != 1 && !_scrollLoad) {
                 goodSort = _this.data.goodSort.concat(goodSort)
             }
 
@@ -106,7 +106,7 @@ Page({
     data: {
         typeList: [],
         cartData: [],
-        goodData: {},
+        goodData: [],
         goodSort: [],
         checkTotal: {
             speciesNum: 0,
@@ -116,8 +116,10 @@ Page({
         },
         curTab: null,
         curTabIndex: 0,
-        curNav: null,
-        curNavIndex: 0
+        curTag: 0,
+        curTagIndex: 0,
+        scrollTop: 0,
+        isTotal: true
     },
     onLoad: function () {
         _this = this
@@ -127,10 +129,10 @@ Page({
         _this.ajax.getMarketItemClassifyVoList()
 
         // 加载商品
-        _this.ajax.getItemByClassifyId();
+        _this.ajax.getItemByClassifyIds()
 
         // 检查购物车
-        _this.ajax.filterValidItems();
+        _this.ajax.filterValidItems()
     },
     setDefaultImg: function (e) {
         this.data.goodData[e.target.dataset.id].imageUrl = 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/defaultImg.png'
@@ -138,32 +140,71 @@ Page({
             goodData: this.data.goodData
         })
     },
-    onTab: function (e) {
+    onItemTab: function (e) {
         let id = e.currentTarget.dataset.id,
             index = parseInt(e.currentTarget.dataset.index);  
         this.setData({
             curTab: id,
-            curTabIndex: index
-        })
+            curTabIndex: index,
+            isTotal: true
+        });
+        config.getItemByClassifyIds.data.classifyId = id
+        _this.ajax.getItemByClassifyIds()
     },
-    onItemNav: function (e) {
-        curNav
+    onItemTag: function (e) {
+        let id = e.currentTarget.dataset.id,
+            index = parseInt(e.currentTarget.dataset.index);
+        if(id > 0) {
+            this.setData({
+                isTotal: false,
+                curTag: id
+            }) 
+            config.getItemByClassifyIds.data.classifyId = id
+            _this.ajax.getItemByClassifyIds()
+        }
+        if (id == -1){
+            id = this.data.curTab
+            this.setData({
+                isTotal: true,
+                curTag: id
+            })
+            config.getItemByClassifyIds.data.classifyId = id
+            _this.ajax.getItemByClassifyIds()
+        }
     },
     onShow: function () {
         // 检查购物车
         _this.ajax.filterValidItems()
+        console.log(this.data.checkTotal)
     },
     onCart: function (e) {
-        console.log(e)
         var data = {};
         // data.status = this.data.status;
         data.goodData = this.data.goodData;
         data.cartData = this.data.cartData;
         data.checkTotal = this.data.checkTotal;
+        console.log(data.checkTotal)
         _this.setData(app.Cart[e.target.dataset.type](data, e.target.dataset.id));
     },
     onGoCart: function () {
         wx.navigateTo({ url: '../cart/cart' })
+    },
+    onScrollTop: function (e) {
+        wx.showNavigationBarLoading() //在标题栏中显示加载
+        wx.setNavigationBarTitle({ title: '刷新中...' })
+        config.pageItems.data.pageIndex = 1
+        _this.ajax.getItemByClassifyIds();
+        setTimeout(function () {
+            wx.hideNavigationBarLoading() //完成停止加载
+            wx.setNavigationBarTitle({ title: '小批' })
+            wx.stopPullDownRefresh() //停止下拉刷新
+        }, 2000);
+    },
+    onScrollBottom: function (e) {
+        if (!_scrollLoad) return
+        _scrollLoad = false
+        config.getItemByClassifyIds.data.pageIndex += 1
+        _this.ajax.getItemByClassifyIds();
     },
     ajax: winAjax
 })

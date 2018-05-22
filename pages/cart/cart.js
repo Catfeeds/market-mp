@@ -7,6 +7,7 @@ var _this = null
 var winAjax = {
     cartData: function () {
         var cart = app.Cart.getCart(), data = {};
+        console.log(cart)
         for (var key in cart) {
             if (key == 'cartTotal') continue;
             data[key] = cart[key];
@@ -14,7 +15,7 @@ var winAjax = {
 
         _this.setData({
             cartData: data,
-            // cartTotal: cart.cartTotal
+            cartTotal: cart.cartTotal
         })
     },
     filterValidItems: function (cb) {
