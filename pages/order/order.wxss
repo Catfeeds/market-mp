@@ -1,7 +1,7 @@
 /**my.wxss**/
 
 page {
-    background: #efeff4;
+    background: #f8f8f8;
 }
 
 .fixed-box {
@@ -12,9 +12,8 @@ page {
 }
 
 .tab {
-    background: #fafafa;
     height: 90rpx;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #D8D8D8;
 }
 
 .tab .liner {

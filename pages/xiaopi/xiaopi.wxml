@@ -3,7 +3,7 @@
 
 <view class="navbar {{temps.temp_canvas == 'temp_offcanvas_navbar' ? 'zIndex' : ''}}">
     <view class="item" data-status-key="canvasShow" data-temp-key="temp_canvas" data-temp-val="temp_offcanvas_market" bindtap="onGoIndex">
-        <image class="icon" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/W-locationIcon@3x.png" style="width:9px;heigth:13px"></image>
+        <image class="item-icon" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/W-locationIcon@3x.png"></image>
         {{currMarket.name || '未关联任何店铺'}}
     </view>
     <view class="item">

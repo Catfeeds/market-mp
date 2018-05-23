@@ -272,7 +272,7 @@ button[type="warn"] {
 /** list **/
 .list{
   width: 100%;
-  background: #f6f6f6; 
+  background: #f8f8f8; 
 }
 .list .item{
   width:100%;

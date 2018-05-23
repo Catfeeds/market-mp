@@ -48,11 +48,10 @@ Page({
   	_this = this
 
   	if(option.type == 'edit'){
-
   		wx.setNavigationBarTitle({title: '地址编辑'})
   		this.ajax.getAddress(option.id)
   	}else{
-  		wx.setNavigationBarTitle({title: '新增地址'})
+  		wx.setNavigationBarTitle({title: '添加收货地址'})
 		this.setData({
 			address : {status : 2}
 		})

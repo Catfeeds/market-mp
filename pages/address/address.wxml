@@ -1,5 +1,5 @@
 
-<scroll-view scroll-y="true" style="height: calc(100% - 114rpx);">
+<scroll-view scroll-y="true" style="height: calc(100% - 94rpx);">
 	<radio-group class="radio-group" bindchange="setDefaultAddress">
 
 	<view class="text-null" wx:if="{{!addressData}}">您还没有添加收货地址哦~</view>
@@ -35,7 +35,7 @@
 	</radio-group>
 </scroll-view>
 
-<view class="butAdd" bindtap="onGo" data-url="addressEdit"><text>+</text>添加地址</view>	
+<view class="butAdd" bindtap="onGo" data-url="addressEdit"><text>+</text>添加收货地址</view>	
 
 
 

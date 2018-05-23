@@ -1,22 +1,13 @@
 /**my.wxss**/
-
-
 page{
-  /*background: #efeff4;*/
+  background: #f8f8f8;
 }
-
-
 .tab {
-  background:#fafafa;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #D8D8D8;
 }
 .tab .liner {
   width: 33.33%;
 }
-
-
-
-
 .tags{
   font-size: 18rpx;
   letter-spacing: 0;

@@ -73,7 +73,7 @@ Page({
   	choose : false
   },
   onLoad: function (option) {
-  	wx.setNavigationBarTitle({title: '地址管理'})
+  	wx.setNavigationBarTitle({title: '收货地址'})
 	_this = this
 	if(option.type != null && option.type == 'choose'){
 		this.setData({choose : true})
