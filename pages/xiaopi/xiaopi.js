@@ -42,7 +42,7 @@ var winAjax = {
         // option.data.itemTypeId = _this.data.status.typeSubShow == 0 ? _this.data.status.typeShow : _this.data.status.typeSubShow
         option.success = function (data) {
             var goodSort = []
-            
+
             // 没有更多数据
             if (data.data.code == 100) {
                 if (config.getItemByClassifyId.data.pageIndex == 0) {
@@ -55,34 +55,28 @@ var winAjax = {
 
             data = data.data.response.pageItemMsg
 
-            // if (data.length == 0) {
-            //     _this.setData({
-            //         goodData: false
-            //     })
-            // } else {
-                for (var i in data) {
-                    if (cart[data[i].itemId]) {
-                        data[i].num = cart[data[i].itemId].num;
-                        data[i].check = cart[data[i].itemId].check;
-                    } else {
-                        data[i].num = 0;
-                        data[i].check = false;
-                    }
-                    goodSort.push(data[i].itemId)
-                    goodData[data[i].itemId] = data[i];
+            for (var i in data) {
+                if (cart[data[i].itemId]) {
+                    data[i].num = cart[data[i].itemId].num;
+                    data[i].check = cart[data[i].itemId].check;
+                } else {
+                    data[i].num = 0;
+                    data[i].check = false;
                 }
+                goodSort.push(data[i].itemId)
+                goodData[data[i].itemId] = data[i];
+            }
 
-                if (config.getItemByClassifyIds.data.pageIndex != 0 && !_scrollLoad) {
-                    goodSort = _this.data.goodSort.concat(goodSort)
-                }
+            if (config.getItemByClassifyIds.data.pageIndex != 0 && !_scrollLoad) {
+                goodSort = _this.data.goodSort.concat(goodSort)
+            }
 
-                _this.setData({
-                    isGoodData: false,
-                    goodData: goodData,
-                    goodSort: goodSort
-                })
-                _scrollLoad = true
-            // }
+            _this.setData({
+                isGoodData: false,
+                goodData: goodData,
+                goodSort: goodSort
+            })
+            _scrollLoad = true
         }
         app.ajax(_this, option);
     },
@@ -105,7 +99,7 @@ var winAjax = {
                         Cart[data[i]] = cart[data[i]]
                     }
                 }
-                app.Cart.saveCart(Cart, null);
+                // app.Cart.saveCart(Cart, null);
                 _this.data.checkTotal = app.Cart.getCheckTotal(); // 加载选中商品total
                 _this.setData(_this.data);
                 typeof cb == "function" && cb(_this.data.checkTotal.totalNum > 0 ? true : false)
@@ -219,6 +213,9 @@ Page({
         _scrollLoad = false
         config.getItemByClassifyIds.data.pageIndex += 1
         _this.ajax.goodData();
+    },
+    onGoIndex: function () {
+        wx.navigateTo({ url: '../index/index' })
     },
     ajax: winAjax
 })

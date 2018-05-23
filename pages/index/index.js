@@ -43,7 +43,7 @@ Page({
         auth: false,
         currMarket: false,
         marketData: false,
-        marketSort: false,
+        marketSort: [],
     },
     onLoad: function (option) {
         wx.setNavigationBarTitle({ title: '选择门店' })
@@ -81,7 +81,7 @@ Page({
         wx.reLaunch({ url: 'home' })
     },
     getLocation: function (cb) {
-        _this.setData({ marketData: false })
+        _this.setData({ marketSort: [] })
         wx.showLoading({
             title: '正在获取定位'
         })

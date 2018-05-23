@@ -49,6 +49,6 @@ page{
 	margin-top: 460rpx;
 	display: block;
 	width: 80%;
-	color: #8F1A30;
+	color: #890E25;
 	margin-left:5%;
 }

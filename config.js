@@ -2,14 +2,6 @@
  * 小程序配置文件
  */
 
-
-// itemTypes: {
-//     host : "marketItem",     域名
-//     islogin : true,          是否存在 开放接口
-//     url : "/itemTypes.do",   
-//     data : { marketId : 100000 }
-// },
-
 // huangxc 
 // #### 通行证中心域名地址 ####
 // passportRemoteURL=http://huangxc:8080/passport/
@@ -34,22 +26,11 @@
 // #### 无人超市域名地址 ####
 // marketRemoteURL=http://119.23.104.118:8083/
 
-
 var host = {
-
     market: "https://market.xiaohuistore.com",
     passport: "https://market.xiaohuistore.com",
     payment: "https://market.xiaohuistore.com",
     socket: "wss://market.xiaohuistore.com"
-    // passport: "http://192.168.1.100:8080", 
-
-    // market      : "http://huangxc:8080/market",
-    // passport    : "http://huangxc:8080/passport", 
-    // payment    : "http://huangxc:8080/payment",
-
-    // payment     : "http://119.23.104.118:8082",
-    // market      : "http://119.23.104.118:8083",
-    // passport    : "http://112.74.185.56:8080",
 }
 
 var ServerHost = {
@@ -375,8 +356,6 @@ var config = {
         url: "/address/removeAddress",
         data: { passportId: 100000, addressId: 0 }
     },
-
-
     //  加载问题类目
     loaderProblemTypes: {
         host: "marketQuest",
@@ -467,7 +446,7 @@ var config = {
     getMarketInformationCount: {
         host: "market",
         islogin: false,
-        url:  "/getMarketInformationCount",
+        url: "/getMarketInformationCount",
         data: { passportId: 100000 }
     },
     // 根据类型获取消息列表

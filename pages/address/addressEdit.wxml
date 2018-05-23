@@ -41,7 +41,7 @@
 		<view><text>设为默认</text></view>
 		<view>
 			<view class="body-view">
-			    <switch checked="{{address.status == 2 ? 'true' : ''}}" color="#8F1A30" bindchange="onSwitchChange"/>
+			    <switch checked="{{address.status == 2 ? 'true' : ''}}" color="#890E25" bindchange="onSwitchChange"/>
 			</view>
 		</view>
 	</view>

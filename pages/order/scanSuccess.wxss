@@ -45,7 +45,7 @@ page{
 .mouths .mouth{
 	background: #F6ECEE;
 	border-radius: 12rpx;
-	color: #8F1A30;
+	color: #890E25;
 	font-size: 40rpx;
 	padding: 14rpx 26rpx;
 	line-height: 100rpx;
@@ -54,11 +54,11 @@ page{
 
 .msg{
 	text-align: center;
-	color: #8F1A30;
+	color: #890E25;
 }
 .containerMsg{
 	text-align: center;
-	color: #8F1A30;
+	color: #890E25;
 }
 
 .itemGoods{

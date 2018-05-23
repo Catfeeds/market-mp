@@ -1,10 +1,46 @@
 page{
   background: #efeff4;
 }
+/** navbar 导航栏 **/
+.navbar{
+  position: fixed;
+  top: 0px;
+  z-index: 90;
+}
+.navbar .item navigator{
+   display: inline-block;
+}
+.navbar .item .item_nav{
+    vertical-align: middle;
+    margin: 11rpx; 
+}
+.navbar .item .item_nav:last-child{
+    /* margin: 0rpx 22rpx 0rpx 0rpx; */
+    margin-right: 22rpx;
+}
+.navbar .item .item_coupon{
+    vertical-align: middle; 
+    margin:0rpx 20rpx 20rpx 0rpx;
+}
+.tagNum{
+  position:absolute;
+  top:10rpx;
+  right:22rpx;
+  height:22rpx;
+  width:22rpx;
+  color: #fff;
+  background:#F12C20;
+  border-radius:100rpx;
+  line-height:22rpx;
+  font-size:16rpx;
+  text-align:center;
+  display:inline-block;
+}
 .fixed-box{
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 90;
+  top: 80rpx;
   background:#fff;
 }
 .scrollx-tab {
@@ -73,7 +109,7 @@ page{
     color:#fff;
 }
 .list{
-     height: calc(100% - 190rpx);
-     padding-top:190rpx;
+     height: calc(100% - 270rpx);
+     padding-top:270rpx;
 }
 

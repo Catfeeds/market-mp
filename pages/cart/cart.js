@@ -9,13 +9,14 @@ var winAjax = {
         var cart = app.Cart.getCart(), data = {};
         console.log(cart)
         for (var key in cart) {
+            console.log(key)
             if (key == 'cartTotal') continue;
             data[key] = cart[key];
         }
 
         _this.setData({
             cartData: data,
-            cartTotal: cart.cartTotal
+            // cartTotal: cart.cartTotal
         })
     },
     filterValidItems: function (cb) {

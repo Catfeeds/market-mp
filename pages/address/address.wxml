@@ -20,7 +20,7 @@
 		 <view class="item" style="background: #FAFAFA;margin-left:0px">
 			<view>
 				<label class="radio" style="margin:40rpx 0 0 24rpx;">
-					<radio style="transform:scale(.85);" name="status" value="{{id}}" checked="{{addressData[id].status == 2 ? 'checked':''}}"  data-type="CHECK" color="#8F1A30"/>
+					<radio style="transform:scale(.85);" name="status" value="{{id}}" checked="{{addressData[id].status == 2 ? 'checked':''}}"  data-type="CHECK" color="#890E25"/>
 					默认地址
 				</label>
 			</view>

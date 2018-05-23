@@ -27,7 +27,6 @@
 }
 /** navbar 导航栏 **/
 .navbar{
-  opacity: 0.9;
   position: fixed;
   top: 0px;
   z-index: 90;

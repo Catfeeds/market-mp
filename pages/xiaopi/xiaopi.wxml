@@ -1,4 +1,26 @@
+<import src="../../template/template.wxml" />
 <import src="../../template/temp-goods.wxml" />
+
+<view class="navbar {{temps.temp_canvas == 'temp_offcanvas_navbar' ? 'zIndex' : ''}}">
+    <view class="item" data-status-key="canvasShow" data-temp-key="temp_canvas" data-temp-val="temp_offcanvas_market" bindtap="onGoIndex">
+        <image class="icon" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/W-locationIcon@3x.png" style="width:9px;heigth:13px"></image>
+        {{currMarket.name || '未关联任何店铺'}}
+    </view>
+    <view class="item">
+        <navigator class='item_coupon' hover-class="navigator-hover" url="../coupons/canReceive">
+            <view>
+                <label style='background-color:#ff6600;border-radius:2px;padding:1px'>领优惠券</label>
+            </view>
+        </navigator>
+        <navigator class='item_nav' hover-class="navigator-hover" url="../index/search">
+            <image src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/SearchIcon2@3x.png" style="width: 40rpx;height:40rpx;"></image>
+        </navigator>
+        <navigator class='item_nav' hover-class="navigator-hover" url="../message/message">
+            <image src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/msg.png" style="width: 40rpx;height:40rpx;"></image>
+            <view class="tagNum" wx:if="{{socketCount}}">{{socketCount}}</view>
+        </navigator>
+    </view>
+</view>
 <view class="fixed-box">
     <view class="scrollx-tab">
         <scroll-view class="scrollx-tab__bd scrollx-tab__bd--scroll" scroll-x="true">

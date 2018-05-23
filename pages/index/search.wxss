@@ -30,7 +30,7 @@ page{
 	color: red;
 }
 .search input{
-	color: #8F1A30;
+	color: #890E25;
 	padding-left:62rpx;
 	background:#fff;
 	border-radius: 30rpx;

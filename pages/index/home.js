@@ -199,7 +199,7 @@ var winAjax = {
                     }
                 }
                 console.log(Cart)
-                app.Cart.saveCart(Cart, null);
+                // app.Cart.saveCart(Cart, null);
                 _this.data.checkTotal = app.Cart.getCheckTotal(); // 加载选中商品total
                 _this.setData(_this.data);
                 typeof cb == "function" && cb(_this.data.checkTotal.totalNum > 0 ? true : false)
@@ -207,7 +207,6 @@ var winAjax = {
         }
         app.ajax(_this, option);
     }
-
 }
 
 Page({
@@ -325,13 +324,13 @@ Page({
                     console.log('====> receive server msg ：', obj.response.datas)
                     var arr = obj.response.datas;
                     var val = 1;
-                    var num = count(val, arr);
+                    var num = getArrSameCount(val, arr);
                     console.log('====> msgCount：', num)
                     _this.setData({
                         socketCount: num
                     })
                 });
-                function count(val, arr) {
+                function getArrSameCount(val, arr) {
                     var count = 0;
                     for (var i = 0; i < arr.length; i++) {
                         if (arr[i].type == val) count++;
@@ -383,9 +382,10 @@ Page({
         wx.navigateTo({ url: '../cart/cart' })
     },
     onShow: function () {
-        console.log(this.data.checkTotal)
+        
         // 检查购物车
         _this.ajax.filterValidItems()
+        console.log(this.data.checkTotal)
     },
     onScrollHotTop: function (e) {
         wx.showNavigationBarLoading() //在标题栏中显示加载

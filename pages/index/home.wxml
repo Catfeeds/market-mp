@@ -1,15 +1,8 @@
 <import src="../../template/template.wxml" />
 <import src="../../template/temp-order.wxml" />
 <import src="../../template/temp-goods.wxml" />
-<!-- <view class="tipBar">
-    <text style='margin-left:5px'>亲，您有优惠券可以领取哦~</text>
-   <image class='tip_close' src='http://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/close.png'></image> 
-</view>  -->
+
 <view class="navbar {{temps.temp_canvas == 'temp_offcanvas_navbar' ? 'zIndex' : ''}}">
-    <!-- <view class="item" style="z-index: 50;" data-status-key="canvasShow" data-temp-key="temp_canvas" data-temp-val="temp_offcanvas_navbar" bindtap="onStatus">
-        <image class="icon" src="{{icons.navigate.url}}?v=1" style="width: {{icons.navigate.w}};height:{{icons.navigate.h}};" data-status-key="canvasShow" data-temp-key="temp_canvas" data-temp-val="temp_offcanvas_navbar">
-        </image>
-    </view> -->
     <view class="item" data-status-key="canvasShow" data-temp-key="temp_canvas" data-temp-val="temp_offcanvas_market" bindtap="onGoIndex">
         <template is="icon" data="{{...icons.W_location}}"></template>
         {{currMarket.name || '未关联任何店铺'}}
