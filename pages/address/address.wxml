@@ -7,14 +7,14 @@
 	<view wx:for="{{addressSort}}" wx:for-item="id" wx:key="id" class="list justify">
 		<view class="item" bindtap="{{choose ? 'onChoose' : ''}}" data-id="{{id}}" data-lat="{{addressData[id].latitude}}" data-lng="{{addressData[id].longitude}}">
 			<view data-id="{{id}}">
-			<text data-id="{{id}}">{{addressData[id].addressAlias}}</text>
-			<text data-id="{{id}}" style="padding-left: 10px;">{{addressData[id].detailAddress}}</text>
+			<text data-id="{{id}}">{{addressData[id].name}}</text>
+			<text data-id="{{id}}" style="padding-left: 15px;">{{addressData[id].phoneNumber}}</text>
 			</view>
 		</view>
 		<view class="item" bindtap="{{choose ? 'onChoose' : ''}}" data-id="{{id}}" data-lat="{{addressData[id].latitude}}" data-lng="{{addressData[id].longitude}}">
 			<view class="text-shallow" data-id="{{id}}">  
-				<text data-id="{{id}}">{{addressData[id].name}}</text>
-				<text data-id="{{id}}" style="padding-left: 100rpx;" data-id="{{id}}">{{addressData[id].phoneNumber}}</text>
+				<text data-id="{{id}}">{{addressData[id].addressAlias}}</text>
+				<text data-id="{{id}}" style="padding-left: 5rpx;" data-id="{{id}}">{{addressData[id].detailAddress}}</text>
 			</view>
 		</view>
 		 <view class="item" style="background: #FAFAFA;margin-left:0px">
@@ -26,8 +26,11 @@
 			</view>
             <!-- <block wx:if="{{!choose}}"> -->
                 <view class="buts">
+                    <view class='pic01'><image src='https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/edit.png'></image></view>
+                    
                     <text class="border-r" bindtap="onGo" data-url="addressEdit?type=edit&id={{id}}">编辑</text>
-                    <text class="" bindtap="removeAddress" data-id="{{id}}">删除</text>
+                    <view class='pic01'><image src='https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/delete.png'></image></view>
+                    <text class="border-r1" bindtap="removeAddress" data-id="{{id}}">删除</text>
                 </view>
             <!-- </block> -->
 		</view> 

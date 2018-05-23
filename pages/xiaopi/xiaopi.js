@@ -131,13 +131,17 @@ Page({
     },
     onLoad: function () {
         _this = this
-        wx.setNavigationBarTitle({ title: '小批' })
+        wx.setNavigationBarTitle({ title: '值得囤' })
 
         // 加载分类
         _this.ajax.getMarketItemClassifyVoList()
 
         // 检查购物车
         _this.ajax.filterValidItems()
+
+        _this.setData({
+            currMarket: app.Market.get()
+        });
     },
     setDefaultImg: function (e) {
         this.data.goodData[e.target.dataset.id].imageUrl = 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/defaultImg.png'

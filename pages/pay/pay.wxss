@@ -1,7 +1,7 @@
 /**pay.wxss**/
 
 page {
-    background: #efeff4;
+    background: #f8f8f8;
 }
 
 .fixed-box {

@@ -20,3 +20,5 @@ page{
 input[disabled]{
 	color: #888;
 }
+
+

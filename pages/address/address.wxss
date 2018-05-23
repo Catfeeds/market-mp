@@ -12,12 +12,14 @@ page{
   position: absolute;
   right: 0px;
   color:#888;
+  overflow:hidden;
 }
 .buts .border-r{
-  border-right:1px solid #D8D8D8;
+  /* border-right:1px solid #D8D8D8; */
+  float: left;
 }
 .buts text{
-  padding: 0 30rpx;
+  padding: 0 25rpx 0 10rpx;
 }
 
 
@@ -39,3 +41,5 @@ page{
   position:relative;
   left:-14rpx;
 }
+.pic01{ line-height:40rpx; height:40rpx;  width:40rpx; float:left;}
+.pic01 image{width: 40rpx; height: 40rpx;}

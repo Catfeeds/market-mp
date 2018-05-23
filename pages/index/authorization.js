@@ -13,7 +13,7 @@ Page({
     icons : icons()
   },
   onLoad: function (option) {
-    wx.setNavigationBarTitle({title: '微信授权'})
+    wx.setNavigationBarTitle({title: '授权提示'})
     _this = this
     this.setData({option:option})
   },

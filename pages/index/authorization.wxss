@@ -1,11 +1,19 @@
 page{
-  background: #efeff4;
+  background: #ffffff;
 }
-
 
 .content{
-  background: #efeff4;
-  width: 80%;
-
-  padding: 30% 10%;
+  background: #ffffff;
+  text-align: left;
+  width: 90%;
+  font-size: 32rpx;
+  padding: 5%;
 }
+.content-detail{
+    padding: 2%;
+    line-height: 50rpx;
+}
+.content-img{
+    margin-left: -6%;
+}
+

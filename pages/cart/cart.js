@@ -16,7 +16,7 @@ var winAjax = {
                 deliverArr.push(data[key])
             }
         }
-
+        console.log(_this.data.cartGoodData)
         _this.setData({
             cartData: data,
             xpGoodData: pickUpArr,
@@ -108,6 +108,7 @@ Page({
         _this.setData(app.Cart.CHECKALL(this.data, e.target.dataset.check));
     },
     onCart: function (e) {
+        console.log(e)
         var data = {};
         data.status = this.data.status;
         data.cartData = this.data.cartData;

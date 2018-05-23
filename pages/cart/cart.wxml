@@ -8,13 +8,13 @@
         <!-- <text class="text-muted text-small">（共选 {{checkTotal.speciesNum || 0}} 件）</text> -->
     </view>
     <view class="item" data-type="REMOVER" bindtap="onCart" style="width:240rpx;">
-        <image class="icon" src="{{icons.trash.url}}" style="width: {{icons.trash.w}};height:{{icons.trash.h}}; position: relative;top:-2rpx;right:8rpx;" data-type="REMOVER"></image>
+        <image class="icon" src="{{icons.trash.url}}" style="width: {{icons.trash.w}};height:{{icons.trash.h}}; position: relative;top:0rpx;right:8rpx;" data-type="REMOVER"></image>
         <text data-type="REMOVER">清空购物车</text>
     </view>
 </view>
 
 <scroll-view class="list" scroll-y="true">
-     <!-- <block wx:if="{{xpGoodData}}">
+       <!-- <block wx:if="{{xpGoodData}}">
         <view class="list-title">需配送  <text class="text-muted2">仅支持配送 20分钟送货上门</text></view>
         <template is="temp_goods_cart_xiaopi" data="{{...item}}" wx:for="{{xpGoodData}}" wx:key="{{id}}" />
     </block>
@@ -27,8 +27,8 @@
     </block>
     <block wx:else>
         <view></view>
-    </block>  -->
-     <template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{id}}" /> 
+    </block>    -->
+       <template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{id}}" /> 
     <view style="height:120rpx"></view>
 </scroll-view>
 

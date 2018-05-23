@@ -6,13 +6,12 @@
   color: #717171;
   border-bottom:1px solid #d8d8d8;
   height: 80rpx;
-  position: absolute;
+  position: fixed;
   top: 0px;
-  z-index: 1000;
+  z-index: 100;
 }
 .navbar .item{
   width: 180rpx;
-
 }
 
 .navbar .left{
@@ -20,7 +19,6 @@
   /*margin-left: 10px;*/
   text-align: left;
 }
-
 
 .item .checkbox{
   margin:36rpx 0 0 20rpx;
