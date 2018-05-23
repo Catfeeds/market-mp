@@ -269,7 +269,7 @@ var winAjax = {
                             }
                             if (totalNum == 0) {
                                 app.Cart.REMOVER(); // 删除购物车
-                                wx.reLaunch({ 'url': '../index/index' });
+                                wx.reLaunch({ 'url': '../index/home' });
                             } else {
                                 app.Cart.saveCart(cart);
                                 _this.ajax.generateOrder();
@@ -277,7 +277,7 @@ var winAjax = {
                         } else if (res.cancel) {
                             console.log('用户点击重新购物')
                             app.Cart.REMOVER(); // 删除购物车
-                            wx.reLaunch({ 'url': '../index/index' });
+                            wx.reLaunch({ 'url': '../index/home' });
                         }
                     }
                 })
@@ -287,7 +287,7 @@ var winAjax = {
                     content: data.data.msg,
                     success: function (res) {
                         app.Cart.REMOVER(); // 删除购物车
-                        wx.reLaunch({ 'url': '../index/index' });
+                        wx.reLaunch({ 'url': '../index/home' });
                     }
                 })
             }
@@ -336,7 +336,7 @@ var winAjax = {
                     duration: 2000
                 })
                 setTimeout(function () {
-                    wx.reLaunch({ 'url': '../index/index' });
+                    wx.reLaunch({ 'url': '../index/home' });
                 }, 1000)
             } else {
                 wx.showToast({
@@ -363,7 +363,7 @@ var winAjax = {
                     duration: 2000
                 })
                 setTimeout(function () {
-                    wx.reLaunch({ 'url': '../index/index' });
+                    wx.reLaunch({ 'url': '../index/home' });
                 }, 1000)
             },
             'fail': function (res) {

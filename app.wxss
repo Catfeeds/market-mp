@@ -228,15 +228,15 @@ button[type="warn"] {
   background:#E6E4E4;
   color: #717171;
   text-align: center;
-  height: 112rpx;
-  line-height: 112rpx;
+  height: 105rpx;
+  line-height: 105rpx;
   border-bottom:1rpx solid #fff;
 }
 .subnav .item.active{
   background:#fff;
   color: #890E25;
   border-left:10rpx solid #890E25;
-  border-bottom:1px solid #E6E4E4;
+  border-bottom:1px solid #ECECEC;
 }
 .subnav .subitem{
   display: none;
@@ -256,8 +256,8 @@ button[type="warn"] {
   border-bottom: 0px;
 }
 .subnav .subitem view{
-  height: 66rpx;
-  line-height:68rpx;
+  height: 90rpx;
+  line-height: 90rpx;
   border-bottom: 1px dashed #ccc;
   text-align: center;
   margin:0 10rpx;

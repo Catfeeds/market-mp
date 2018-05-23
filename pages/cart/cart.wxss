@@ -34,3 +34,9 @@
   padding-top:80rpx;
   height:calc(100% - 184rpx)
 }
+
+.list-title {
+  font-size: 26rpx;
+  line-height: 1;
+  padding: 5px 20rpx 5px 20rpx;
+}

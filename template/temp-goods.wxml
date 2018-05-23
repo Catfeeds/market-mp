@@ -101,13 +101,84 @@
     </view>
 </template>
 
-<!-- 商品购物车模板 -->
+<!-- 商品购物车模板-小批 -->
+<template name="temp_goods_cart_xiaopi">
+    <view class="item">
+        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        <image class="item-img" src="{{imageUrl}}"></image>
+        <view>
+            <view style="color: #3F3F3F;font-size: 28rpx;">{{name}}</view>
+            <view>
+                <text wx:if="{{itemLadderPrices.length > 0}}" class="text-secon text-small">{{itemLadderPrices[0].showMsg}}</text>
+                <text wx:else class='text-small' style='color:#fff'>暂无满减活动</text>
+            </view>
+            <view>
+                <text class="text-main text-small">￥</text>
+                <block wx:if="{{discountType == 0}}">
+                    <text class="text-main text-large-2x">{{showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{showMaxPrice}}</text>
+                </block>
+                <block wx:if="{{discountType != 0}}">
+                    <text class="text-main text-large-2x">{{showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{showMaxPrice}}</text>
+                </block>
+            </view>
+        </view>
+        <view class="cart-buts">
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/minusIcon@3x.png" data-type="MINUS" data-id="{{itemId}}" catchtap="onCart" class="{{num == 0 ?'hide':''}}"></image>
+            <view class="{{num == 0 ?'hide':''}}" style="display: inline-block;width:60rpx;text-align: center;position: relative;top: 4rpx;">{{num}}</view>
+            <block wx:if="{{num >= stock}}">
+                <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon_dis.png"></image>
+            </block>
+            <block wx:else>
+                <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon@3x.png" data-type="ADD" data-id="{{itemId}}" catchtap="onCart"></image>
+            </block>
+        </view>
+    </view>
+</template>
+
+<!-- 商品购物车模板-门店自提 -->
+<template name="temp_goods_cart_ziti">
+    <view class="item">
+        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        <image class="item-img" src="{{imageUrl}}"></image>
+        <view>
+            <view style="color: #3F3F3F;font-size: 28rpx;">{{name}}</view>
+            <view>
+                <text wx:if="{{itemLadderPrices.length > 0}}" class="text-secon text-small">{{itemLadderPrices[0].showMsg}}</text>
+                <text wx:else class='text-small' style='color:#fff'>暂无满减活动</text>
+            </view>
+            <view>
+                <text class="text-main text-small">￥</text>
+                <block wx:if="{{discountType == 0}}">
+                    <text class="text-main text-large-2x">{{showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{showMaxPrice}}</text>
+                </block>
+                <block wx:if="{{discountType != 0}}">
+                    <text class="text-main text-large-2x">{{showSellPrice}}</text>
+                    <text class="text-delete text-small text-indent-small">￥{{showMaxPrice}}</text>
+                </block>
+            </view>
+        </view>
+        <view class="cart-buts">
+            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/minusIcon@3x.png" data-type="MINUS" data-id="{{itemId}}" catchtap="onCart" class="{{num == 0 ?'hide':''}}"></image>
+            <view class="{{num == 0 ?'hide':''}}" style="display: inline-block;width:60rpx;text-align: center;position: relative;top: 4rpx;">{{num}}</view>
+            <block wx:if="{{num >= stock}}">
+                <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon_dis.png"></image>
+            </block>
+            <block wx:else>
+                <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/Addicon@3x.png" data-type="ADD" data-id="{{itemId}}" catchtap="onCart"></image>
+            </block>
+        </view>
+    </view>
+</template>
+
 <template name="temp_goods_cart">
     <view class="item">
         <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
         <image class="item-img" src="{{imageUrl}}"></image>
         <view>
-            <view class="" style="color: #3F3F3F;font-size: 28rpx;">{{name}}</view>
+            <view style="color: #3F3F3F;font-size: 28rpx;">{{name}}</view>
             <view>
                 <text wx:if="{{itemLadderPrices.length > 0}}" class="text-secon text-small">{{itemLadderPrices[0].showMsg}}</text>
                 <text wx:else class='text-small' style='color:#fff'>暂无满减活动</text>

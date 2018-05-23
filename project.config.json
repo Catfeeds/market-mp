@@ -58,14 +58,14 @@
 				},
 				{
 					"id": 4,
-					"name": "支付",
-					"pathName": "pages/pay/pay",
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 5,
 					"name": "demo",
-					"pathName": "pages/index/demo",
+					"pathName": "pages/order/scan",
 					"query": ""
 				}
 			]

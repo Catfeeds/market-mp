@@ -13,8 +13,22 @@
     </view>
 </view>
 
-<scroll-view class="list" scroll-y="true" style="">
-    <template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{id}}" />
+<scroll-view class="list" scroll-y="true">
+     <!-- <block wx:if="{{xpGoodData}}">
+        <view class="list-title">需配送  <text class="text-muted2">仅支持配送 20分钟送货上门</text></view>
+        <template is="temp_goods_cart_xiaopi" data="{{...item}}" wx:for="{{xpGoodData}}" wx:key="{{id}}" />
+    </block>
+    <block wx:else>
+        <view></view>
+    </block>
+    <block wx:if="{{ztGoodData}}">
+        <view class="list-title">可自提 <text class="text-muted2">门店扫码即取</text></view>
+        <template is="temp_goods_cart_ziti" data="{{...item}}" wx:for="{{ztGoodData}}" wx:key="{{id}}" />
+    </block>
+    <block wx:else>
+        <view></view>
+    </block>  -->
+     <template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{id}}" /> 
     <view style="height:120rpx"></view>
 </scroll-view>
 

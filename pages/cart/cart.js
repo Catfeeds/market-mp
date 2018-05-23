@@ -6,18 +6,25 @@ var _this = null
 
 var winAjax = {
     cartData: function () {
-        var cart = app.Cart.getCart(), data = {};
-        console.log(cart)
+        var cart = app.Cart.getCart(), data = {}, pickUpArr = [], deliverArr = [];
         for (var key in cart) {
-            console.log(key)
             if (key == 'cartTotal') continue;
             data[key] = cart[key];
+            if (data[key].pickUpMode == 1){ //小批
+                pickUpArr.push(data[key])
+            } else if (data[key].pickUpMode == 2) { //门店商品
+                deliverArr.push(data[key])
+            }
         }
 
         _this.setData({
             cartData: data,
+            xpGoodData: pickUpArr,
+            ztGoodData: deliverArr
             // cartTotal: cart.cartTotal
         })
+        console.log(_this.data.cartData)
+
     },
     filterValidItems: function (cb) {
         var option = config.filterValidItems;
@@ -52,6 +59,8 @@ Page({
     data: {
         userInfo: { status: 4 },
         cartData: [],
+        xpGoodData: false,
+        ztGoodData: false,
         cartTotal: {
             totalNum: 0,
             totalMoney: 0.0
