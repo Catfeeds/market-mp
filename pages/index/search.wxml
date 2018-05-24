@@ -85,7 +85,7 @@
 				<image class="checkAll-img" 
 				data-check="{{status.checkAll}}" 
 				bindtap="onCartCheckAll"
-				src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}" 
+				src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}" 
 				></image>
 				全选（已选 {{checkTotal.speciesNum || 0}} 件）
 				<view style="width:160rpx;" data-type="REMOVER" catchtap="onCart">

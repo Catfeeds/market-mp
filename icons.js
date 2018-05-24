@@ -38,8 +38,8 @@ var icons = {
     "u" : "checkIcon"
   },
   close:{
-    "w" : "15px",
-    "h" : "15px",
+    "w" : "18px",
+    "h" : "18px",
     "u" : "closeIcon"
   },
   focus:{

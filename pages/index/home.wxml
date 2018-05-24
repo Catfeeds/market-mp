@@ -48,7 +48,7 @@
     <scroll-view class="list" scroll-y="true" style="width: calc(100% - 172rpx);height: 100%" bindscrolltoupper="onScrollHotTop" bindscrolltolower="onScrollBottom" scroll-top="{{scrollTop}}" enable-back-to-top="true">
         <view style="height: 80rpx;"></view>
         <block wx:if="{{temps.temp_main == 'temp_hot' && status.isHotShow}}">
-            <image src="{{icons.close.url}}" data-status-key="isHotShow" data-id="{{status.isHotShow}}" bindtap="onStatus" style="width: {{icons.close.w}};height:{{icons.close.h}};position: absolute;right: 22rpx;top:90rpx;z-index: 99"></image>
+            <image src="{{icons.close.url}}" data-status-key="isHotShow" data-id="{{status.isHotShow}}" bindtap="onStatus" style="width: {{icons.close.w}};height:{{icons.close.h}};position: absolute;right: 22rpx;top:90rpx;z-index: 5"></image>
 
             <template is="temp_hot" data="{{...item}}" wx:for="{{orderData}}" wx:key="{{item.marketId}}" />
             <view wx:if="{{orderDataSize > 1}}" class="more" bindtap="onGo" data-url="../order/order?tabActive=15">点击查看更多</view>
@@ -77,7 +77,7 @@
     </view>
     <text class="iconCart-up"></text>
     <view class="hd">
-        <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image>
         全选
         <text class="text-small">（已选 {{checkTotal.speciesNum || 0}} 件）</text>
         <view class="text-muted" style="width:160rpx;" data-type="REMOVER" catchtap="onCart">

@@ -104,7 +104,7 @@
 <!-- 商品购物车模板-小批 -->
 <template name="temp_goods_cart_xiaopi">
     <view class="item">
-        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image>
         <image class="item-img" src="{{imageUrl}}"></image>
         <view>
             <view style="color: #3F3F3F;font-size: 28rpx;">{{name}}</view>
@@ -140,7 +140,7 @@
 <!-- 商品购物车模板-门店自提 -->
 <template name="temp_goods_cart_ziti">
     <view class="item">
-        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image>
         <image class="item-img" src="{{imageUrl}}"></image>
         <view>
             <view style="color: #3F3F3F;font-size: 28rpx;">{{name}}</view>
@@ -175,7 +175,7 @@
 
 <template name="temp_goods_cart">
     <view class="item">
-        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image>
+        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image>
         <image class="item-img" src="{{imageUrl}}"></image>
         <view>
             <view style="color: #3F3F3F;font-size: 28rpx;">{{name}}</view>

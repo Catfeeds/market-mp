@@ -3,7 +3,7 @@
 
 <view class="navbar" style="background:#f4f4f4">
     <view class="item left">
-        <!-- <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}"></image> -->
+        <!-- <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image> -->
         <text class="text-red text-indent"> 自提与配送商品合并下单，全部配送</text>
     </view>
     <view class="item" data-type="REMOVER" bindtap="onCart" style="width:240rpx;">
@@ -18,7 +18,7 @@
             <image class="checkList-img" 
                     data-check="{{status.checkAll}}"
                     bindtap="onCartCheckAll" 
-                    src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}">
+                    src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}">
             </image>
             <text>需配送</text>
             <text class="text-muted2"> 仅支持配送 20分钟送货上门</text>
@@ -33,7 +33,7 @@
             <image class="checkList-img" 
                     data-check="{{status.checkAll}}"
                     bindtap="onCartCheckAll" 
-                    src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/checkbok.png'}}">
+                    src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}">
             </image>
             <text>需自提</text>
             <text class="text-muted2"> 门店扫码即取</text>

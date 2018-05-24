@@ -38,7 +38,7 @@ text {
 .checkAll-img{
   width: 45rpx;
   height: 45rpx;
-  margin: 10rpx 5rpx 10rpx 20rpx;
+  margin: 10rpx 5rpx 15rpx 20rpx;
   vertical-align: middle;
 }
 .check-img{
@@ -345,15 +345,15 @@ button[type="warn"] {
   bottom: 10px;
   right: 10px;
   z-index: 90;
-  height: 100rpx;
-  width: 100rpx;
-  line-height:100rpx;
+  height: 115rpx;
+  width: 115rpx;
+  line-height:115rpx;
   opacity: 1;
   color: #fff;
 }
 .floatCart image{
-    height: 100rpx;
-    width: 100rpx;
+    height: 115rpx;
+    width: 115rpx;
     display: block;
 }
 /** 购物车 按钮 **/
@@ -420,8 +420,8 @@ button[type="warn"] {
 }
 .tagNnm{
   position:absolute;
-  top: 0px;
-  right:0px;
+  top: 2px;
+  right:8px;
   height:30rpx;
   width:30rpx; 
   color: #fff;
