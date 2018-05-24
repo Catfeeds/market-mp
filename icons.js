@@ -23,8 +23,8 @@ var icons = {
     "u" : "O-location"
   },
   W_location:{
-    "w" : "9px",
-    "h" : "13px",
+    "w" : "11px",
+    "h" : "14px",
     "u" : "W-locationIcon"
   },
   cart:{
@@ -63,22 +63,22 @@ var icons = {
     "u" : "navigateiconicon"
   },
   order:{
-    "w" : "33px",
+    "w" : "36px",
     "h" : "40px",
     "u" : "OrderIcon"
   },
   payment:{
-    "w" : "33px",
+    "w" : "36px",
     "h" : "40px",
     "u" : "paymentIcon"
   },
   receipt:{
-    "w" : "49px",
+    "w" : "36px",
     "h" : "40px",
     "u" : "ReceiptIcon"
   },
   refunds:{
-    "w" : "33px",
+    "w" : "36px",
     "h" : "40px",
     "u" : "RefundsIcon"
   },

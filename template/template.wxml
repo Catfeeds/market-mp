@@ -1,5 +1,5 @@
 <template name="icon">
-	<image class="icon" src="{{url}}" style="width: {{w}};height:{{h}};"></image>
+	<image class="icon" src="{{url}}" style="width: {{w}};height:{{h}};padding-left:20rpx"></image>
 </template>
 
 

@@ -224,6 +224,7 @@ Page({
         goodData: {},
         orderData: [],
         cartData: {},
+        isGoodData: false,
         socketCount: false,
         checkTotal: {
             speciesNum: 0,

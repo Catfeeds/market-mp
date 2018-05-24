@@ -16,7 +16,7 @@ var winAjax = {
                 deliverArr.push(data[key])
             }
         }
-        console.log(_this.data.cartGoodData)
+       
         _this.setData({
             cartData: data,
             xpGoodData: pickUpArr,

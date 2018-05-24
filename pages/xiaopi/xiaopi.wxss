@@ -12,11 +12,11 @@ page{
 }
 .navbar .item .item-icon{
     vertical-align:middle;
-    padding-left:22rpx;
+    padding-left:20rpx;
     display:inline-block;
     padding-bottom:6rpx;
-    width: 9px;
-    height: 13px;
+    width: 11px;
+    height: 14px;
 }
 .navbar .item .item_nav{
     vertical-align: middle;

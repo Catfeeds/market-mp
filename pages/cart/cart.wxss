@@ -36,5 +36,12 @@
 .list-title {
   font-size: 26rpx;
   line-height: 1;
-  padding: 5px 20rpx 5px 20rpx;
+  padding: 2px 20rpx 2px 20rpx;
+  border-top: 1rpx solid #D8D8D8;
+}
+.checkList-img{
+  width: 45rpx;
+  height: 45rpx;
+  margin: 8rpx 10rpx 8rpx 0rpx;
+  vertical-align: middle;
 }

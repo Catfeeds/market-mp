@@ -197,7 +197,7 @@ button[type="warn"] {
     width:30rpx;
     height:32rpx;
     vertical-align:middle; 
-    padding-left:22rpx;
+    padding-left:10rpx;
     display: inline-block;
     padding-bottom:6rpx; 
 }
@@ -277,7 +277,7 @@ button[type="warn"] {
 .list .item{
   width:100%;
   background:#fff;
-  /* border-bottom: 1px solid #E5E5E5; */
+   /* border-bottom: 1rpx solid #D8D8D8;  */
   padding:20rpx 0 14rpx 0;
   display: inline-flex;
   position: relative;
@@ -285,17 +285,16 @@ button[type="warn"] {
 .list .item:first-child::before {
   display:none;
 }
-.list .item::before {
+ .list .item::before {
   content:" ";
   position:absolute;
   left:0rpx;
   top:0;
   right:0rpx;
   height:1px;
-  border-top:1rpx solid #D8D8D8;
+  border-top:1rpx solid #D8D8D8; 
   color:#D8D8D8;
-}
-
+} 
 .list .item .item-img{
   width:126rpx;
   height:126rpx;
@@ -325,7 +324,7 @@ button[type="warn"] {
 .list.justify .item::before {
   left:5rpx;
   right:0;
-  border-top:1rpx solid #E5E5E5;
+  border-top:1rpx solid #D8D8D8;
 }
 
 .list.justify .item-before::before {
