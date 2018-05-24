@@ -53,8 +53,6 @@ var winAjax = {
     }
 }
 
-
-
 Page({
     data: {
         userInfo: { status: 4 },
@@ -107,15 +105,23 @@ Page({
     onCartCheckAll: function (e) {
         _this.setData(app.Cart.CHECKALL(this.data, e.target.dataset.check));
     },
-    onCart: function (e) {
-        
+    onCart: function (e) { 
         var data = {};
+        var xps = this.data.xpGoodData;
+        var zts = this.data.ztGoodData;
+        // xps.xpGoodData = this.data.xpGoodData;
+        // zts.ztGoodData = this.data.ztGoodData;
+        // this.Cart[e.target.dataset.type](xps,e.target.dataset.id);
+        // this.Cart[e.target.dataset.type](zts,e.target.dataset.id);
+
         data.status = this.data.status;
         data.cartData = this.data.cartData;
         data.cartTotal = this.data.cartTotal;
         data.checkTotal = this.data.checkTotal;
-        console.log(app.Cart[e.target.dataset.type](data, e.target.dataset.id))
         _this.setData(app.Cart[e.target.dataset.type](data, e.target.dataset.id));
+        
+        // 加载购物车数据 逻辑刷新非ajax请求
+        this.ajax.cartData();
     },
     onPay: function (e) {
         var mode = 2;
@@ -162,6 +168,36 @@ Page({
                 wx.navigateTo({ url: '../index/authorization?userInfo=true' })
             }
         }
+    },
+    Cart: {
+        ADD_All: function (data, id){
+
+        },
+        ADD: function (data,id){
+            for(var i in data){
+                if(data[i].itemId = id){
+                    data[i].num += 1
+                }
+            }
+            _this.setData({xpGoodData: data})
+        },
+        MINUS: function (data,id){
+            for (var i in data) {
+                if (data[i].itemId = id) {
+                    data[i].num -= 1
+                }
+            }
+            _this.setData({ xpGoodData: data })
+        },
+        CHECK: function (data, id) {
+
+        },
+        CHECKALL: function (data, id) {
+            
+        },
+        REMOVER: function (data, id) {
+            
+        },
     },
     ajax: winAjax
 })
