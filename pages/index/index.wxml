@@ -41,7 +41,7 @@
 </view>
 <scroll-view class="listView" scroll-y="true">
     <block wx:if="{{marketSort.length == 0}}">
-        <view class="maket-list-null">未找到附近店铺...</view>
+        <view class="maket-list-null">正在努力获取店铺列表...</view>
     </block>
     <block wx:else>
         <template is="template_market" data="{{id,marketData}}" wx:for="{{marketSort}}" wx:for-item="id" wx:key="id"></template>

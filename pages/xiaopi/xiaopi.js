@@ -7,8 +7,8 @@ var _scrollLoad = true
 var winAjax = {
     getMarketItemClassifyVoList: function () {
         var option = config.getMarketItemClassifyVoList;
-        // option.data.marketId = app.data.currMarket.id
-        console.log("====> currMarket id: ", app.data)
+            option.data.marketId = _this.data.currMarket.id
+            console.log("====> currMarket id: ", _this.data.currMarket.id)
 
         option.success = function (data) {
             console.log("====> " + option.url, data)
@@ -38,8 +38,8 @@ var winAjax = {
         //     return false;
         // }
 
-        // option.data.marketId = _this.data.currMarket.id
-        // option.data.itemTypeId = _this.data.status.typeSubShow == 0 ? _this.data.status.typeShow : _this.data.status.typeSubShow
+        option.data.marketId = _this.data.currMarket.id
+        
         option.success = function (data) {
             var goodSort = []
 
@@ -132,16 +132,16 @@ Page({
     onLoad: function () {
         _this = this
         wx.setNavigationBarTitle({ title: '值得囤' })
+        _this.setData({
+            currMarket: app.Market.get()
+        })
 
         // 加载分类
         _this.ajax.getMarketItemClassifyVoList()
 
         // 检查购物车
         _this.ajax.filterValidItems()
-
-        _this.setData({
-            currMarket: app.Market.get()
-        });
+      
     },
     setDefaultImg: function (e) {
         this.data.goodData[e.target.dataset.id].imageUrl = 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/defaultImg.png'

@@ -303,10 +303,6 @@ Page({
                 wx.onSocketOpen(function (res) {
                     console.log('====> success socket', res.data)
                     socketOpen = true
-                    // for (var i = 0; i < socketMsgQueue.length; i++) {
-                    //     _this.sendSocketMessage(socketMsgQueue[i])
-                    // }
-                    // socketMsgQueue = []
                     sendSocketMessage(_this.data.userInfo.passportId)
                 });
                 function sendSocketMessage(msg) {
@@ -415,7 +411,6 @@ Page({
         this.ajax.goodData();
     },
     getLocation: function (cb) {
-
         // wx.showLoading({
         //   title: '定位中'
         // })

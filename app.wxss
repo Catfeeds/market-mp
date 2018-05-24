@@ -194,10 +194,10 @@ button[type="warn"] {
 
 /** 图标 **/
 .icon{
-    width:32rpx;
+    width:30rpx;
     height:32rpx;
     vertical-align:middle; 
-    padding-left:10rpx;
+    padding-left:22rpx;
     display: inline-block;
     padding-bottom:6rpx; 
 }
