@@ -16,7 +16,7 @@
 			<view class="title">
 				<text>历史搜索</text>
 				<image class="" src="{{icons.close.url}}" bindtap="onSearchRemoveAll"
-				style="width: {{icons.close.w}};height:{{icons.close.h}};position: absolute;right: 32rpx;top:48rpx"></image>
+				style="width: {{icons.close.w}};height:{{icons.close.h}};position: absolute;right: 32rpx;top:12px"></image>
 			</view>
 			<view style="padding: 8rpx 30rpx 8rpx 30rpx;">
 				<view class="tag" wx:for="{{searchHistoryData}}" wx:key="{{item}}" bindtap="onSearchGood" data-value="{{item}}">{{item}}</view>
@@ -59,7 +59,7 @@
 
 
 		<!-- 购物车 -->
-		<view class="cartnav">
+		<!-- <view class="cartnav">
 			<view class="item left {{status.cartShow ? 'hide':'show'}}">
 				<view class="iconCart">
 					<image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png" data-status-key="cartShow" bindtap="onStatus"></image>
@@ -71,10 +71,10 @@
 				<view class="text-small-1x">节省：￥{{checkTotal.thriftMoney}}</view>
 			</view>
 			<view class="item right" style="font-size: 34rpx;opacity:{{checkTotal.totalNum > 0 ? '1' : '0.2'}}" bindtap="onPay">去结算</view>
-		</view>
+		</view> -->
 
 		<!-- 二级购物车 -->
-		<view class="cart-subnav-scenes {{status.cartShow ? 'show':'hide'}}" data-status-key="cartShow" catchtap="onStatus"></view>
+		<!-- <view class="cart-subnav-scenes {{status.cartShow ? 'show':'hide'}}" data-status-key="cartShow" catchtap="onStatus"></view>
 		<view class="cart-subnav {{status.cartShow ? 'show':'hide'}}">
 			<view class="iconCart">
 				<image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png" data-status-key="cartShow" catchtap="onStatus"></image>
@@ -95,5 +95,9 @@
 			<scroll-view class="bd list" scroll-y="true">
 				<template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{item.id}}"/>
 			</scroll-view>
-		</view>
+		</view> -->
 	</block>
+    <view class="floatCart" bindtap="onGoCart">
+        <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png"></image>
+        <view class="tagNnm" style="{{checkTotal.totalNum > 99 ? 'width: 28px;right: -5px;':''}}">{{checkTotal.totalNum}}</view>
+    </view>

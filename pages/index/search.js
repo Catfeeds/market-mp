@@ -238,6 +238,9 @@ Page({
             delta: 1
         })
     },
+    onGoCart: function () {
+        wx.navigateTo({ url: '../cart/cart' })
+    },
     onCancel: function () {
         // _this.data.status.showSearch = 0;
         // _this.setData({
