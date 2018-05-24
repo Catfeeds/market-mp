@@ -1,9 +1,10 @@
-<view class="content">
-    <view style='background:#FFFBE6;border-radius:8px;border:1px solid #FFE58F;'>
-        <view class="content-detail">小程序需要您的授权（地理位置用于获取附近门店，用户信息仅头像和昵称）。授权基于微信开放接口，请放心授权。请按照下图授权:</view>
-        <view class="content-img">
-            <image class='img' src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/authorization.png" mode="aspectFit"></image>
-        </view>
-    </view>
+
+<view class="msg-list">
+    <view class="haveDesc">小程序需要您的授权（地理位置用于获取附近门店，用户信息仅头像和昵称）。授权基于微信开放接口，请放心授权。请按照下图授权:</view>
+    <view class="haveImg">
+        <image class="haveImage" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/authorization.png" mode="scaleToFill"></image>
+    </view>     
+</view>
+<view style='padding:2rem'>
     <button type="primary" hover-class="none" bindtap="openSetting" style='margin-top:20px'>去授权</button>
 </view>
