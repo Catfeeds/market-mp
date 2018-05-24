@@ -49,7 +49,7 @@
 
 
 <view class="cartnav">
-    <view class="item">
+    <view class="item left">
         <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/radiocheck.png' : 'https://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/radiobox.png'}}"></image>
         全选
     </view>
@@ -59,8 +59,5 @@
         </view>
         <view class="text-B2 text-small-1x" style="font-weight: 600;">节省：￥0.00</view>
     </view>
-    <view class="item right" style="font-size: 32rpx;opacity:{{checkTotal.totalNum > 0 ? '1' : '0.2'}}" bindtap="onPay">
-        去结算
-        <text class="text-small">({{checkTotal.totalNum}}件)</text>
-    </view>
+    <view class="item right" style="font-size: 32rpx;opacity:{{checkTotal.totalNum > 0 ? '1' : '0.2'}}" bindtap="onPay">去结算</view>
 </view>

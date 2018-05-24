@@ -108,12 +108,13 @@ Page({
         _this.setData(app.Cart.CHECKALL(this.data, e.target.dataset.check));
     },
     onCart: function (e) {
-        console.log(e)
+        
         var data = {};
         data.status = this.data.status;
         data.cartData = this.data.cartData;
         data.cartTotal = this.data.cartTotal;
         data.checkTotal = this.data.checkTotal;
+        console.log(app.Cart[e.target.dataset.type](data, e.target.dataset.id))
         _this.setData(app.Cart[e.target.dataset.type](data, e.target.dataset.id));
     },
     onPay: function (e) {

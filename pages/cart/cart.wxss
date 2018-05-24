@@ -25,7 +25,7 @@
 }
 
 .cartnav .item.center{
-  width:calc(100% - 170rpx - 280rpx);
+  width:calc(100% - 170rpx - 220rpx);
 }
 
 .list{
