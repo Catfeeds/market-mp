@@ -3,8 +3,8 @@
 
 <view class="navbar" style="background:#f4f4f4">
     <view class="item left">
-        <!-- <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image> -->
-        <text class="text-red text-indent"> 自提与配送商品合并下单，全部配送</text>
+         <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image> 
+         <text class="text-red text-indent-small"> 自提与配送商品合并下单，需配送</text> 
     </view>
     <view class="item" data-type="REMOVER" bindtap="onCart" style="width:240rpx;">
         <image class="icon" src="{{icons.trash.url}}" style="width: {{icons.trash.w}};height:{{icons.trash.h}}; position: relative;top:0rpx;right:8rpx;" data-type="REMOVER"></image>
@@ -13,14 +13,14 @@
 </view>
 
 <scroll-view class="list" scroll-y="true">
-    <block wx:if="{{xpGoodData.length > 0}}">
-        <view class="list-title">
-            <image class="checkList-img" 
+    <!-- <block wx:if="{{xpGoodData.length > 0}}">
+        <view class="list-title"> -->
+             <!-- <image class="checkList-img" 
                     data-check="{{status.checkAll}}"
                     bindtap="onCartCheckAll" 
                     src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}">
-            </image>
-            <text>需配送</text>
+            </image>  -->
+            <!-- <text class="text-large">需配送</text>
             <text class="text-muted2"> 仅支持配送 20分钟送货上门</text>
         </view>
         <template is="temp_goods_cart_xiaopi" data="{{...item}}" wx:for="{{xpGoodData}}" wx:key="{{id}}" />
@@ -29,21 +29,21 @@
         <view></view>
     </block>
     <block wx:if="{{ztGoodData.length > 0}}">
-        <view class="list-title">
-            <image class="checkList-img" 
+        <view class="list-title"> -->
+             <!-- <image class="checkList-img" 
                     data-check="{{status.checkAll}}"
                     bindtap="onCartCheckAll" 
                     src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}">
-            </image>
-            <text>需自提</text>
+            </image>  -->
+            <!-- <text class="text-large">需自提</text>
             <text class="text-muted2"> 门店扫码即取</text>
         </view>
         <template is="temp_goods_cart_ziti" data="{{...item}}" wx:for="{{ztGoodData}}" wx:key="{{id}}" />
     </block>
     <block wx:else>
         <view></view>
-    </block>
-    <!-- <template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{id}}" /> -->
+    </block> -->
+      <template is="temp_goods_cart" data="{{...item}}" wx:for="{{cartData}}" wx:key="{{id}}" />  
     <view style="height:120rpx"></view>
 </scroll-view>
 

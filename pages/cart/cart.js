@@ -10,17 +10,18 @@ var winAjax = {
         for (var key in cart) {
             if (key == 'cartTotal') continue;
             data[key] = cart[key];
-            if (data[key].pickUpMode == 1){ //小批
-                pickUpArr.push(data[key])
-            } else if (data[key].pickUpMode == 2) { //门店商品
-                deliverArr.push(data[key])
-            }
+            // if (data[key].pickUpMode == 1){ //小批
+            //     pickUpArr.push(data[key])
+            // } else if (data[key].pickUpMode == 2) { //门店商品
+            //     deliverArr.push(data[key])
+            // }
         }
+    //    data = pickUpArr.concat(deliverArr)
        
         _this.setData({
-            cartData: data,
-            xpGoodData: pickUpArr,
-            ztGoodData: deliverArr
+            cartData: data
+            // xpGoodData: pickUpArr,
+            // ztGoodData: deliverArr
             // cartTotal: cart.cartTotal
         })
         console.log(_this.data.cartData)
@@ -68,13 +69,17 @@ Page({
             totalMoney: 0.0
         },
         status: { checkAll: false },
+        state: {
+            xpCheckAll: false,
+            ztCheckAll: false
+        },
         icons: icons()
     },
     onLoad: function () {
         wx.setNavigationBarTitle({ title: '购物车' })
         // 初始化信息
         _this = this
-
+        
         // 加载购物车数据
         this.ajax.cartData();
         getApp().statistical.notifyClickShoppingCart(); // 统计
@@ -104,24 +109,31 @@ Page({
     },
     onCartCheckAll: function (e) {
         _this.setData(app.Cart.CHECKALL(this.data, e.target.dataset.check));
+
+        // 加载购物车数据 逻辑刷新非ajax请求
+        // this.ajax.cartData();
     },
     onCart: function (e) { 
         var data = {};
-        var xps = this.data.xpGoodData;
-        var zts = this.data.ztGoodData;
+        // var xps = this.data.xpGoodData;
+        // var zts = this.data.ztGoodData;
         // xps.xpGoodData = this.data.xpGoodData;
         // zts.ztGoodData = this.data.ztGoodData;
-        // this.Cart[e.target.dataset.type](xps,e.target.dataset.id);
-        // this.Cart[e.target.dataset.type](zts,e.target.dataset.id);
 
         data.status = this.data.status;
         data.cartData = this.data.cartData;
         data.cartTotal = this.data.cartTotal;
         data.checkTotal = this.data.checkTotal;
+        // if (xps.length > 0) {
+        //     this.Cart[e.target.dataset.type](xps, e.target.dataset.id);
+        // }
+        // if (zts.length > 0) {
+        //     this.Cart[e.target.dataset.type](zts, e.target.dataset.id);
+        // }
         _this.setData(app.Cart[e.target.dataset.type](data, e.target.dataset.id));
         
         // 加载购物车数据 逻辑刷新非ajax请求
-        this.ajax.cartData();
+        // this.ajax.cartData();
     },
     onPay: function (e) {
         var mode = 2;
@@ -190,7 +202,10 @@ Page({
             _this.setData({ xpGoodData: data })
         },
         CHECK: function (data, id) {
-
+            for (var i in data) {
+                data[i].check = !data[i].check                
+            }
+            _this.setData({ xpGoodData: data })
         },
         CHECKALL: function (data, id) {
             

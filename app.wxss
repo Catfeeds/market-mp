@@ -36,15 +36,15 @@ text {
   color:#b8b8b8;
 }
 .checkAll-img{
-  width: 45rpx;
-  height: 45rpx;
-  margin: 10rpx 5rpx 15rpx 0rpx;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 10rpx 5rpx 15rpx 20rpx;
   vertical-align: middle;
 }
 .check-img{
-  width: 45rpx;
-  height: 45rpx;
-  margin: 45rpx 10rpx 10rpx 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 40rpx 10rpx 10rpx 20rpx;
   vertical-align: middle;
 }
 
@@ -394,7 +394,7 @@ button[type="warn"] {
   min-width:90rpx;
 }
 .cartnav .item.left{
-  width:170rpx;
+  width:150rpx;
   text-align:center;
   display:inline-block;
   background: #000;

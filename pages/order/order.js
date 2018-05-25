@@ -113,11 +113,6 @@ Page({
     // 获取订单数据
     this.ajax.ordersData()
 
-
-
-  },
-  onReload: function(){
-
   },
   onUnload : function(){
     var pages = getCurrentPages();

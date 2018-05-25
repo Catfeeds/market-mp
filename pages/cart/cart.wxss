@@ -25,7 +25,7 @@
 }
 
 .cartnav .item.center{
-  width:calc(100% - 170rpx - 220rpx);
+  width:calc(100% - 150rpx - 220rpx);
 }
 
 .list{
@@ -36,7 +36,7 @@
 .list-title {
   font-size: 26rpx;
   line-height: 1;
-  padding: 2px 20rpx 2px 20rpx;
+  padding: 4px 20rpx;
   border-top: 1rpx solid #D8D8D8;
 }
 .checkList-img{

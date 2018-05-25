@@ -39,7 +39,8 @@ var winAjax = {
         // }
 
         option.data.marketId = _this.data.currMarket.id
-        
+        option.data.passportId = _this.data.userInfo.passportId
+
         option.success = function (data) {
             var goodSort = []
 
@@ -111,6 +112,7 @@ var winAjax = {
 
 Page({
     data: {
+        userInfo: {},
         typeList: [],
         cartData: [],
         goodData: [],
@@ -132,8 +134,10 @@ Page({
     onLoad: function () {
         _this = this
         wx.setNavigationBarTitle({ title: '值得囤' })
+        var userInfo = getApp().data.userInfo
         _this.setData({
-            currMarket: app.Market.get()
+            currMarket: app.Market.get(),
+            userInfo: userInfo
         })
 
         // 加载分类
@@ -142,6 +146,9 @@ Page({
         // 检查购物车
         _this.ajax.filterValidItems()
       
+    },
+    onReload: function () {
+        // this.onLoad()
     },
     setDefaultImg: function (e) {
         this.data.goodData[e.target.dataset.id].imageUrl = 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/defaultImg.png'
@@ -187,7 +194,6 @@ Page({
     onShow: function () {
         // 检查购物车
         _this.ajax.filterValidItems()
-        console.log(this.data.checkTotal)
     },
     onCart: function (e) {
         var data = {};

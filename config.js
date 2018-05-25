@@ -114,7 +114,7 @@ var config = {
         host: "market",
         islogin: true,
         url: "/getItemByClassifyIds",
-        data: { marketId: 100001, classifyId: 1, pageSize: 12, pageIndex: 0 }
+        data: { passportId: 8888, marketId: 100001, classifyId: 1, pageSize: 12, pageIndex: 0, itemClassifyVisible: 3 }
     },
     // 找到商店
     findMarket: {
