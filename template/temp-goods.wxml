@@ -175,8 +175,15 @@
 
 <template name="temp_goods_cart">
     <view class="item">
-        <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image>
-        <image class="item-img" src="{{imageUrl}}"></image>
+        <view>
+            <image class="check-img" data-id="{{itemId}}" data-type="CHECK" bindtap="onCart" src="{{check ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image>
+        </view>
+        <view>
+            <image class="item-img" src="{{imageUrl}}"></image>
+            <block wx:if="{{pickUpMode == 1}}">
+                <view class="xiaopi_tip">小批商品</view>
+            </block>
+        </view>
         <view>
             <view style="color: #3F3F3F;font-size: 28rpx;">{{name}}</view>
             <view>

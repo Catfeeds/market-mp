@@ -44,8 +44,9 @@ text {
 .check-img{
   width: 50rpx;
   height: 50rpx;
-  margin: 40rpx 10rpx 10rpx 20rpx;
-  vertical-align: middle;
+  /* margin: 40rpx 10rpx 10rpx 20rpx;
+  vertical-align: middle; */
+   margin: 40rpx 15rpx 40rpx 25rpx; 
 }
 
 .sellout{
@@ -298,7 +299,7 @@ button[type="warn"] {
 .list .item .item-img{
   width:126rpx;
   height:126rpx;
-  margin:0 10rpx;
+  margin:0 15rpx 0 5rpx;
 }
 .list .item text , .list .item input{
   line-height:48rpx; 

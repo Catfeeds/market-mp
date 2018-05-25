@@ -60,12 +60,12 @@
                 <text class="text-shallow">¥ {{checkTotal.thriftMoney}}</text>
             </view>
         </view>
-        <view wx:if="{{status.tabActive == 2}}" class="item text-shallow">
+        <view wx:if="{{status.tabActive == 2}}" class="item">
             <view>
                 <text>运     费（满 {{market.freeDeliveryFee/100}} 免运费）</text>
             </view>
             <view>
-                <text>¥ {{checkTotal.totalMoney >= (market.freeDeliveryFee / 100) ? '免运费' : market.deliveryCost / 100 }}</text>
+                <text class="text-shallow">¥ {{checkTotal.totalMoney >= (market.freeDeliveryFee / 100) ? '免运费' : market.deliveryCost / 100 }}</text>
             </view>
         </view>
         <view class="item item-before">

@@ -45,3 +45,18 @@
   margin: 8rpx 10rpx 8rpx 0rpx;
   vertical-align: middle;
 }
+.xiaopi_tip{
+  height:30rpx;
+  width:100rpx;
+  background-color:#890E25;
+  line-height:30rpx;
+  color:#fff;
+  font-size:20rpx;
+  text-align:center;
+  border-radius:8px; 
+  opacity:0.7;
+  position:absolute;
+  top:20rpx;
+  left:104rpx;
+  z-index: 1; 
+}

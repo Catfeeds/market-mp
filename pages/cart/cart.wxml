@@ -3,8 +3,8 @@
 
 <view class="navbar" style="background:#f4f4f4">
     <view class="item left">
-         <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image> 
-         <text class="text-red text-indent-small"> 自提与配送商品合并下单，需配送</text> 
+         <!-- <image class="checkAll-img" data-check="{{status.checkAll}}" bindtap="onCartCheckAll" src="{{status.checkAll ? 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok_check.png' : 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/bok.png'}}"></image>  -->
+         <text class="text-red text-indent"> 自提与配送商品合并下单，需配送</text> 
     </view>
     <view class="item" data-type="REMOVER" bindtap="onCart" style="width:240rpx;">
         <image class="icon" src="{{icons.trash.url}}" style="width: {{icons.trash.w}};height:{{icons.trash.h}}; position: relative;top:0rpx;right:8rpx;" data-type="REMOVER"></image>
