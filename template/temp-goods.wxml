@@ -73,8 +73,8 @@
         <view style="width:calc(100% - 126rpx);">
             <view class="text-large">{{goodData[id].name}}</view>
             <view>
-                <text class="text-B2 text-small">配送到家当日达，</text>
-                <text wx:if="{{goodData[id].itemLadderPrices.length > 0}}" class="text-secon text-small">{{goodData[id].itemLadderPrices[0].showMsg}}</text>
+                <text class="text-B2 text-small">配送到家当日达</text>
+                <text wx:if="{{goodData[id].itemLadderPrices.length > 0}}" class="text-secon text-small"> {{goodData[id].itemLadderPrices[0].showMsg}}</text>
             </view>
             <view style="margin-top:8rpx;">
                 <text class="text-main text-small">￥</text>

@@ -305,6 +305,8 @@ var winAjax = {
 
         if (_this.data.coupon.id) {
             option.data.couponId = _this.data.coupon.id
+        }else{
+            option.data.couponId = 0
         }
         option.data.orderSequenceNumber = orderSequenceNumber
         option.data.partnerUserId = _this.data.userInfo.openId
