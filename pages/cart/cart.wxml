@@ -57,7 +57,7 @@
         <view class="text-small-1x">合计：￥
             <text class="text-large-2x" style="font-weight: 600;">{{checkTotal.totalMoney}}</text>
         </view>
-        <view class="text-B2 text-small-1x" style="font-weight: 600;">节省：￥0.00</view>
+        <view class="text-B2 text-small-1x" style="font-weight: 600;">节省：￥{{checkTotal.thriftMoney}}</view>
     </view>
     <view class="item right" style="font-size: 32rpx;opacity:{{checkTotal.totalNum > 0 ? '1' : '0.2'}}" bindtap="onPay">去结算</view>
 </view>

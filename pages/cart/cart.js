@@ -140,7 +140,7 @@ Page({
         var cartData = app.Cart.getCart();
         var keyArr = Object.keys(cartData);
         for (var i in keyArr) {
-            if (cartData[keyArr[i]].pickUpMode == 1) {
+            if (cartData[keyArr[i]].pickUpMode == 1 && cartData[keyArr[i]].check) {
                 mode = 1;
                 break;
             }

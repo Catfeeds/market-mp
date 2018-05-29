@@ -533,7 +533,7 @@ Page({
         wx.showModal({
             title: '提示',
             showCancel: false,
-            content: '小批商品只能选择配送方式',
+            content: '内含配送商品只能选择配送方式',
             success: function (res) {
 
             }

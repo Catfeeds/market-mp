@@ -155,6 +155,7 @@ Page({
             cartData: app.Cart.getCart(),
             checkTotal: app.Cart.getCheckTotal()
         })
+        this.ajax.goodData(this.data.searchKeyValue)
     },
     onUnload: function () {
         var pages = getCurrentPages();

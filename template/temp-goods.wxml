@@ -181,7 +181,7 @@
         <view>
             <image class="item-img" src="{{imageUrl}}"></image>
             <block wx:if="{{pickUpMode == 1}}">
-                <view class="xiaopi_tip">小批商品</view>
+                <view class="xiaopi_tip">配送</view>
             </block>
         </view>
         <view>

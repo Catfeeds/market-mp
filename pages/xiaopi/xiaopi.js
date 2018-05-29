@@ -8,6 +8,7 @@ var winAjax = {
     getMarketItemClassifyVoList: function () {
         var option = config.getMarketItemClassifyVoList;
             option.data.marketId = _this.data.currMarket.id
+            option.data.itemClassifyVisible = 3
             console.log("====> currMarket id: ", _this.data.currMarket.id)
 
         option.success = function (data) {
@@ -148,7 +149,16 @@ Page({
       
     },
     onReload: function () {
-        // this.onLoad()
+        this.setData({
+            cartData: app.Cart.getCart(),
+            checkTotal: app.Cart.getCheckTotal()
+        })
+        
+        // 加载分类
+        _this.ajax.getMarketItemClassifyVoList()
+
+        // 检查购物车
+        _this.ajax.filterValidItems()
     },
     setDefaultImg: function (e) {
         this.data.goodData[e.target.dataset.id].imageUrl = 'http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/defaultImg.png'
@@ -192,6 +202,12 @@ Page({
         }
     },
     onShow: function () {
+        console.log("小批onShow")
+        this.setData({
+            checkTotal: app.Cart.getCheckTotal()
+        })
+        // 加载分类
+        _this.ajax.getMarketItemClassifyVoList()
         // 检查购物车
         _this.ajax.filterValidItems()
     },
@@ -214,7 +230,7 @@ Page({
         _this.ajax.goodData();
         setTimeout(function () {
             wx.hideNavigationBarLoading() //完成停止加载
-            wx.setNavigationBarTitle({ title: '小批' })
+            wx.setNavigationBarTitle({ title: '值得囤' })
             wx.stopPullDownRefresh() //停止下拉刷新
         }, 2000);
     },

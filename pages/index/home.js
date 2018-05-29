@@ -77,7 +77,6 @@ var winAjax = {
         app.ajax(_this, option)
     },
     itemTypes: function () {
-
         var option = config.itemTypes;
         option.data.marketId = _this.data.currMarket.id
         console.log("====> currMarket id: " + _this.data.currMarket.id)
@@ -379,10 +378,16 @@ Page({
         wx.navigateTo({ url: '../cart/cart' })
     },
     onShow: function () {
-        
+        console.log("首页onShow")
+        this.setData({
+            checkTotal: app.Cart.getCheckTotal()
+        })
+        // 加载 热卖
+        _this.getHot()
+        // 加载分类
+        _this.ajax.itemTypes()
         // 检查购物车
         _this.ajax.filterValidItems()
-        console.log(this.data.checkTotal)
     },
     onScrollHotTop: function (e) {
         wx.showNavigationBarLoading() //在标题栏中显示加载
