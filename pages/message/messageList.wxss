@@ -14,7 +14,7 @@ page{
     background-color: #fff;
     border-radius:7px;
     /* box-shadow: 1px 1px 1px 1px #890E25; */
-     filter: drop-shadow(2px 2px 5px #666); 
+     /* filter: drop-shadow(2px 2px 5px #666); */
     position: relative;
     z-index: auto;
 }

@@ -1,5 +1,5 @@
 page{
-  background: #efeff4;
+  background: #f8f8f8;
 }
 .common-list:nth-child(1){
   margin-top: 20rpx;

@@ -28,7 +28,7 @@
     <view class="item">
         <view style="width: 150rpx;">
             <image wx:if="{{goodData[id].stock == 0}}" class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
-            <image wx:if="{{goodData[id].stock > 0 && goodData[id].stock < 6}}" class="sellout" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/lessStock.png" lazy-load="true"></image>
+            <!-- <image wx:if="{{goodData[id].stock > 0 && goodData[id].stock < 6}}" class="sellout" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/lessStock.png" lazy-load="true"></image> -->
             <image style="position: absolute;top: calc(50% - 62rpx)" class="item-img" src="{{goodData[id].imageUrl}}" lazy-load="true" data-id="{{id}}" binderror="setDefaultImg"></image>
         </view>
         <view style="width:calc(100% - 126rpx);">
@@ -67,7 +67,7 @@
     <view class="item">
         <view style="width: 150rpx;">
             <image wx:if="{{goodData[id].stock == 0}}" class="sellout" src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/sellout.png" lazy-load="true"></image>
-            <image wx:if="{{goodData[id].stock > 0 && goodData[id].stock < 6}}" class="sellout" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/lessStock.png" lazy-load="true"></image>
+            <!-- <image wx:if="{{goodData[id].stock > 0 && goodData[id].stock < 6}}" class="sellout" src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/lessStock.png" lazy-load="true"></image> -->
             <image style="position: absolute;top: calc(50% - 62rpx)" class="item-img" src="{{goodData[id].imageUrl}}" lazy-load="true" data-id="{{id}}" binderror="setDefaultImg"></image>
         </view>
         <view style="width:calc(100% - 126rpx);">

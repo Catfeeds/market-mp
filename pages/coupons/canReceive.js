@@ -60,7 +60,7 @@ Page({
 
     var pages = getCurrentPages();
     var prevPage = pages[pages.length - 2]; //上2个页面
-    prevPage.onLoad()
+    prevPage.onReload()
   },
   onScrollTop: function(e){
   },
