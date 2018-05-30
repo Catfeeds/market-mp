@@ -154,8 +154,8 @@ Page({
             checkTotal: app.Cart.getCheckTotal()
         })
         
-        // 加载分类
-        _this.ajax.getMarketItemClassifyVoList()
+        // 加载商品
+        _this.ajax.goodData()
 
         // 检查购物车
         _this.ajax.filterValidItems()
@@ -206,8 +206,8 @@ Page({
         this.setData({
             checkTotal: app.Cart.getCheckTotal()
         })
-        // 加载分类
-        _this.ajax.getMarketItemClassifyVoList()
+        // 加载商品
+        _this.ajax.goodData()
         // 检查购物车
         _this.ajax.filterValidItems()
     },
