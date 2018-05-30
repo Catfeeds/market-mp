@@ -202,7 +202,6 @@ Page({
         }
     },
     onShow: function () {
-        console.log("小批onShow")
         this.setData({
             checkTotal: app.Cart.getCheckTotal()
         })

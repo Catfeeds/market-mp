@@ -378,7 +378,6 @@ Page({
         wx.navigateTo({ url: '../cart/cart' })
     },
     onShow: function () {
-        console.log("首页onShow")
         this.setData({
             checkTotal: app.Cart.getCheckTotal()
         })
