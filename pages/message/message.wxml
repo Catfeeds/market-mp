@@ -21,7 +21,7 @@
             <text>更有优惠，常来这里看看。</text>
         </view>
         <view class="content-img">
-            <image src="http://xmarket.oss-cn-shenzhen.aliyuncs.com/market/app/icon/CarIcon@3x.png" mode="aspectFill" class="cover"></image>
+            <image src="https://xmarket.oss-cn-shenzhen.aliyuncs.com/market-small/cou.png" mode="aspectFill" class="cover"></image>
             <block wx:if="{{msgCount.couponCount > 0}}">
                 <view class="tagNum">{{msgCount.couponCount}}</view>
             </block>

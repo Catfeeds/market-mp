@@ -27,10 +27,10 @@
 // marketRemoteURL=http://119.23.104.118:8083/
 
 var host = {
-    market: "https://m.xiaohuistore.com",
-    passport: "https://m.xiaohuistore.com",
-    payment: "https://m.xiaohuistore.com",
-    socket: "wss://m.xiaohuistore.com"
+    market: "https://market.xiaohuistore.com",
+    passport: "https://market.xiaohuistore.com",
+    payment: "https://market.xiaohuistore.com",
+    socket: "wss://market.xiaohuistore.com"
 }
 
 var ServerHost = {

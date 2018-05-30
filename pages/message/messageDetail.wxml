@@ -21,7 +21,7 @@
             </view>
         </view>
         <view class="entry-summary-p">
-            <image class="p-image" src="{{msgContentData.imgUrl}}"></image>
+            <image class="p-image" src="{{msgContentData.imgUrl}}" mode="widthFix"></image>
         </view>
     </view>
 </view>

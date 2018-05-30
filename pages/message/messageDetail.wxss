@@ -65,7 +65,7 @@ view {
 }
 .p-image{
     overflow: hidden;
-    height: 650rpx;
+    /* height: 650rpx; */
 }
 .entry-summary-p image {
     width: 100% !important;
